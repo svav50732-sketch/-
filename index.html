@@ -355,44 +355,81 @@
       }
 
       /* Продукт + цена — рядом (flex), как в классических nutra-формах */
+      /* Сбрасываем абсолютное позиционирование из внешнего css/boxes.css */
       .prod_img_wrapper {
-        margin: 16px 0 10px;
+        margin: 16px 0 10px !important;
+        position: static !important;
       }
       .prod_img_wrapper .Figure.product {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        margin: 0;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 18px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: static !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
       }
-      .prod_img_wrapper .Figure img {
-        max-width: 140px;
-        width: 140px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: none;
-        flex-shrink: 0;
+      .prod_img_wrapper .Figure.product img {
+        position: static !important;
+        display: block !important;
+        max-width: 140px !important;
+        width: 140px !important;
+        height: auto !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
       }
       .priceс {
-        margin: 0;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        width: auto !important;
+        height: auto !important;
+        transform: none !important;
+        flex-shrink: 0 !important;
       }
       .discountс {
-        display: inline-block;
-        background: var(--rose-500);
-        color: #fff;
-        padding: 5px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.3px;
-        text-transform: uppercase;
-        margin-bottom: 4px;
-        white-space: nowrap;
+        position: static !important;
+        display: inline-block !important;
+        background: var(--rose-500) !important;
+        background-image: none !important;
+        color: #fff !important;
+        padding: 5px 12px !important;
+        border-radius: 6px !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.3px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 4px !important;
+        white-space: nowrap !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+        width: auto !important;
+        height: auto !important;
+        top: auto !important;
+        left: auto !important;
       }
       .order_block del,
       .price_old,

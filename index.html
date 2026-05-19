@@ -319,120 +319,193 @@
         color: var(--text-muted);
       }
 
-      /* ORDER BLOCK — самый важный, делаем как карточку */
+      /* ===========================================================
+         ORDER BLOCK — компактная форма заказа (стиль оригинала)
+         Тёплая бежево-розовая палитра сохраняется
+         =========================================================== */
       .order_block {
-        background: linear-gradient(180deg, #ffffff 0%, #fdf6f0 100%) !important;
+        background: #ffffff !important;
         border: 1px solid var(--rose-100) !important;
-        border-radius: 24px !important;
-        padding: 36px 32px !important;
-        margin: 40px auto !important;
-        max-width: 560px;
-        box-shadow: 0 20px 50px rgba(181, 101, 118, 0.15);
+        border-radius: 16px !important;
+        padding: 24px 22px !important;
+        margin: 32px auto !important;
+        max-width: 460px;
+        box-shadow: 0 14px 40px rgba(181, 101, 118, 0.18);
         text-align: center;
       }
       .order_block .green_text {
-        font-family: "Cormorant Garamond", serif;
-        font-style: italic;
-        font-size: 20px !important;
+        font-family: "Source Sans 3", sans-serif !important;
+        font-style: normal !important;
+        font-size: 15px !important;
+        line-height: 1.45 !important;
         color: var(--olive) !important;
-        margin: 8px 0 !important;
+        margin: 4px 0 !important;
         background: none !important;
         border: none !important;
         padding: 0 !important;
+        font-weight: 600 !important;
       }
-      .order_block del,
-      .price_old {
+      .order_block .green_text:nth-of-type(3) {
+        font-size: 16px !important;
+        margin-top: 10px !important;
+      }
+      .order_block .green_text del {
         color: var(--text-muted) !important;
+        font-weight: 400 !important;
       }
-      .new_price,
-      .price_main {
-        color: var(--rose-700) !important;
-        font-family: "Cormorant Garamond", serif !important;
-        font-size: 42px !important;
-        font-weight: 700 !important;
+
+      /* Продукт + цена — рядом (flex), как в классических nutra-формах */
+      .prod_img_wrapper {
+        margin: 16px 0 10px;
+      }
+      .prod_img_wrapper .Figure.product {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin: 0;
+      }
+      .prod_img_wrapper .Figure img {
+        max-width: 140px;
+        width: 140px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: none;
+        flex-shrink: 0;
       }
       .priceс {
-        margin: 18px 0;
+        margin: 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
       }
       .discountс {
         display: inline-block;
         background: var(--rose-500);
         color: #fff;
-        padding: 6px 18px;
-        border-radius: 999px;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        margin-bottom: 14px;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        white-space: nowrap;
       }
-      .prod_img_wrapper .Figure img {
-        max-width: 240px;
-        border-radius: 16px;
-        box-shadow: none;
+      .order_block del,
+      .price_old,
+      .js_old_price {
+        color: var(--text-muted) !important;
+        font-size: 18px !important;
+        font-weight: 500 !important;
+      }
+      .new_price,
+      .price_main,
+      .js_new_price {
+        color: var(--rose-700) !important;
+        font-family: "Source Sans 3", sans-serif !important;
+        font-size: 34px !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
       }
 
+      /* Инструкция + таймер */
       .order_block h3 {
-        font-family: "Cormorant Garamond", serif !important;
-        font-size: 20px !important;
+        font-family: "Source Sans 3", sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
         color: var(--text-dark) !important;
         font-weight: 500 !important;
-        margin: 24px 0 18px !important;
+        margin: 14px 0 12px !important;
+        padding: 0 !important;
+        border-left: none !important;
       }
       .time_remains {
         display: inline-block;
-        background: var(--text-dark);
+        background: var(--rose-700);
         color: #fff;
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-family: "Source Sans 3", monospace;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-family: "Source Sans 3", "Courier New", monospace;
         font-weight: 700;
-        font-size: 22px;
-        min-width: 50px;
+        font-size: 20px;
+        min-width: 44px;
+        line-height: 1.2;
       }
 
       /* FORM */
       .form-post {
-        max-width: 380px;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0;
       }
       .span-input-roulette {
         display: block;
-        margin: 12px 0;
+        margin: 8px 0;
       }
       .input-roulette {
         width: 100%;
-        padding: 16px 20px !important;
+        padding: 12px 16px !important;
         border: 1.5px solid var(--rose-100) !important;
-        border-radius: 12px !important;
-        background: #fff !important;
+        border-radius: 8px !important;
+        background: #fdf6f0 !important;
         font-family: "Source Sans 3", sans-serif !important;
         font-size: 16px !important;
         color: var(--text-dark) !important;
         box-sizing: border-box;
-        transition: border-color 0.2s;
+        transition: border-color 0.15s, background 0.15s;
+        height: 48px;
+      }
+      .input-roulette::placeholder {
+        color: var(--text-muted);
+        opacity: 0.8;
       }
       .input-roulette:focus {
         outline: none;
         border-color: var(--rose-500) !important;
+        background: #fff !important;
       }
       .submit-roulette {
         width: 100%;
         background: linear-gradient(135deg, #b56576 0%, #8a3b50 100%) !important;
         color: #fff !important;
         border: none !important;
-        padding: 18px !important;
-        border-radius: 12px !important;
-        font-family: "Cormorant Garamond", serif !important;
-        font-weight: 600 !important;
-        font-size: 20px !important;
-        letter-spacing: 1px;
+        padding: 14px 18px !important;
+        border-radius: 8px !important;
+        font-family: "Source Sans 3", sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 17px !important;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
         cursor: pointer;
-        box-shadow: 0 8px 20px rgba(138, 59, 80, 0.3);
-        transition: transform 0.15s;
+        box-shadow: 0 6px 16px rgba(138, 59, 80, 0.28);
+        transition: transform 0.15s, box-shadow 0.15s;
+        margin-top: 6px;
+        height: 52px;
       }
       .submit-roulette:hover {
         transform: translateY(-1px);
+        box-shadow: 0 10px 22px rgba(138, 59, 80, 0.35);
+      }
+      .submit-roulette:active {
+        transform: translateY(0);
+      }
+
+      /* На узких экранах продукт и цена — стопкой */
+      @media (max-width: 480px) {
+        .prod_img_wrapper .Figure.product {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .priceс {
+          align-items: center;
+          text-align: center;
+        }
+        .prod_img_wrapper .Figure img {
+          max-width: 120px;
+          width: 120px;
+        }
       }
 
       /* TOOLBAR */
@@ -566,12 +639,15 @@
           font-size: 19px !important;
         }
         .order_block {
-          padding: 24px 18px !important;
-          margin: 24px 8px !important;
+          padding: 20px 16px !important;
+          margin: 24px 12px !important;
         }
         .new_price,
         .price_main {
-          font-size: 34px !important;
+          font-size: 30px !important;
+        }
+        .order_block h3 {
+          font-size: 14px !important;
         }
         .ittem-comment {
           padding: 18px 18px 18px 82px;
@@ -781,7 +857,7 @@
 
                       <!-- ИЗОБРАЖЕНИЕ 1 (главное фото героини): пожилая полька 85-90 лет, седые волосы, добрый взгляд, в белом медицинском халате, можно со стетоскопом на шее или на фоне медицинского кабинета. Должна выглядеть здоровой, бодрой, ухоженной — никаких слабых, больных бабушек. Стиль — портретное фото, как для статьи в газете. Соотношение примерно 4:3 -->
                       <figure class="Figure">
-                        <img src="https://static.joxi.pro/1771924282911-63f2f9df-7805-4145-b42b-c50f5c04517c.webp" />
+                        <img src="https://static.joxi.pro/1779181401237-684ad2e9-a299-4af8-bff6-0ddd0ef5f1b0.jpg" />
                         <span class="Figure-caption"
                           >Krystyna Wiśniewska – polska emerytka, która w wieku
                           89 lat czuje się tak, jak wiele kobiet czuje się w
@@ -947,7 +1023,7 @@
 
                       <!-- ИЗОБРАЖЕНИЕ 2 (content-2.webp): анатомическая инфографика "до и после". Слева — мочевой пузырь с воспалёнными, утолщёнными стенками, налётом изнутри, ослабленными мышцами тазового дна (стрелочки, подписи). Справа — здоровый, чистый, розовый мочевой пузырь и крепкие мышцы. Стиль медицинской иллюстрации, как в учебнике или брошюре, цвета: розовый, красный, бежевый. Без откровенной анатомии — пристойная для FB/Google модерации -->
                       <figure class="Figure">
-                        <img src="images/content-2.webp" />
+                        <img src="https://static.joxi.pro/1779181690062-3a1826e0-8551-4b38-9ef6-75400b30727b.jpg" />
                         <span class="Figure-caption"
                           >Z biegiem lat w pęcherzu każdej kobiety gromadzi
                           się przewlekły stan zapalny i osady – to właśnie one
@@ -1010,7 +1086,7 @@
 
                       <!-- ИЗОБРАЖЕНИЕ 3 (content-3.webp): иллюстрация регенерации клеток мочевого пузыря — крупный план здоровой, обновлённой розовой ткани с делящимися клетками. Можно стилизовать под микроскопическое фото или 3D-рендер. Цвета — мягкий розовый, бежевый, белый. Подпись "регенерация клеток" -->
                       <figure class="Figure">
-                        <img src="images/content-3.webp" />
+                        <img src="https://static.joxi.pro/1779181805364-9a25d66b-40b6-4eac-8d0e-1927c7a785d3.jpg" />
                         <span class="Figure-caption"
                           >Regeneracja komórek błony śluzowej pęcherza – to
                           właśnie ona pozwala odzyskać zdrowy układ moczowy. I
@@ -1342,7 +1418,7 @@
 
                       <!-- ИЗОБРАЖЕНИЕ 4 (content-4.webp): СТРАХ-картинка для усиления эмоции. Вариант А: пожилая женщина с грустным лицом сидит на краю кровати, рядом упаковка взрослых памперсов/урологических прокладок (без откровенностей). Вариант B: иллюстрация хирургической операции на мочевом пузыре/катетер (минимально натуралистично, без крови). Лучше вариант А — больше эмоций, проходит модерацию. Подпись о страшных последствиях нелеченного недержания -->
                       <figure class="Figure">
-                        <img src="images/content-4.webp" />
+                        <img src="https://static.joxi.pro/1779182051433-c9a717b8-2af4-415c-97fd-cc338bd5e615.jpg" />
                         <span class="Figure-caption"
                           >Rak pęcherza – najgroźniejsze powikłanie. Śmiertelność
                           z powodu zaawansowanego raka pęcherza wynosi nawet
@@ -1509,7 +1585,7 @@
                           <div class="prod_img_wrapper">
                             <!-- ИЗОБРАЖЕНИЕ 5 (Cystiolla-BOTTLE.png): упаковка/баночка капсул Cystiolla на белом или прозрачном фоне. Стиль: премиальная нутра — белая бутылочка с фиолетово-розовой/синей этикеткой, лого "Cystiolla", изображения ягод (клюква, черника) и грейпфрута на этикетке, надпись "60 capsules" или "30 capsules", надпись "Cranberry • Blueberry • Grapefruit". Можно добавить рядом одну открытую капсулу. Без фона, PNG с прозрачностью. -->
                             <figure class="Figure product">
-                              <img src="images/Cystiolla-BOTTLE.png" />
+                              <img src="найс.png" />
                               <div class="priceс">
                                 <span class="discountс"
                                   >Pani osobisty rabat – 50%!</span

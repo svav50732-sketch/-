@@ -1,0 +1,2092 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+    </style>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui"
+    />
+    <meta name="theme-color" content="#000" />
+
+    <title>
+      Emerytowana urolog ujawniła metodę, która pozwala kobietom zapomnieć o
+      nietrzymaniu moczu. Dziś sama ma 89 lat i jak mówią lekarze, u których
+      regularnie się bada, "jej pęcherz pracuje lepiej niż u niejednej
+      czterdziestolatki". To właśnie tak wypowiadają się o niej specjaliści.
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.webp" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/javascript" src="js/data.js"></script>
+
+    <link rel="stylesheet" href="css/boxes.css" />
+    <script src="js/boxes.js"></script>
+
+    <!-- ============================================================
+         REDESIGN: «Kobiecy magazyn» (Variant B)
+         Тёплая бежево-розовая палитра, серифные заголовки,
+         крупная типографика, овальные/скруглённые фото
+         ============================================================ -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-cream: #fdf6f0;
+        --bg-card: #ffffff;
+        --bg-soft: #f7e8de;
+        --rose-50: #fbeae6;
+        --rose-100: #f1d4cb;
+        --rose-300: #d49a96;
+        --rose-500: #b56576;
+        --rose-700: #8a3b50;
+        --olive: #6b7a4f;
+        --olive-soft: #a4b58a;
+        --gold: #c89b6a;
+        --text-dark: #2c1810;
+        --text-body: #4a3a30;
+        --text-muted: #8a7a6f;
+        --line: #e9d8cc;
+        --shadow-soft: 0 8px 30px rgba(181, 101, 118, 0.10);
+        --shadow-card: 0 12px 40px rgba(74, 58, 48, 0.08);
+      }
+
+      html,
+      body {
+        background: var(--bg-cream) !important;
+        color: var(--text-body) !important;
+        font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif !important;
+        font-size: 18px;
+        line-height: 1.75;
+      }
+
+      .App-container {
+        max-width: 760px;
+        margin: 0 auto;
+        background: transparent;
+      }
+
+      /* HEADER — мягкий, элегантный */
+      .Header-root {
+        background: var(--bg-card) !important;
+        border-bottom: 1px solid var(--line) !important;
+        padding: 14px 24px !important;
+        box-shadow: var(--shadow-soft);
+      }
+      .Header-meduza svg path {
+        fill: var(--rose-700) !important;
+      }
+      .Header-item a,
+      .Header-item {
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-weight: 500 !important;
+        font-size: 18px !important;
+        color: var(--text-dark) !important;
+        letter-spacing: 0.3px;
+      }
+      .Header-item a:hover {
+        color: var(--rose-500) !important;
+      }
+      .Header-itemLang {
+        border: 1px solid var(--rose-300) !important;
+        border-radius: 999px !important;
+        padding: 4px 12px !important;
+        color: var(--rose-500) !important;
+      }
+
+      /* MATERIAL HEADER */
+      .GeneralMaterial-root {
+        background: transparent !important;
+      }
+      .GeneralMaterial-container {
+        background: var(--bg-card);
+        margin: 24px auto;
+        border-radius: 18px;
+        box-shadow: var(--shadow-card);
+        padding: 36px 44px 48px;
+      }
+
+      .news-label {
+        display: inline-block;
+        background: var(--rose-50);
+        color: var(--rose-700);
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 13px;
+        padding: 6px 16px;
+        border-radius: 999px;
+        margin-bottom: 24px;
+      }
+
+      h1,
+      .SimpleTitle-root {
+        font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+        font-weight: 600 !important;
+        font-size: 34px !important;
+        line-height: 1.25 !important;
+        color: var(--text-dark) !important;
+        letter-spacing: -0.3px;
+        margin: 0 0 22px !important;
+      }
+      h1::first-letter,
+      .SimpleTitle-root::first-letter {
+        color: var(--rose-500);
+      }
+
+      .Meta-root,
+      .Timestamp-root {
+        color: var(--text-muted) !important;
+        font-family: "Source Sans 3", sans-serif !important;
+        font-size: 14px !important;
+        font-style: italic;
+      }
+
+      /* TYPOGRAPHY */
+      .GeneralMaterial-article p {
+        font-size: 18px;
+        line-height: 1.85;
+        color: var(--text-body);
+        margin: 0 0 22px;
+      }
+      .GeneralMaterial-article p b {
+        color: var(--text-dark);
+      }
+      .GeneralMaterial-article u {
+        text-decoration-color: var(--rose-300);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+
+      .GeneralMaterial-article h2 {
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-weight: 600 !important;
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+        color: var(--text-dark) !important;
+        margin: 40px 0 20px !important;
+        padding-left: 18px;
+        border-left: 3px solid var(--rose-300);
+      }
+      .GeneralMaterial-article h2.ct {
+        text-align: center;
+        padding: 26px 28px;
+        border-left: none;
+        border-radius: 14px;
+        font-style: italic;
+        font-size: 24px !important;
+      }
+      .GeneralMaterial-article h2.green {
+        background: linear-gradient(135deg, #f4ece0 0%, #f7e8de 100%);
+        color: var(--olive) !important;
+      }
+      .GeneralMaterial-article h2.red {
+        background: linear-gradient(135deg, #fbeae6 0%, #f1d4cb 100%);
+        color: var(--rose-700) !important;
+      }
+
+      .GeneralMaterial-article p.green {
+        background: linear-gradient(135deg, #f7efe6 0%, #f4ece0 100%);
+        border-left: 4px solid var(--olive-soft);
+        padding: 20px 24px;
+        border-radius: 0 14px 14px 0;
+        color: var(--olive) !important;
+        margin-bottom: 16px;
+      }
+      .GeneralMaterial-article p.red {
+        background: linear-gradient(135deg, #fbeae6 0%, #f4d4cc 100%);
+        border-left: 4px solid var(--rose-500);
+        padding: 20px 24px;
+        border-radius: 0 14px 14px 0;
+        color: var(--rose-700) !important;
+      }
+      .big_text {
+        font-size: 22px !important;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        text-align: center;
+        color: var(--rose-700);
+        padding: 18px 0;
+      }
+
+      /* FIGURE — фото в скруглённых формах */
+      .Figure {
+        margin: 32px auto;
+        text-align: center;
+      }
+      .Figure img {
+        width: 100%;
+        max-width: 540px;
+        height: auto;
+        border-radius: 24px;
+        box-shadow: var(--shadow-card);
+      }
+      /* Главное фото героини — овал в духе журнала */
+      .GeneralMaterial-article > .Figure:first-of-type img {
+        max-width: 380px;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 50% / 45%;
+        border: 6px solid var(--bg-card);
+        outline: 2px solid var(--rose-300);
+        outline-offset: 6px;
+      }
+      .Figure-caption {
+        display: block;
+        margin-top: 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 16px;
+        color: var(--text-muted);
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
+      }
+
+      /* LISTS */
+      .ListBlock-root.ListBlock-ul {
+        list-style: none;
+        padding: 0;
+        margin: 24px 0;
+      }
+      .ListBlock-root.ListBlock-ul li {
+        background: var(--bg-soft);
+        border-radius: 12px;
+        padding: 16px 20px 16px 52px;
+        margin: 0 0 12px;
+        position: relative;
+        font-size: 17px;
+        line-height: 1.7;
+      }
+      .ListBlock-root.ListBlock-ul li::before {
+        content: "♥";
+        position: absolute;
+        left: 20px;
+        top: 16px;
+        color: var(--rose-500);
+        font-size: 18px;
+      }
+      .ListBlock-root.ListBlock-ul li b {
+        color: var(--rose-700);
+      }
+
+      /* COUNTER */
+      .left_count {
+        text-align: center;
+        margin: 18px 0 8px;
+      }
+      .prod_left_val {
+        display: inline-block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--rose-700);
+        padding: 10px 32px;
+        border: 2px solid var(--rose-300);
+        border-radius: 12px;
+        background: var(--rose-50);
+      }
+      p.ct {
+        text-align: center;
+        font-style: italic;
+        color: var(--text-muted);
+      }
+
+      /* ORDER BLOCK — самый важный, делаем как карточку */
+      .order_block {
+        background: linear-gradient(180deg, #ffffff 0%, #fdf6f0 100%) !important;
+        border: 1px solid var(--rose-100) !important;
+        border-radius: 24px !important;
+        padding: 36px 32px !important;
+        margin: 40px auto !important;
+        max-width: 560px;
+        box-shadow: 0 20px 50px rgba(181, 101, 118, 0.15);
+        text-align: center;
+      }
+      .order_block .green_text {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 20px !important;
+        color: var(--olive) !important;
+        margin: 8px 0 !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+      }
+      .order_block del,
+      .price_old {
+        color: var(--text-muted) !important;
+      }
+      .new_price,
+      .price_main {
+        color: var(--rose-700) !important;
+        font-family: "Cormorant Garamond", serif !important;
+        font-size: 42px !important;
+        font-weight: 700 !important;
+      }
+      .priceс {
+        margin: 18px 0;
+      }
+      .discountс {
+        display: inline-block;
+        background: var(--rose-500);
+        color: #fff;
+        padding: 6px 18px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 14px;
+      }
+      .prod_img_wrapper .Figure img {
+        max-width: 240px;
+        border-radius: 16px;
+        box-shadow: none;
+      }
+
+      .order_block h3 {
+        font-family: "Cormorant Garamond", serif !important;
+        font-size: 20px !important;
+        color: var(--text-dark) !important;
+        font-weight: 500 !important;
+        margin: 24px 0 18px !important;
+      }
+      .time_remains {
+        display: inline-block;
+        background: var(--text-dark);
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-family: "Source Sans 3", monospace;
+        font-weight: 700;
+        font-size: 22px;
+        min-width: 50px;
+      }
+
+      /* FORM */
+      .form-post {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+      .span-input-roulette {
+        display: block;
+        margin: 12px 0;
+      }
+      .input-roulette {
+        width: 100%;
+        padding: 16px 20px !important;
+        border: 1.5px solid var(--rose-100) !important;
+        border-radius: 12px !important;
+        background: #fff !important;
+        font-family: "Source Sans 3", sans-serif !important;
+        font-size: 16px !important;
+        color: var(--text-dark) !important;
+        box-sizing: border-box;
+        transition: border-color 0.2s;
+      }
+      .input-roulette:focus {
+        outline: none;
+        border-color: var(--rose-500) !important;
+      }
+      .submit-roulette {
+        width: 100%;
+        background: linear-gradient(135deg, #b56576 0%, #8a3b50 100%) !important;
+        color: #fff !important;
+        border: none !important;
+        padding: 18px !important;
+        border-radius: 12px !important;
+        font-family: "Cormorant Garamond", serif !important;
+        font-weight: 600 !important;
+        font-size: 20px !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(138, 59, 80, 0.3);
+        transition: transform 0.15s;
+      }
+      .submit-roulette:hover {
+        transform: translateY(-1px);
+      }
+
+      /* TOOLBAR */
+      .Toolbar-root {
+        margin: 40px 0 30px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+      .Toolbar-line {
+        display: none;
+      }
+      .Toolbar-list-custom {
+        text-align: center;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        color: var(--text-muted);
+      }
+      .Toolbar-link {
+        color: var(--rose-500) !important;
+        font-size: 16px;
+      }
+
+      /* COMMENTS */
+      .SimpleBlock-h4 {
+        font-family: "Cormorant Garamond", serif !important;
+        font-size: 28px !important;
+        color: var(--text-dark) !important;
+        text-align: center;
+        margin: 40px 0 28px !important;
+        font-weight: 600 !important;
+      }
+      .SimpleBlock-h4::before,
+      .SimpleBlock-h4::after {
+        content: "—";
+        color: var(--rose-300);
+        margin: 0 18px;
+      }
+      .ittem-comment {
+        background: var(--bg-card);
+        border-radius: 18px;
+        padding: 22px 24px 22px 92px;
+        margin: 0 0 16px;
+        position: relative;
+        box-shadow: var(--shadow-soft);
+        min-height: 80px;
+      }
+      .ittem-comment.ans {
+        background: var(--rose-50);
+        margin-left: 32px;
+        border-left: 3px solid var(--rose-300);
+      }
+      .ittem-comment .ava-img {
+        position: absolute;
+        left: 20px;
+        top: 22px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--bg-card);
+        outline: 1.5px solid var(--rose-300);
+      }
+      .ittem-comment p {
+        margin: 0 0 6px !important;
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+      }
+      .ittem-comment p:first-of-type strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        color: var(--rose-700);
+        font-weight: 600;
+      }
+
+      /* CTA BUTTON */
+      a.button {
+        display: block;
+        max-width: 480px;
+        margin: 36px auto 20px;
+        background: linear-gradient(135deg, #b56576 0%, #8a3b50 100%);
+        color: #fff !important;
+        text-decoration: none;
+        padding: 22px 28px;
+        border-radius: 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 0.5px;
+        box-shadow: 0 14px 32px rgba(138, 59, 80, 0.28);
+        transition: transform 0.15s;
+      }
+      a.button:hover {
+        transform: translateY(-2px);
+      }
+
+      /* FOOTER */
+      .Footer-root {
+        background: transparent !important;
+        margin-top: 40px;
+      }
+      .Footer-giphy,
+      .Footer-copyrightItem span {
+        font-family: "Cormorant Garamond", serif !important;
+        color: var(--text-muted) !important;
+        font-style: italic;
+      }
+
+      /* MOBILE */
+      @media (max-width: 720px) {
+        body {
+          font-size: 17px;
+        }
+        .GeneralMaterial-container {
+          margin: 12px;
+          padding: 24px 18px 32px;
+          border-radius: 14px;
+        }
+        h1,
+        .SimpleTitle-root {
+          font-size: 26px !important;
+        }
+        .GeneralMaterial-article h2 {
+          font-size: 22px !important;
+        }
+        .GeneralMaterial-article h2.ct {
+          font-size: 20px !important;
+          padding: 20px 18px;
+        }
+        .big_text {
+          font-size: 19px !important;
+        }
+        .order_block {
+          padding: 24px 18px !important;
+          margin: 24px 8px !important;
+        }
+        .new_price,
+        .price_main {
+          font-size: 34px !important;
+        }
+        .ittem-comment {
+          padding: 18px 18px 18px 82px;
+        }
+        .ittem-comment.ans {
+          margin-left: 16px;
+        }
+        .ittem-comment .ava-img {
+          width: 48px;
+          height: 48px;
+          left: 16px;
+        }
+        .GeneralMaterial-article > .Figure:first-of-type img {
+          max-width: 280px;
+        }
+        a.button {
+          font-size: 18px;
+          padding: 18px 20px;
+          margin: 28px 16px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="App-container">
+        <div class="App-header">
+          <header class="Header-root" role="banner">
+            <div class="Header-logo">
+              <a
+                class="Header-meduza"
+                href="#"
+                aria-label="Meduza. Przejdź do strony głównej"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="SvgSymbol-root SvgSymbol-meduzaLogo"
+                  width="544"
+                  height="115"
+                  viewBox="0 0 544 115"
+                >
+                  <path
+                    d="M59.1008614,49.65632 L59.1008614,106.01472 L84.9480411,114.24 L84.9480411,49.65632 L101.574882,49.65632 L101.574882,106.01472 L127.270909,114.24 L144.048902,91.392 L127.422062,91.392 L127.422062,35.7952 L101.726035,26.80832 L84.9480411,46.60992 L84.9480411,35.7952 L59.2520145,26.80832 L42.4740206,46.60992 L42.4740206,35.7952 L16.7779939,26.80832 L0,49.65632 L16.6268408,49.65632 L16.6268408,106.01472 L42.4740206,114.24 L42.4740206,49.65632 L59.1008614,49.65632 L59.1008614,49.65632 Z M336.61795,91.392 L336.61795,35.0336 L310.770769,26.80832 L310.770769,105.25312 L336.466796,114.24 L353.24479,94.4384 L353.24479,105.25312 L378.940817,114.24 L395.71881,91.392 L379.091969,91.392 L379.091969,35.0336 L353.24479,26.80832 L353.24479,91.392 L336.61795,91.392 L336.61795,91.392 Z M527.373159,38.08 L502.130592,26.80832 L472.202278,41.1264 L502.130592,52.39808 L461.016949,72.352 L461.016949,104.94848 L486.86413,114.24 L502.130592,94.28608 L502.130592,105.25312 L527.977771,114.24 L544,91.23968 L527.373159,91.23968 L527.373159,38.08 L527.373159,38.08 Z M177.453737,114.24 L207.079744,102.35904 L177.453737,91.23968 L177.453737,75.24608 L216.300083,56.3584 L194.231731,26.80832 L151.606557,47.37152 L151.606557,103.12064 L177.453737,114.24 L177.453737,114.24 Z M455.424284,89.56416 L423.984441,79.968 L453.459295,42.19264 L416.577937,26.80832 L397.230341,51.48416 L428.821339,61.23264 L398.741873,98.85568 L436.076687,114.24 L455.424284,89.56416 L455.424284,89.56416 Z M486.86413,91.392 L486.86413,68.84864 L502.130592,61.53728 L502.130592,91.392 L486.86413,91.392 L486.86413,91.392 Z M177.453737,41.58336 L190.452904,59.55712 L177.453737,65.80224 L177.453737,41.58336 L177.453737,41.58336 Z M222.95082,103.12064 L248.797999,114.24 L291.27202,97.18016 L291.27202,29.7024 L222.95082,0 L222.95082,26.30784 L265.424841,43.21536 L265.424841,97.33248 L248.797999,91.23968 L248.797999,43.71584 L222.95082,51.94112 L222.95082,103.12064 L222.95082,103.12064 Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <div class="Header-menuToggle">
+              <button
+                class="Header-item"
+                type="button"
+                aria-label="Otwórz menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="SvgSymbol-root SvgSymbol-menu SvgSymbol-isInHeader"
+                  width="22"
+                  height="24"
+                  viewBox="0 0 22 24"
+                >
+                  <g
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  >
+                    <path
+                      d="M1 20.576h19.328M1 11.444h19.328M1 2.556h19.328"
+                    ></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <div class="Header-nav">
+              <nav class="Header-menu">
+                <span class="Header-item"
+                  ><a class="Link-root" href="#">Wiadomości</a></span
+                >
+                <span class="Header-item"
+                  ><a class="Link-root" href="#">Historie</a></span
+                >
+                <span class="Header-item"
+                  ><a class="Link-root" href="#">Analizy</a></span
+                >
+                <span class="Header-item"
+                  ><a class="Link-root" href="#">Gry</a></span
+                >
+                <span class="Header-item"
+                  ><a class="Link-root" href="#">Chapiteau</a></span
+                >
+                <span class="Header-item"
+                  ><a class="Link-root" href="#">Podcasty</a></span
+                >
+              </nav>
+              <div class="Header-mobileNav">
+                <nav class="Header-menuAdditional">
+                  <a class="Header-menuAdditionalItem" href="#"
+                    >O projekcie</a
+                  >
+                  <a class="Header-menuAdditionalItem" href="#">Reklama</a>
+                  <a class="Header-menuAdditionalItem" href="#"
+                    >Meduza po angielsku</a
+                  >
+                </nav>
+                <div class="Header-switcher"></div>
+              </div>
+            </div>
+            <div class="Header-buttons">
+              <a class="Header-item Header-itemLang" href="#">EN</a>
+              <button
+                class="Header-item Header-itemSearch"
+                type="button"
+                aria-label="Szukaj"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="SvgSymbol-root SvgSymbol-search SvgSymbol-isInHeader"
+                  width="20"
+                  height="24"
+                  viewBox="0 0 20 24"
+                >
+                  <circle
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    vector-effect="non-scaling-stroke"
+                    cx="10"
+                    cy="10"
+                    r="9"
+                  ></circle>
+                  <path
+                    d="M18.868 22.124L17.4 20.25"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+        </div>
+        <main class="App-content" id="maincontent">
+          <div class="AffiliatePanels-root">
+            <div style="position: relative">
+              <div
+                class="GeneralMaterial-root GeneralMaterial-default GeneralMaterial-simple"
+              >
+                <div class="GeneralMaterial-container">
+                  <div class="GeneralMaterial-head">
+                    <div class="GeneralMaterial-materialHeader">
+                      <div class="news-label">Wiadomości</div>
+                      <h1 class="SimpleTitle-root">
+                        Emerytowana urolog ujawniła metodę, która pozwala
+                        kobietom zapomnieć o nietrzymaniu moczu. Dziś sama ma
+                        89 lat i jak mówią lekarze, u których regularnie się
+                        bada, "jej pęcherz pracuje lepiej niż u niejednej
+                        czterdziestolatki". To właśnie tak wypowiadają się o
+                        niej specjaliści.
+                      </h1>
+                      <div class="Meta-root Meta-simple">
+                        <div class="MetaItem-root MetaItem-hasBullets">
+                          <time class="Timestamp-root date-8 time"
+                            >27.01.2026 15:22</time
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="GeneralMaterial-body">
+                    <div class="GeneralMaterial-article">
+                      <p class="green">
+                        <b
+                          >Krystyna Wiśniewska twierdzi, że odkryła sekret
+                          zdrowia układu moczowego, gdy pracowała jako urolog,
+                          i wszystkie pacjentki, którym o tym opowiedziała,
+                          pozbyły się problemu nietrzymania moczu. Krystyna
+                          Wiśniewska przesłała nam list, w którym postanowiła
+                          podzielić się tą metodą ze wszystkimi naszymi
+                          czytelniczkami!</b
+                        >
+                      </p>
+                      <p class="green">
+                        <b
+                          >Uwaga! To materiał ekskluzywny, przygotowany
+                          specjalnie dla naszej publikacji!</b
+                        >
+                      </p>
+                      <p class="green">
+                        <b
+                          >Jeśli czujesz, że tracisz kontrolę nad swoim
+                          pęcherzem, boisz się kaszlnąć, kichnąć lub się
+                          roześmiać przy ludziach, jeśli wstajesz w nocy do
+                          toalety po kilka razy, a prokładki stały się
+                          codziennością – polecamy przeczytać list emerytowanej
+                          urolog! Być może znajdziesz w nim rozwiązanie wielu
+                          swoich problemów!</b
+                        >
+                      </p>
+
+                      <!-- ИЗОБРАЖЕНИЕ 1 (главное фото героини): пожилая полька 85-90 лет, седые волосы, добрый взгляд, в белом медицинском халате, можно со стетоскопом на шее или на фоне медицинского кабинета. Должна выглядеть здоровой, бодрой, ухоженной — никаких слабых, больных бабушек. Стиль — портретное фото, как для статьи в газете. Соотношение примерно 4:3 -->
+                      <figure class="Figure">
+                        <img src="https://static.joxi.pro/1771924282911-63f2f9df-7805-4145-b42b-c50f5c04517c.webp" />
+                        <span class="Figure-caption"
+                          >Krystyna Wiśniewska – polska emerytka, która w wieku
+                          89 lat czuje się tak, jak wiele kobiet czuje się w
+                          wieku 50 lat!</span
+                        >
+                      </figure>
+
+                      <p>
+                        Większość kobiet, które dożywają 80–90 lat, nie radzi
+                        sobie bez pomocy z zewnątrz. Krystyna Wiśniewska jest
+                        wyjątkiem od tej reguły. Krystyna Wiśniewska nie tylko
+                        mieszka sama, ale wciąż pomaga innym ludziom. Do dziś
+                        konsultuje pacjentki, a ze starego nawyku robi to
+                        bezpłatnie – po prostu, żeby być potrzebną i mieć
+                        kontakt z ludźmi.
+                      </p>
+                      <p>
+                        Niestety, wiele rówieśniczek Krystyny Wiśniewskiej
+                        zmarło już dawno temu. Jak twierdzi sama Krystyna,
+                        wynika to z tego, że "nie dbały o swoje zdrowie, w
+                        szczególności o zdrowie intymne i moczowe, i żyły
+                        chwilą". A tak nie wolno! Jeśli kobieta chce żyć długo
+                        i cieszyć się sobą, w pewnym wieku (po 45–50 roku
+                        życia) musi zacząć dbać o swoje zdrowie. Można (i
+                        lepiej) zrobić to wcześniej, ale po 45–50 trzeba to
+                        zrobić bezwzględnie.
+                      </p>
+                      <p>
+                        <u
+                          >Długowieczność i dobre samopoczucie to nie tylko
+                          dar, ale i dbanie o siebie!</u
+                        >
+                      </p>
+                      <p>
+                        Krystyna Wiśniewska napisała do nas list, w którym
+                        postanowiła podzielić się metodą poprawy zdrowia układu
+                        moczowego, którą odkryła dla siebie, gdy była jeszcze
+                        praktykującym urologiem. Publikujemy ten list w
+                        całości, tak jak do nas dotarł. Jeśli chcesz znowu
+                        czuć się pewnie i przestać żyć w cieniu nietrzymania
+                        moczu, polecamy go przeczytać.
+                      </p>
+                      <h2>List od Krystyny Wiśniewskiej</h2>
+                      <p>Dzień dobry!</p>
+                      <p>
+                        Nazywam się Krystyna Wiśniewska. Mieszkam w Warszawie.
+                        Przed emeryturą pracowałam jako urolog przez ponad 40
+                        lat. W pewnym momencie zrozumiałam sekret zdrowia
+                        kobiecego układu moczowego i tego, jak uniknąć
+                        nietrzymania moczu, które dziś dotyka prawie każdą
+                        kobietę po 45. Ponieważ nie była to oficjalna metoda
+                        leczenia, nie mogłam jej przepisywać – mogłam tylko
+                        polecać. A kobiety, które posłuchały mojej rady,
+                        zawsze mówiły mi, że ta metoda zwróciła im pewność
+                        siebie. Wiele z nich żyje do dziś i prawie co roku
+                        dzwoni do mnie, żeby złożyć życzenia urodzinowe.
+                      </p>
+                      <p>
+                        Jednocześnie rozumiem, że nie jestem już młoda. Mam 89
+                        lat i oczywiście nie będę żyła wiecznie. Dlatego
+                        postanowiłam napisać ten list-apel do wszystkich
+                        kobiet. Chcę podzielić się moją wiedzą, by przedłużyć
+                        i poprawić życie tysiącom kobiet, które dziś wstydzą
+                        się wyjść z domu.
+                      </p>
+                      <p>
+                        Tak naprawdę w tej metodzie nie ma nic szczególnie
+                        skomplikowanego ani niemożliwego. Naukowcy znają tę
+                        metodę od dawna. Ale nie stosuje się jej w leczeniu,
+                        ponieważ nie jest ona ukierunkowana na pozbycie się
+                        konkretnych objawów, lecz na ogólne oczyszczenie i
+                        odnowę pęcherza moczowego oraz tkanek dna miednicy.
+                        Każdej komórki i każdej tkanki. A wtedy organizm sam
+                        zaczyna radzić sobie z problemem nietrzymania.
+                      </p>
+                      <p>
+                        Co więcej, jak zrozumiałam w swoim czasie, taka metoda
+                        leczenia po prostu nie jest opłacalna dla koncernów
+                        farmaceutycznych i producentów wkładek urologicznych –
+                        dlatego nie jest promowana. Nikt nigdy nie będzie jej
+                        lobbował. A dlaczego nie jest opłacalna? Bo koncernom
+                        farmaceutycznym nie zależy na tym, żeby kobiety były
+                        zdrowe!
+                      </p>
+                      <p>
+                        Wręcz przeciwnie – zależy im na tym, żeby kobiety były
+                        chore i kupowały ich pigułki oraz wkładki bez końca.
+                        Czyli opłaca im się produkować leki, które pomagają
+                        tylko tymczasowo. I tak właśnie robią. Na przykład w
+                        leczeniu nietrzymania moczu po 45 (które dziś dotyka
+                        niemal każdej kobiety) stosuje się dokładnie taką
+                        terapię.
+                      </p>
+                      <p class="red">
+                        <u
+                          >A tymczasem z nietrzymania moczu można w pełni się
+                          wyleczyć! Nie ma żadnej potrzeby noszenia wkładek
+                          codziennie, robienia operacji ani brania pigułek do
+                          końca życia! Ale kobiety po prostu tego nie wiedzą.</u
+                        >
+                      </p>
+                      <p>
+                        Z tego powodu postanowiłam napisać ten list. Nikogo nie
+                        zmuszam, by korzystał z mojej rady, ale zachęcam
+                        chociaż spróbować. A potem same zdecydujecie – czy wam
+                        to potrzebne, czy nie. Lepiej spróbować, niż później
+                        żałować utraconej szansy. Leczenie poważnych powikłań
+                        (operacje pęcherza, zakładanie taśm TVT, cewniki) jest
+                        wielokrotnie trudniejsze niż zapobieganie. Szczególnie
+                        w starszym wieku. I to właśnie przede wszystkim do
+                        kobiet starszych skierowany jest mój list.
+                      </p>
+                      <h2>
+                        Według was, na czym opiera się zdrowie kobiecego układu
+                        moczowego?
+                      </h2>
+                      <p>
+                        Na ścianach pęcherza moczowego i mięśniach dna
+                        miednicy! To właśnie one decydują, czy mocz jest
+                        trzymany w pęcherzu, a wydalany tylko wtedy, gdy tego
+                        chcemy. Pęcherz jest wyściełany cienką, delikatną
+                        błoną śluzową, a jego praca zależy od tego, jak
+                        zdrowa jest ta wyściółka oraz jak silne są mięśnie
+                        wokół niego!
+                      </p>
+                      <p>
+                        Gdy jesteśmy młode, zarówno błona śluzowa pęcherza,
+                        jak i mięśnie dna miednicy działają stabilnie, dzięki
+                        czemu mocz jest utrzymywany bez najmniejszego wysiłku.
+                        Jednak z wiekiem – szczególnie po porodzie i w okresie
+                        menopauzy – błona ta staje się cienka, sucha i
+                        podrażniona, a mięśnie tracą napięcie. I pęcherz
+                        zaczyna "głodować".
+                      </p>
+                      <p>
+                        Wyobraźcie sobie na przykład roślinę lubiącą wilgoć,
+                        którą pewnego dnia zaczęłyście podlewać znacznie mniej
+                        niż potrzebuje. Co się stanie z tą rośliną? Tak!
+                        Zwiędnie i zacznie chorować. Dokładnie to samo dzieje
+                        się ze ścianami pęcherza. A w konsekwencji – z całym
+                        zdrowiem intymnym kobiety. Gdy ukrwienie i odżywianie
+                        tkanek pogarsza się, pęcherz przestaje pełnić swoje
+                        funkcje, mięśnie słabną, a to z kolei niesie ze sobą
+                        kolejne problemy. Lawina narasta!
+                      </p>
+                      <p>
+                        A dlaczego dokładnie zachodzą te zmiany? Winne jest
+                        przewlekłe utajone zapalenie ścianek pęcherza! Tak –
+                        właśnie to, o czym lekarze rzadko mówią. Ze swoją
+                        budową błona pęcherza jest bardzo wrażliwa. Z biegiem
+                        lat odkładają się na niej bakterie E. coli, sole,
+                        kryształy moczu i toksyny. Oprócz samych bakterii w
+                        tych osadach biorą udział też inne substancje, które
+                        po prostu przyklejają się do ścianek.
+                      </p>
+                      <p>
+                        Wszystko to prowadzi do tego, że z latami na ściankach
+                        pęcherza tworzy się coraz grubsza warstwa "kamienia
+                        biologicznego". I przez to zmniejsza się efektywna
+                        pojemność pęcherza oraz jego zdolność do prawidłowego
+                        napinania się i rozluźniania.
+                      </p>
+
+                      <!-- ИЗОБРАЖЕНИЕ 2 (content-2.webp): анатомическая инфографика "до и после". Слева — мочевой пузырь с воспалёнными, утолщёнными стенками, налётом изнутри, ослабленными мышцами тазового дна (стрелочки, подписи). Справа — здоровый, чистый, розовый мочевой пузырь и крепкие мышцы. Стиль медицинской иллюстрации, как в учебнике или брошюре, цвета: розовый, красный, бежевый. Без откровенной анатомии — пристойная для FB/Google модерации -->
+                      <figure class="Figure">
+                        <img src="images/content-2.webp" />
+                        <span class="Figure-caption"
+                          >Z biegiem lat w pęcherzu każdej kobiety gromadzi
+                          się przewlekły stan zapalny i osady – to właśnie one
+                          osłabiają pęcherz i prowadzą do nietrzymania moczu</span
+                        >
+                      </figure>
+
+                      <h2 class="ct green">
+                        Jednocześnie pęcherz musi w jakiś sposób utrzymać mocz
+                        – więc mózg zaczyna wysyłać coraz silniejsze i częstsze
+                        sygnały do mięśni, próbując "zacisnąć" osłabiony układ.
+                        Właśnie dlatego po 45 pojawia się parcie naglące oraz
+                        wyciekanie moczu przy kaszlu, które, jak już wspomniałam,
+                        nie jest oddzielną chorobą, lecz reakcją organizmu na
+                        zanieczyszczenie i osłabienie ścianek pęcherza.
+                      </h2>
+                      <p>
+                        Można porównać ten proces do zatykania się rur wodnych
+                        kamieniem i osadem. W pewnym momencie taki system
+                        wodociągowy, aby działać prawidłowo, wymaga albo
+                        zwiększonego ciśnienia, albo gruntownego czyszczenia.
+                      </p>
+                      <p class="big_text">
+                        <u
+                          >To samo z pęcherzem. I tak jak rury wodociągowe,
+                          pęcherz da się oczyścić! I trzeba to zrobić,
+                          szczególnie kobietom po 45 roku życia!</u
+                        >
+                      </p>
+                      <p>
+                        Dosłownie kilka lat temu szwedzcy naukowcy określili
+                        objętość osadów i ognisk zapalnych w pęcherzu, które
+                        gromadzą się w wieku 50–55 lat. Jak ustalono, średnio u
+                        kobiety w ścianach pęcherza i drogach moczowych
+                        gromadzi się do 4 g utajonego "biofilmu" bakterii i
+                        toksyn, a warstwa na wewnętrznych ściankach pęcherza
+                        może osiągać grubość do 1 mm! Prowadzi to do tego, że
+                        małe kanaliki w błonie zostają całkowicie zatkane i de
+                        facto wyłączone z prawidłowej pracy, a sprawność
+                        pęcherza spada o 60–70%.
+                      </p>
+                      <p>
+                        W rezultacie cały kobiecy układ moczowy zaczyna
+                        "głodować". I to właśnie prowadzi do nietrzymania moczu
+                        w starszym wieku. Bo pęcherz nie może działać
+                        prawidłowo, gdy brakuje mu zdrowej, regenerującej się
+                        wyściółki!
+                      </p>
+                      <h2>Jeśli oczyścić pęcherz, można odzyskać młodość?</h2>
+                      <h2 class="ct green">
+                        Tak! Oczywiście nie cofniecie przeżytych lat, ale
+                        możecie sprawić, że pęcherz i mięśnie dna miednicy
+                        znów będą młode i sprawne. Kobiece ciało ma cudowną
+                        właściwość. Nasze komórki są zdolne do regeneracji –
+                        czyli do podziału. A więc błona śluzowa pęcherza może
+                        się odbudować. Oczywiście nie dzieje się to szybko,
+                        ale dzieje się zawsze, gdy stworzymy odpowiednie
+                        warunki do regeneracji komórek.
+                      </h2>
+
+                      <!-- ИЗОБРАЖЕНИЕ 3 (content-3.webp): иллюстрация регенерации клеток мочевого пузыря — крупный план здоровой, обновлённой розовой ткани с делящимися клетками. Можно стилизовать под микроскопическое фото или 3D-рендер. Цвета — мягкий розовый, бежевый, белый. Подпись "регенерация клеток" -->
+                      <figure class="Figure">
+                        <img src="images/content-3.webp" />
+                        <span class="Figure-caption"
+                          >Regeneracja komórek błony śluzowej pęcherza – to
+                          właśnie ona pozwala odzyskać zdrowy układ moczowy. I
+                          można to zrobić w każdym wieku!</span
+                        >
+                      </figure>
+
+                      <p>
+                        Wcześniej podałam już przykład rośliny lubiącej
+                        wilgoć, którą przestałyście podlewać tak, jak należy.
+                        A teraz wyobraźcie sobie, że zaczęłyście znowu dawać
+                        jej tyle wody, ile potrzebuje. Po pewnym czasie ożyje
+                        i znowu zachwyci was swoim pięknem. To samo stanie się
+                        z waszym pęcherzem i z waszym zdrowiem, gdy
+                        unormujecie pracę układu moczowego. Dosłownie
+                        rozkwitniecie!
+                      </p>
+                      <p>
+                        Wiele kobiet, gdy im o tym opowiadam, mówi, że to
+                        wszystko jest zbyt proste. I tak właśnie jest! Nie ma
+                        nic skomplikowanego we wsparciu własnego organizmu!
+                        Powiem więcej – oczyszczenie pęcherza wystarczy zrobić
+                        tylko 2 razy w życiu! Czyli poświęcić na to tylko 2
+                        miesiące.
+                      </p>
+                      <p>
+                        Pierwszy raz oczyścić się w wieku 45–50 lat, a drugi –
+                        w wieku 75–80 lat! Na szczęście, osady i zmiany
+                        zapalne gromadzą się w pęcherzu dość powoli, więc
+                        odstęp między oczyszczeniami można robić tak długi.
+                      </p>
+                      <p>
+                        Jednak jeśli macie więcej niż 50 lat lub nawet ponad
+                        70 i nigdy wcześniej się nie oczyszczałyście,
+                        powinnyście to zrobić! A nawet więcej – jest to wam
+                        wręcz niezbędne! Po takim oczyszczeniu poczujecie
+                        potężny przypływ pewności siebie i zdrowia. Czują to
+                        absolutnie wszystkie kobiety! A jeśli się nie
+                        oczyścicie – wręcz przeciwnie, staniecie się jeszcze
+                        słabsze i bardziej chore.
+                      </p>
+                      <h2>Jak zrozumieć, że pęcherz potrzebuje oczyszczenia?</h2>
+                      <p>
+                        Zanieczyszczenie pęcherza ma także swoje
+                        charakterystyczne objawy. Łatwo możecie określić ten
+                        stan również po nich.
+                      </p>
+                      <p><b>Główne objawy zanieczyszczenia pęcherza:</b></p>
+
+                      <ul class="ListBlock-root ListBlock-ul">
+                        <li>
+                          <b>Brak sił i ciągłe zmęczenie.</b> Budzicie się już
+                          zmęczone. Zrobiłyście coś przez chwilę i już szybko
+                          się zmęczyłyście. To znaczy, że waszemu organizmowi
+                          brakuje regeneracji – ciągłe wstawanie w nocy do
+                          toalety i niepokój z powodu wycieków nie pozwalają
+                          się porządnie wyspać.
+                        </li>
+                        <li>
+                          <b>Często zły nastrój i wstyd.</b> Jeśli nic was nie
+                          cieszy, ciągle jesteście niezadowolone, boicie się
+                          wyjść do ludzi, na uroczystości rodzinne, na ślub
+                          wnuczki – to znaczy, że problem już mocno wpłynął
+                          na waszą psychikę i hormony. To również dzieje się
+                          przez przewlekłe podrażnienie i wyczerpanie.
+                        </li>
+                        <li>
+                          <b
+                            >Wyciekanie moczu przy kaszlu, śmiechu, kichnięciu
+                            <span style="color: red"
+                              >(najbardziej oczywisty objaw numer 1!).</span
+                            ></b
+                          >
+                          Jeśli zdarza się wam, że przy nagłym ruchu (na
+                          przykład źle się obróciłyście) lub przy śmiechu mocz
+                          puszcza, to wasz pęcherz na pewno nie pracuje tak,
+                          jak powinien! Ten objaw wskazuje, że mięśnie i
+                          ścianki pęcherza są osłabione i podrażnione!
+                        </li>
+                        <li>
+                          <b
+                            >Parcie naglące i wstawanie w nocy
+                            <span style="color: red"
+                              >(najbardziej oczywisty objaw numer 2!). Jeśli
+                              całe życie miałyście normalne oddawanie moczu, a
+                              w starszym wieku zaczęło się parcie 8–10 razy
+                              dziennie i wstawanie 3–5 razy w nocy – winne są
+                              przewlekłe ognisk zapalne i osady w pęcherzu! Z
+                              ich powodu, jak już wspomniano wcześniej, mózg
+                              musi wysyłać częstsze sygnały! Parcie naglące w
+                              starszym wieku to nie choroba, a szczególny stan
+                              zanieczyszczonego pęcherza! Nie trzeba brać
+                              pigułek hamujących parcie, trzeba oczyścić
+                              pęcherz!</span
+                            ></b
+                          >
+                        </li>
+                        <li>
+                          <b>Pieczenie i dyskomfort w okolicy intymnej.</b>
+                          Z powodu tego, że błona pęcherza i cewki moczowej
+                          jest podrażniona, pojawia się pieczenie, swędzenie i
+                          uczucie "ciężaru na dole". Z czasem prowadzi to do
+                          nawracających zapaleń pęcherza, a co gorsza – do
+                          przewlekłej infekcji, która grozi powikłaniami
+                          nerkowymi.
+                        </li>
+                        <li>
+                          <b>Pogorszenie życia intymnego.</b> Z powodu suchości
+                          i podrażnienia błony śluzowej oraz wycieków, stosunek
+                          staje się nieprzyjemny lub bolesny. Wiele kobiet
+                          zaczyna unikać bliskości, co odbija się na relacji z
+                          partnerem.
+                        </li>
+                        <li>
+                          <b>Suchość i podrażnienie w okolicy intymnej.</b>
+                          Brak prawidłowego odżywiania tkanek prowadzi do tego,
+                          że błona śluzowa staje się sucha, cienka i wrażliwa.
+                          To z kolei nasila wyciekanie moczu i pieczenie.
+                        </li>
+                        <li>
+                          <b>Pogorszenie pamięci.</b> Może wydawać się dziwne,
+                          ale chroniczny brak snu z powodu nocnych wstawań
+                          niszczy pamięć i koncentrację. Demencja, osłabienie
+                          umysłowe, choroba Alzheimera u starszych kobiet
+                          często mają swój początek właśnie w przewlekłym
+                          niedoborze snu spowodowanym nokturią.
+                        </li>
+                      </ul>
+
+                      <h2 class="ct red">
+                        Jeśli macie więcej niż 50 lat, to wasz pęcherz na pewno
+                        jest zanieczyszczony! Pęcherz zanieczyszcza się u
+                        każdej kobiety, nawet u tej, która całe życie
+                        prowadziła zdrowy tryb życia. Osady i bakterie
+                        gromadzą się tam stopniowo z biegiem lat – także w
+                        wyniku spadku estrogenu w menopauzie, który osłabia
+                        naturalną odporność błony śluzowej. Można więc, z
+                        pewnym uproszczeniem, nazwać ten proces naturalnym.
+                        Jednakże ten proces bez żadnego uproszczenia jest
+                        patologiczny! I jeśli chcecie być zdrowe, pewne siebie
+                        i żyć długo – trzeba z nim walczyć!
+                      </h2>
+                      <h2>
+                        Czym i jak można oczyścić pęcherz z osadów i innych
+                        zanieczyszczeń?
+                      </h2>
+                      <p>
+                        Oczyszczanie pęcherza stało się teraz znacznie
+                        prostsze! I to świetna wiadomość! Wcześniej, gdy
+                        zaczynałam to robić i polecać tę metodę poprawy
+                        zdrowia, kobiety musiały przygotowywać specjalne
+                        wywary z roślin – z żurawiny, borówki, mącznicy
+                        lekarskiej. Receptury, swoją drogą, takich wywarów
+                        znalazłam w medycynie ludowej. Czyli taka procedura
+                        jak oczyszczenie pęcherza znana jest kobietom od dawna
+                        i myślę, że nasze prababki uciekały się do niej
+                        regularnie. Dopiero z nadejściem pigułek, wkładek
+                        higienicznych i koncernów farmaceutycznych ta procedura
+                        została zepchnięta na drugi plan.
+                      </p>
+                      <p>
+                        Ale przygotowywanie tych wywarów było uciążliwe i
+                        skomplikowane. Co więcej, te wywary trzeba było brać
+                        przez pół roku, czasami nawet dłużej. I to wiele kobiet
+                        zniechęcało. Jednakże teraz wszystko uprościło się
+                        wielokrotnie. Teraz oczyszczenie pęcherza można
+                        przeprowadzić szybko i prosto. Można to zrobić za
+                        pomocą specjalnych preparatów. Także w Polsce jest taki
+                        preparat. Nazywa się Cystiolla. Produkuje go nie
+                        jakaś prywatna firma farmaceutyczna, lecz główna
+                        placówka naukowa kraju – czyli Polski Instytut
+                        Urologii w Warszawie. Czyli Cystiolla jest preparatem
+                        maksymalnie profesjonalnym.
+                      </p>
+                      <p>
+                        Ten preparat pozwala przeprowadzić oczyszczenie w
+                        zaledwie 1 miesiąc. Dla porównania, jak już pisałam
+                        wyżej, wywarami trzeba było oczyszczać się co
+                        najmniej 6 miesięcy. Czyli Cystiolla jest znacznie
+                        szybsza, skuteczniejsza i prostsza. Wystarczy
+                        przyjmować tylko 1 kapsułkę dziennie.
+                      </p>
+                      <p>
+                        Cystiolla pojawiła się niedawno, ale już zyskała
+                        świetną opinię. Kobiety, którym ją poleciłam, są
+                        zachwycone. Mówią, że samopoczucie i pewność siebie
+                        po oczyszczeniu pęcherza poprawiają się już po 1–2
+                        tygodniach od rozpoczęcia kuracji. Po wywarach,
+                        oczywiście, nie można było oczekiwać takiej szybkości.
+                      </p>
+                      <h2 class="ct green">
+                        W składzie Cystiolli znajdują się trzy unikalne
+                        składniki aktywne, które działają w synergii: ekstrakt
+                        z żurawiny (Cranberry), ekstrakt z borówki czarnej
+                        (Blueberry) oraz wyciąg z grejpfruta (Grapefruit).
+                        Może już o nich słyszałyście. Kilka lat temu dużo o
+                        nich mówiono w wiadomościach...
+                      </h2>
+                      <p>
+                        Te trzy składniki nie zostały odkryte przez polskich
+                        naukowców, lecz przez badaczy skandynawskich i
+                        japońskich. Za odkrycie mechanizmu działania
+                        proantocyjanidyn (PAC) z żurawiny i borówki na ścianki
+                        pęcherza otrzymali nawet Nagrodę Nobla w dziedzinie
+                        medycyny.
+                        <u
+                          >Te substancje są dobre, ponieważ są zdolne do
+                          wniknięcia w osady i ogniska zapalne w pęcherzu i
+                          niszczenia ich od wewnątrz. W rezultacie bakterie i
+                          osady są rozkładane na bezpieczne składniki, które
+                          są filtrowane i wydalane z organizmu przez nerki.
+                          Grejpfrut natomiast zawiera naringinę, która wzmacnia
+                          mięśnie dna miednicy i przywraca elastyczność
+                          ściankom pęcherza.</u
+                        >
+                      </p>
+                      <p>
+                        W rezultacie pęcherz staje się czysty, jego mięśnie –
+                        silne, a błona śluzowa – zregenerowana. Mocz jest
+                        utrzymywany prawidłowo. A to z kolei niesie ze sobą
+                        wiele pozytywnych zmian w zdrowiu i w życiu kobiety.
+                      </p>
+                      <p>
+                        Wiele kobiet, które oczyszczają pęcherz po raz
+                        pierwszy, mówi, że to tak, jakby odzyskały ciało
+                        sprzed 15–20 lat. I tak właśnie jest!
+                      </p>
+                      <h2>
+                        Krótko wymienię, jakie pozytywne zmiany w zdrowiu, w
+                        samopoczuciu, w życiu zachodzą u większości kobiet po
+                        pierwszym oczyszczeniu pęcherza (które, jak już
+                        wspomniano, najlepiej przeprowadzić w wieku 45–55 lat).
+                        Te same zmiany zajdą również u was!
+                      </h2>
+                      <p><b>Przestanie wyciekać mocz przy kaszlu i śmiechu</b></p>
+                      <p>
+                        Przede wszystkim mija nietrzymanie wysiłkowe. Wiele
+                        kobiet latami nosi wkładki codziennie, by ukryć
+                        wycieki. Cystiolla eliminuje przyczynę nietrzymania.
+                        Mięśnie dna miednicy odzyskują napięcie, a mocz po
+                        prostu nie wycieka, więc konieczność noszenia
+                        jakichkolwiek wkładek odpada. Wraz z nietrzymaniem
+                        odchodzą również wszystkie jego nieprzyjemne objawy,
+                        a do tego dziesięciokrotnie zmniejsza się
+                        prawdopodobieństwo konieczności operacji czy cewnika.
+                      </p>
+                      <p>
+                        <b
+                          >Wróci spokojny sen, znikną parcia, poprawi się
+                          pamięć</b
+                        >
+                      </p>
+                      <p>
+                        Unormuje się praca wszystkich narządów, które
+                        najsilniej zależą od jakości pracy układu moczowego.
+                        To pęcherz, mięśnie dna miednicy, błona śluzowa, jak i
+                        sen. W rezultacie poprawi się sen, pamięć, wrócicie do
+                        szybkiego myślenia, jak w młodości. Pewna pacjentka
+                        kiedyś powiedziała mi, że po oczyszczeniu pęcherza
+                        całkowicie przestała wstawać w nocy. Wcześniej budziła
+                        się 5 razy. Co więcej, przestaną pojawiać się parcia
+                        naglące w ciągu dnia. A jeśli już mocno was męczą –
+                        będą znacznie rzadsze.
+                      </p>
+                      <p><b>Znów będzie się wam chciało żyć!</b></p>
+                      <p>
+                        Unormuje się sen, pojawi się więcej sił i poprawi się
+                        nastrój. Poczujecie się lepiej. Wróci do was chęć
+                        życia i robienia czegoś. Będzie się wam chciało znów
+                        być aktywnymi! Znów poczujecie, jak piękne jest
+                        życie! Znów odważycie się jechać do wnuków, na wesele,
+                        do teatru – bez strachu, że "puści".
+                      </p>
+                      <p>
+                        <b
+                          >Wróci życie intymne</b
+                        >
+                      </p>
+                      <p>
+                        Co bardzo ważne – wraz z regeneracją błony śluzowej
+                        wraca też nawilżenie i komfort w okolicy intymnej. To
+                        wróci wam bliskość z partnerem. Wiele kobiet pisze do
+                        mnie, że po latach unikania bliskości znów poczuły się
+                        kobietami. Mężowie tego nie zauważą wprost, ale na
+                        pewno docenią.
+                      </p>
+                      <p><b>Wzmocni się odporność</b></p>
+                      <p>
+                        Odporność na infekcje dróg moczowych jest zapewniana
+                        przez zdrową, regenerującą się błonę śluzową pęcherza
+                        i prawidłowy mikrobiom okolicy intymnej. W
+                        konsekwencji, im czystszy pęcherz, tym wyższa
+                        skuteczność lokalnej odporności, ponieważ bakterie nie
+                        są w stanie się przyczepić do ścianek. Po oczyszczeniu
+                        pęcherza odporność wzmacnia się praktycznie
+                        natychmiast. A to oznacza, że nie będą wam już
+                        dokuczać zapalenia pęcherza, a jeśli już się pojawią,
+                        miną szybciej i bez konsekwencji.
+                      </p>
+                      <p>
+                        <b
+                          >Zmniejszy się ryzyko nowotworu pęcherza
+                          <span style="color: red"
+                            >(to bardzo ważne!)</span
+                          ></b
+                        >
+                      </p>
+                      <p>
+                        Wszystkie kobiety boją się raka. I słusznie, ponieważ
+                        z zaawansowanego raka pęcherza nie ma już ucieczki.
+                        Umierają na niego i biedne, i bogate. I zwykłe
+                        pracownice, i znane osobistości. Ale czym jest guz
+                        nowotworowy i dlaczego się pojawia? Wszystkie komórki
+                        się dzielą. W niesprzyjających warunkach komórki
+                        dzielą się z błędami. A gdy takich błędów jest dużo,
+                        powstają komórki nieprawidłowe, które również zaczynają
+                        się dzielić.
+                      </p>
+                      <p>
+                        To właśnie z takich komórek składa się guz nowotworowy.
+                        I właśnie dlatego wszystkie guzy nowotworowe rosną z
+                        czasem. Przewlekły stan zapalny i osady w pęcherzu
+                        tworzą dokładnie takie niesprzyjające warunki, w
+                        których komórki mogą się mylić. Oczyszczenie pęcherza
+                        eliminuje te warunki. To właśnie dlatego ta procedura
+                        zmniejsza setki razy prawdopodobieństwo pojawienia się
+                        raka pęcherza! Szczególnie u starszych kobiet.
+                      </p>
+
+                      <!-- ИЗОБРАЖЕНИЕ 4 (content-4.webp): СТРАХ-картинка для усиления эмоции. Вариант А: пожилая женщина с грустным лицом сидит на краю кровати, рядом упаковка взрослых памперсов/урологических прокладок (без откровенностей). Вариант B: иллюстрация хирургической операции на мочевом пузыре/катетер (минимально натуралистично, без крови). Лучше вариант А — больше эмоций, проходит модерацию. Подпись о страшных последствиях нелеченного недержания -->
+                      <figure class="Figure">
+                        <img src="images/content-4.webp" />
+                        <span class="Figure-caption"
+                          >Rak pęcherza – najgroźniejsze powikłanie. Śmiertelność
+                          z powodu zaawansowanego raka pęcherza wynosi nawet
+                          90%. To oznacza, że gdy rak się ujawni, będzie już za
+                          późno, by cokolwiek zrobić. U starszych kobiet
+                          prawdopodobieństwo rozwoju raka jest wysokie, i nie
+                          jest to z powodu wieku, lecz z powodu przewlekłego
+                          stanu zapalnego pęcherza!</span
+                        >
+                      </figure>
+
+                      <p>
+                        Oczywiście wszystkie te efekty poprawy zdrowia po
+                        oczyszczeniu pęcherza zależą od tego, jak bardzo
+                        organizm był już osłabiony. Więc najlepiej jest
+                        oczyścić pęcherz po raz pierwszy w okolicach 45–50
+                        roku życia. Jednakże, jeśli macie już ponad 50 lat,
+                        oczyszczenie i tak poprawi wasze samopoczucie i wasze
+                        zdrowie.
+                      </p>
+                      <p>
+                        Wiele kobiet po 50–60 budzi się każdego dnia ze
+                        strachem, że już "puściło" w nocy. Po oczyszczeniu
+                        pęcherza obudzicie się suche, spokojne i pewne siebie!
+                        Jak już wspomniano wyżej, polecam chociaż spróbować.
+                        Na pewno nie będzie gorzej.
+                      </p>
+                      <p>
+                        Cystiolla jest preparatem w 100% naturalnym, a więc
+                        całkowicie bezpiecznym. W jej składzie nie ma niczego,
+                        co mogłoby zaszkodzić. Wręcz przeciwnie, zawiera ona
+                        ekstrakt z żurawiny (Cranberry), ekstrakt z borówki
+                        czarnej (Blueberry) i wyciąg z grejpfruta (Grapefruit)
+                        – trzy najsilniejsze naturalne składniki o
+                        udowodnionym działaniu na pęcherz, wyróżnione przez
+                        jury Nagrody Nobla (najbardziej prestiżowej nagrody na
+                        całym świecie!). To właśnie dlatego polecam Cystiollę.
+                      </p>
+                      <h2>Gdzie można kupić Cystiollę?</h2>
+                      <p>
+                        Jedyną wadą Cystiolli jest to, że ten preparat trudno
+                        kupić. Nie jest w wolnej sprzedaży, nie jest dostarczany
+                        do aptek, lecz trafia bezpośrednio do różnych klinik
+                        urologicznych w Polsce. Czyli, żeby przeprowadzić
+                        kurację oczyszczenia pęcherza, trzeba było zwrócić się
+                        do kliniki. Jest to związane z ograniczoną produkcją
+                        Cystiolli. Ponieważ preparat ma złożony skład, a do
+                        jego produkcji wymagany jest drogi sprzęt laboratoryjny,
+                        jest produkowany w małych partiach, których nie
+                        wystarcza dla aptek.
+                      </p>
+                      <p>
+                        Jednakże teraz ten preparat jest dystrybuowany przez
+                        sam instytut w ramach uruchomionego programu medycznego.
+                        Zgodnie z tym programem preparat może zamówić każda
+                        obywatelka Polski z dostawą do domu przez kuriera. I
+                        właśnie z tej możliwości polecam skorzystać.
+                      </p>
+                      <p>
+                        Taki program – to prawdziwy prezent dla polskich
+                        kobiet w wieku dojrzałym. Nie potrwa długo. Co więcej,
+                        według oświadczeń samego instytutu, na program została
+                        przeznaczona partia – owszem duża, ale ograniczona,
+                        która, jestem pewna, zostanie wyczerpana szybko.
+                      </p>
+                      <p>
+                        Więc jeśli chcecie przestać żyć w cieniu wycieków,
+                        znacząco poprawić wasze samopoczucie, a nawet przedłużyć
+                        życie – polecam oczyścić pęcherz tym wspaniałym
+                        preparatem. Jak już wspomniano, ten preparat należy
+                        przyjmować przez 1 miesiąc (w tym czasie pęcherz
+                        całkowicie się oczyszcza), jednakże znaczące zmiany w
+                        samopoczuciu odczujecie już po 2 tygodniach od
+                        rozpoczęcia kuracji.
+                      </p>
+                      <p>
+                        Życzę wszystkim zdrowia i dziękuję za przeczytanie
+                        mojego apelu do końca!
+                      </p>
+                      <h2 class="ct green">
+                        Uwaga! Przed publikacją listu Krystyny Wiśniewskiej
+                        skontaktowaliśmy się z Polskim Instytutem Urologii w
+                        Warszawie i poznaliśmy szczegóły dotyczące dystrybucji
+                        Cystiolli w ramach programu. Instytut potwierdził
+                        słowa 89-letniej urolog.
+                      </h2>
+                      <h2 class="ct green">
+                        Ponadto poinformowano nas, że w ramach programu
+                        Cystiolla jest dystrybuowana po najkorzystniejszej
+                        cenie dla kupujących – praktycznie po kosztach produkcji
+                        bez żadnej marży handlowej (Instytut zgodnie z prawem
+                        nie ma prawa prowadzić działalności komercyjnej).
+                      </h2>
+                      <h2 class="ct green">
+                        Ponadto w instytucie poinformowano nas o warunkach
+                        otrzymania Cystiolli. Cystiollę może zamówić każda
+                        obywatelka Polski.
+                      </h2>
+                      <p><b>Aby zamówić Cystiollę należy:</b></p>
+
+                      <ul class="ListBlock-root ListBlock-ul">
+                        <li>
+                          Znajdować się na terytorium Polski. Program jest
+                          ważny tylko w obrębie kraju, za granicę Instytut
+                          nie ma prawa wysyłać preparatu. Z oferty mogą
+                          skorzystać tylko obywatele Polski.
+                        </li>
+                        <li>
+                          Aby otrzymać preparat, należy złożyć wstępne
+                          zamówienie. Zamówienie składa się w specjalnym
+                          formularzu. Dla naszych czytelniczek publikujemy
+                          formularz poniżej na tej stronie. Zaraz po złożeniu
+                          zamówienia oddzwoni do was konsultant. Należy mu
+                          podać adres dostawy. Ponadto możesz zadać konsultantce
+                          dowolne pytania o Cystiollę.
+                        </li>
+                        <li>
+                          Po 3–4 dniach niezbędnych na dostawę, odebrać
+                          Cystiollę od kuriera i dokonać płatności.
+                        </li>
+                      </ul>
+
+                      <h2 class="ct red">
+                        Ważne! Cystiolla rozchodzi się szybko i wkrótce może
+                        się skończyć! Po tym nie będzie już można zamówić
+                        Cystiolli!
+                      </h2>
+
+                      <h2 class="ct red">
+                        Ilość preparatu pozostała w tej chwili:
+                      </h2>
+
+                      <h3 class="left_count" style="cursor: pointer">
+                        <b class="prod_left_val">476</b>
+                      </h3>
+
+                      <p class="ct">
+                        <b
+                          >Uwaga! Zdążycie jeszcze zamówić Cystiollę, ale
+                          musicie się pospieszyć ze złożeniem zamówienia.
+                          Wskazana ilość wystarczy mniej więcej na 10–15
+                          minut.
+                        </b>
+                      </p>
+
+                      <span id="cta"></span>
+                      <span id="forma-post"></span>
+
+                      <!-- boxes start -->
+                      <div
+                          class="order_block default_order-block"
+                         style="display: block"
+                        >
+                          <p class="green_text">
+                            Cystiolla została zarezerwowana dla Pani.
+                          </p>
+                          <p class="green_text">
+                            Ma Pani 3 minuty na złożenie zamówienia.
+                          </p>
+                          <p class="green_text">
+                            Koszt preparatu dla Pani wyniesie – 149 zł zamiast
+                            <del>298 zł</del>
+                          </p>
+                          <div class="prod_img_wrapper">
+                            <!-- ИЗОБРАЖЕНИЕ 5 (Cystiolla-BOTTLE.png): упаковка/баночка капсул Cystiolla на белом или прозрачном фоне. Стиль: премиальная нутра — белая бутылочка с фиолетово-розовой/синей этикеткой, лого "Cystiolla", изображения ягод (клюква, черника) и грейпфрута на этикетке, надпись "60 capsules" или "30 capsules", надпись "Cranberry • Blueberry • Grapefruit". Можно добавить рядом одну открытую капсулу. Без фона, PNG с прозрачностью. -->
+                            <figure class="Figure product">
+                              <img src="images/Cystiolla-BOTTLE.png" />
+                              <div class="priceс">
+                                <span class="discountс"
+                                  >Pani osobisty rabat – 50%!</span
+                                >
+                                <s
+                                  ><span class="js_old_price price_old"
+                                    >298 zł</span
+                                  ></s
+                                >
+                                <b class="new_price js_new_price price_main"
+                                  >149 zł</b
+                                >
+                              </div>
+                            </figure>
+                          </div>
+                          <h3>
+                            Aby otrzymać preparat, proszę podać swoje imię i
+                            numer telefonu.<br />
+                            Pozostały czas: <br />
+                            <br />
+                            <span class="time_remains" id="min">10</span> :
+                            <span class="time_remains" id="sec">00</span><br />
+                            <br />
+                          </h3>
+                          <form
+                            class="form-post"
+                            action="/order.php"
+                            method="post"
+                          >
+                            <input type="hidden" name="fbpx" value="{fbpx}" />
+                            <input
+                              type="hidden"
+                              name="utm_code"
+                              value="{subid}"
+                            />
+                            <input
+                              type="hidden"
+                              name="cid"
+                              value="{campaign_id}"
+                            />
+                            <input type="hidden" name="sid" value="2978" />
+                            <input type="hidden" name="hash" value="{hash}" />
+                            <input type="hidden" name="country" value="PL" />
+
+                            <span class="span-input-roulette name_in">
+                              <input
+                                class="input-roulette"
+                                name="name"
+                                required=""
+                                placeholder="Wpisz imię"
+                                type="text"
+                              />
+                            </span>
+                            <span class="span-input-roulette phone_in">
+                              <input
+                                class="input-roulette only_number"
+                                name="phone"
+                                required=""
+                                placeholder="Wpisz numer telefonu"
+                                type="tel"
+                              />
+                              <div
+                                id="phone_error"
+                                style="color: red; display: none"
+                              ></div>
+                            </span>
+                            <input
+                              class="js_submit button__text submit-roulette"
+                              type="submit"
+                              value="Wyślij"
+                            />
+                          </form>
+                          <span class="ft"></span>
+                        </div>
+
+
+                      <!-- boxes end -->
+
+                      <div class="Toolbar-root">
+                        <div class="Toolbar-line"></div>
+                        <div class="Toolbar-list-custom">
+                          <a href="#" class="Toolbar-link">Telegram</a>
+                          <span class="Toolbar-dot">•</span>
+                          <a href="#" class="Toolbar-link">Facebook</a>
+                          <span class="Toolbar-dot">•</span>
+                          <a href="#" class="Toolbar-link">Twitter</a>
+                          <span class="Toolbar-dot">•</span>
+                          <span class="Toolbar-link"
+                            ><svg
+                              data-testid="svg-symbol"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              class="SvgSymbol-module_root__WctNR SvgSymbol-module_medium__QaYjY SvgSymbol-module_shareBookmark__7w9X9 SvgSymbol-module_isInToolbar__RzbaX Toolbar-bookmark"
+                              width="11"
+                              height="15"
+                              viewBox="0 0 11 15"
+                            >
+                              <path
+                                clip-rule="evenodd"
+                                d="M10 14 5.5 9.667 1 14V1h9v13Z"
+                                stroke="currentColor"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                fill="none"
+                              ></path></svg
+                            >Dodaj do zakładek</span
+                          >
+                          <span class="Toolbar-dot">•</span>
+                          <a href="#" class="Toolbar-link">PDF</a>
+                          <span class="Toolbar-dot">•</span>
+                          <a href="#" class="Toolbar-link">Napisz do nas</a>
+                        </div>
+                      </div>
+
+                      <h4 class="SimpleBlock-h4"><strong>Komentarze</strong></h4>
+
+                      <!-- АВАТАРКА 1.webp: женщина 50-55 лет, обычная полька, селфи или фото в полупрофиль, нейтральный фон, без макияжа или с минимальным -->
+                      <div class="ittem-comment">
+                        <img src="images/1.webp" class="ava-img" />
+                        <p><strong>Maria Kowalczyk </strong></p>
+                        <p>
+                          Czy ktoś próbował zrobić takie oczyszczenie? Czy
+                          rzeczywiście aż tak pomaga?
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 2.webp: женщина 55-60 лет, доброжелательное лицо, седые/окрашенные волосы, домашняя обстановка -->
+                      <div class="ittem-comment ans">
+                        <img src="images/2.webp" class="ava-img" />
+                        <p><strong>Natalia Wójcik </strong></p>
+                        <p>
+                          Słyszałam bardzo dobre opinie o tym preparacie. Moja
+                          znajoma opowiadała, że po miesięcznej kuracji
+                          przestała w ogóle wstawać w nocy. Wcześniej budziła
+                          się 4–5 razy. I do tego po kuracji minęło jej wiele
+                          innych dolegliwości. Mówiła, że teraz rozumie, jak
+                          ważne jest oczyszczanie. Też chciałam spróbować, ale
+                          nie wiedziałam, gdzie kupić (ona kupiła jakoś przez
+                          znajomości). Teraz zamówiłam i ja. Chcę się oczyścić.
+                          Miesiąc to niewiele, a potem zdrowie na kilka lat!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 3.webp: мужчина 60-65 лет, простоватое лицо, лёгкая улыбка (комментарий от лица мужа пациентки, тоже работает) -->
+                      <div class="ittem-comment ans">
+                        <img src="images/3.webp" class="ava-img" />
+                        <p><strong>Krzysztof Grabowski </strong></p>
+                        <p>
+                          Też mogę to potwierdzić, choć piszę o żonie. Wzięła
+                          Cystiollę. Przed kuracją bała się wyjść na podwórko,
+                          żona męczyła się w nocy. Po oczyszczeniu czuje się
+                          znacznie lepiej. Naprawdę jakby odmłodniała.
+                          Polecam wszystkim mężom – kupcie waszym żonom, niech
+                          spróbują! Preparat jest cudowny!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 4.webp: женщина 45-50 лет, домашнее фото, могут быть очки -->
+                      <div class="ittem-comment">
+                        <img src="images/4.webp" class="ava-img" />
+                        <p><strong>Ewa Lewandowska </strong></p>
+                        <p>
+                          Dziękuję! Zamówiłam. O tym preparacie mówił mi
+                          znajomy lekarz. Mówił, że preparat naprawdę bardzo
+                          dobrze pomaga. Nawet zaskoczył lekarzy. Będę się
+                          leczyć, dziękuję.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 5.webp: женщина 50-52 лет, симпатичная, обычная -->
+                      <div class="ittem-comment">
+                        <img src="images/5.webp" class="ava-img" />
+                        <p><strong>Zofia Nowak </strong></p>
+                        <p>
+                          Dziękuję za informację. Słyszałam dużo o oczyszczaniu
+                          pęcherza, ale sama tego nie stosowałam. Teraz się
+                          oczyszczę, mam 51 lat, w ostatnich latach okropnie
+                          się męczę – wycieki przy każdym kichnięciu, w nocy
+                          wstaję po 3 razy, mam dość tego! Może jak poprawię
+                          stan pęcherza, będzie lepiej.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 6.webp: женщина 55-60 лет, открытая улыбка, добрая внешность -->
+                      <div class="ittem-comment ans">
+                        <img src="images/6.webp" class="ava-img" />
+                        <p><strong>Eleonora Sikora </strong></p>
+                        <p>
+                          Koniecznie się oczyść! Miałam to samo. Jak się
+                          oczyściłam, wszystko przeszło.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 7.webp: женщина 48-52 лет, домашняя/уютная атмосфера -->
+                      <div class="ittem-comment">
+                        <img src="images/7.webp" class="ava-img" />
+                        <p><strong>Serena Kaczmarek </strong></p>
+                        <p>
+                          Mnie też preparat się podoba. Biorę dopiero od 3
+                          tygodni i czuję się znacznie lepiej!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 8.webp: мужчина 55-60 лет, обычный, могут быть усы -->
+                      <div class="ittem-comment">
+                        <img src="images/8.webp" class="ava-img" />
+                        <p><strong>Andrzej Dąbrowski </strong></p>
+                        <p>
+                          Lekarz znajomy zadzwonił i powiedział, żeby pilnie
+                          zamówić dla żony, póki jest taka możliwość. Mówił,
+                          że to bardzo dobry preparat. Prawdziwy eliksir
+                          przeciwko przedwczesnemu starzeniu. Co też zrobiłem.
+                          Niech się oczyści. Polecam wszystkim!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 9.webp: пожилая женщина 65-70 лет, седые волосы, добрая бабушка -->
+                      <div class="ittem-comment">
+                        <img src="images/9.webp" class="ava-img" />
+                        <p><strong>Ludmiła Kruk </strong></p>
+                        <p>
+                          W medycynie ludowej oczyszczanie pęcherza – to
+                          podstawowa zasada zdrowego życia kobiety! Moja babcia
+                          regularnie się oczyszczała i również żyła długo!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 10.webp: женщина 52-58 лет, может быть с украшениями, ухоженная -->
+                      <div class="ittem-comment">
+                        <img src="images/10.webp" class="ava-img" />
+                        <p><strong>Joanna Mazur </strong></p>
+                        <p>
+                          Wzięłam Cystiollę przez miesiąc. Wynik mnie
+                          zaskoczył, poczułam się lepiej. Odzyskałam siły i
+                          przestałam wstawać w nocy. Miałam wcześniej parcia
+                          naglące i wycieki przy śmiechu – też przeszło. Do
+                          tego zaczęłam lepiej spać i bóle głowy zniknęły.
+                          Ogólnie czuję się naprawdę zdrowsza. Teraz także
+                          moja siostra robi oczyszczanie. Też wszystko jej
+                          się podoba. Dziękuję za poradę!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 11.webp: женщина 50-55 лет, серьёзное, деловое лицо -->
+                      <div class="ittem-comment">
+                        <img src="images/11.webp" class="ava-img" />
+                        <p><strong>Danuta Krawczyk </strong></p>
+                        <p>
+                          To naprawdę coś poważnego! Zrobiłam badania moczu
+                          przed i po oczyszczeniu tym preparatem. Ostatecznie
+                          ostatnie analizy pokazały, że bakterii i osadów już
+                          nie ma. Wcześniej było ich dużo! Naprawdę oczyszcza!
+                          Szukałam takiego preparatu od dawna!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 12.webp: женщина 60-65 лет, седые волосы, очки -->
+                      <div class="ittem-comment">
+                        <img src="images/12.webp" class="ava-img" />
+                        <p><strong>Cecylia Kowal </strong></p>
+                        <p>
+                          A mnie poprawiły się nawracające zapalenia pęcherza.
+                          Cierpiałam na nie od lat, brałam antybiotyki co kilka
+                          miesięcy. Cystiolla pomogła mi unormować pracę
+                          pęcherza. Kupiłam to w klinice, tam kosztowało
+                          prawie trzy razy więcej. A tutaj jest naprawdę
+                          bardzo niedrogo.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 13.webp: женщина 50 лет, нейтральное селфи -->
+                      <div class="ittem-comment">
+                        <img src="images/13.webp" class="ava-img" />
+                        <p><strong>Monika Marciniak </strong></p>
+                        <p>
+                          Uff, zdążyłam zamówić w porę. Trzeba brać, póki jest.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 14.webp: пожилая женщина 75-80 лет, добрая, ухоженная -->
+                      <div class="ittem-comment">
+                        <img src="images/14.webp" class="ava-img" />
+                        <p><strong>Małgorzata Górska </strong></p>
+                        <p>
+                          Biorę dopiero od dwóch tygodni i już czuję się
+                          znacznie lepiej! A każdego dnia jest tylko lepiej.
+                          Mam 81 lat. Czuję się naprawdę odmłodzona.
+                          Dlaczego mi wcześniej nie powiedziano o tej
+                          procedurze? Dla mnie Cystiolla była prawdziwym
+                          ratunkiem.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 15.webp: женщина 55-60 лет, тёплая улыбка -->
+                      <div class="ittem-comment">
+                        <img src="images/15.webp" class="ava-img" />
+                        <p><strong>Elżbieta Jankowska </strong></p>
+                        <p>
+                          Mój mąż miał już dość, bo unikałam bliskości. Po
+                          menopauzie wszystko zaczęło wyciekać, wstydziłam
+                          się. Moja siostra skądś zdobyła Cystiollę i dała
+                          mi. W 2 tygodnie nie zostało śladu po moim
+                          problemie. Nawet wyglądam młodziej. Może naprawdę
+                          ważne jest, by utrzymywać pęcherz w czystości!
+                          Przecież to logiczne. I wiedziałam od dawna, że
+                          z wiekiem się zanieczyszcza.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 16.webp: женщина 55 лет, обычная, без макияжа -->
+                      <div class="ittem-comment">
+                        <img src="images/16.webp" class="ava-img" />
+                        <p><strong>Walentyna Kamińska </strong></p>
+                        <p>
+                          O, no naprawdę co za preparat! Bolało mnie wszystko.
+                          Pęcherz, plecy, biodra. Wycieki tak mocne, że co
+                          dwie godziny musiałam zmieniać wkładkę. Rano
+                          ledwo otwierałam oczy, bo nie spałam. Żyłam jak w
+                          piekle. Brałam góry tabletek. Potem dowiedziałam
+                          się o Cystiolli i oczyszczaniu pęcherza. Po 4
+                          tygodniach jest mi znacząco lepiej. Teraz poważnie
+                          zajmuję się swoim zdrowiem. Może pożyję jeszcze
+                          dłużej! Wielkie dzięki!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 17.webp: женщина 60-65 лет, очки, расположенное лицо -->
+                      <div class="ittem-comment">
+                        <img src="images/17.webp" class="ava-img" />
+                        <p><strong>Wiktoria Adamczyk </strong></p>
+                        <p>
+                          Zamówiłam 10 opakowań! Wcześniej już brałam Cystiollę
+                          i zostawiła na mnie dobre wrażenie. Kupiłam ją
+                          prawie 6 razy drożej. A tutaj cena jest niska, więc
+                          zdecydowałam się od razu kupić dużo.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 18.webp: мужчина 55-60 лет, серьёзный взгляд -->
+                      <div class="ittem-comment ans">
+                        <img src="images/18.webp" class="ava-img" />
+                        <p><strong>Edward Kowal </strong></p>
+                        <p>
+                          Wy zamówiłyście 10 opakowań, a niektórym teraz nie
+                          starczy nawet jednego! No co za ludzie... tylko dla
+                          siebie i dla siebie. Tym bardziej, że jak już się
+                          oczyściłyście, możecie tego nie robić jeszcze przez
+                          20 lat!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 19.webp: мужчина 60-65 лет, простое лицо, рубашка -->
+                      <div class="ittem-comment">
+                        <img src="images/19.webp" class="ava-img" />
+                        <p><strong>Stanisław Gajewski </strong></p>
+                        <p>
+                          Dziękuję. Złożyłem zamówienie dla mamy. Nigdy
+                          niczego nie zamawiałem w internecie, ale okazało
+                          się proste.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 20.webp: мужчина 55-60 лет, заботливое лицо -->
+                      <div class="ittem-comment">
+                        <img src="images/20.webp" class="ava-img" />
+                        <p><strong>Fryderyk Piotrowski </strong></p>
+                        <p>
+                          Żonie przepisała ten środek lekarka na nietrzymanie
+                          po menopauzie. Żona bardzo go chwaliła. Ostatecznie
+                          nie tylko wycieki ustały, ale i ogólnie czuje się
+                          lepiej. Wcześniej brała ciągle tabletki na różne
+                          rzeczy (bo wszystko ją bolało), teraz nic takiego
+                          nie bierze i czuje się świetnie. Teraz na wszelki
+                          wypadek zamówiłem 2 opakowania, żeby były. Moja
+                          żona, jak wszyscy tu piszą, kupiła to znacznie
+                          drożej.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 21.webp: женщина 45-50 лет, симпатичная, энергичная -->
+                      <div class="ittem-comment">
+                        <img src="images/21.webp" class="ava-img" />
+                        <p><strong>Julia Marchewka </strong></p>
+                        <p>Jestem zachwycona! Dziękuję.</p>
+                      </div>
+
+                      <!-- АВАТАРКА 22.webp: мужчина 70-75 лет, седой, бодрый дедушка -->
+                      <div class="ittem-comment">
+                        <img src="images/22.webp" class="ava-img" />
+                        <p><strong>Daniel Rzepa </strong></p>
+                        <p>
+                          Kupiłem dla żony, ale czytając tu komentarze
+                          pomyślałem, że i mi pęcherz nie zaszkodzi
+                          przeczyścić. Prostata przerośnięta, parcia naglące.
+                          Też się przyłączam!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 23.webp: женщина 60 лет, грустноватый взгляд -->
+                      <div class="ittem-comment">
+                        <img src="images/23.webp" class="ava-img" />
+                        <p><strong>Roberta Grabowska </strong></p>
+                        <p>
+                          Bardzo boję się raka pęcherza... widziałam, co
+                          potrafi zrobić z ludźmi... dlatego zdecydowałam
+                          się oczyścić. Gorzej na pewno nie będzie.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 24.webp: женщина 50-55 лет, ухоженная, светлый макияж -->
+                      <div class="ittem-comment">
+                        <img src="images/24.webp" class="ava-img" />
+                        <p><strong>Amelia Pawlik </strong></p>
+                        <p>
+                          Wszystkim, które nie próbowały Cystiolli, weźcie,
+                          póki jest. Ten preparat zaskakuje.
+                          <u>
+                            Ja po miesiącu kuracji (jak zaleca producent) nie
+                            tylko poczułam się zdrowiej, ale i odmłodniałam
+                            estetycznie.</u
+                          >
+                          W dosłownym sensie zaczęłam wyglądać młodziej.
+                          Wcześniej wstydziłam się chodzić do basenu z
+                          wnukami, teraz znów chodzę. Śpię lepiej i mój nastrój
+                          się poprawił. Preparat jest bardzo skuteczny.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 25.webp: мужчина 50-55 лет, простой, без особенностей -->
+                      <div class="ittem-comment">
+                        <img src="images/25.webp" class="ava-img" />
+                        <p><strong>Mirosław Czarnecki </strong></p>
+                        <p>
+                          A ja zamówiłem dla mamy 3 dni temu. Zaczęła używać
+                          od razu. Myślę, że będzie się oczyszczać miesiąc,
+                          ale wydaje mi się, że już są efekty. Wcześniej
+                          słyszałem, że można się oczyszczać ziołami, ale
+                          profesjonalny preparat z Instytutu wydaje mi się
+                          jednak skuteczniejszy.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 26.webp: мужчина 60 лет, очки, домашняя обстановка -->
+                      <div class="ittem-comment">
+                        <img src="images/26.webp" class="ava-img" />
+                        <p><strong>Samuel Nowicki </strong></p>
+                        <p>
+                          Dobry preparat! Podobał się żonie. Wzięła, żeby
+                          oczyścić pęcherz i wzmocnić organizm. Po kuracji
+                          naprawdę czuje się zdrowsza, ma więcej energii,
+                          lepiej śpi. Także nokturia minęła, mówiąc krótko.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 27.webp: пожилая женщина 70 лет, простая бабушка с платком -->
+                      <div class="ittem-comment">
+                        <img src="images/27.webp" class="ava-img" />
+                        <p><strong>Matylda Białek </strong></p>
+                        <p>Więc to jest sekret długowieczności!</p>
+                      </div>
+
+                      <!-- АВАТАРКА 28.webp: мужчина 75 лет, седой, благородная внешность -->
+                      <div class="ittem-comment">
+                        <img src="images/28.webp" class="ava-img" />
+                        <p><strong>Rafał Sala </strong></p>
+                        <p>
+                          Rok temu żona przeszła miesięczną kurację z tym
+                          preparatem. Stała się młodsza i zdrowsza! Wycieki
+                          ustały, przestała wstawać w nocy i zaszło wiele
+                          innych zmian. Pęcherz przestał się tak często
+                          domagać. Mniej choruje na przeziębienia, schudła,
+                          miała paradontozę na dziąsłach, też przeszła!
+                          Krótko mówiąc, jest wiele pozytywnych zmian.
+                          Myślę, że tak jak lekarka, każda kobieta powinna
+                          oczyścić pęcherz.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 29.webp: женщина 55 лет, обычная, дружелюбная -->
+                      <div class="ittem-comment">
+                        <img src="images/29.webp" class="ava-img" />
+                        <p><strong>Maria Kopka </strong></p>
+                        <p>
+                          Podobało mi się podejście konsultantki! Przez ponad
+                          pół godziny zadawałam jej pytania, a ona mi
+                          odpowiadała. W gruncie rzeczy dostałam bezpłatną
+                          konsultację na temat mojego problemu. Cystiolla,
+                          oczywiście, zrobiła na mnie wrażenie. Teraz na nią
+                          czekam, żeby jak najszybciej zacząć kurację. Mam
+                          59 lat i czuję, że szybko się starzeję. Chcę
+                          zatrzymać starość!
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 30.webp: женщина 50-55 лет, ухоженная, может с распущенными волосами -->
+                      <div class="ittem-comment">
+                        <img src="images/30.webp" class="ava-img" />
+                        <p><strong>Marika Konieczna </strong></p>
+                        <p>
+                          Cystiolla jest naprawdę nie do przebicia!!! Miałam
+                          wycieki przy każdym kichnięciu od 5 lat, nie mogłam
+                          się ich pozbyć, regularnie nosiłam wkładki. Potem
+                          oczyściłam pęcherz, wycieki całkowicie ustały. To
+                          potwierdziła nawet lekarka! Lekarka ma rację, że
+                          całe zdrowie kobiety zaczyna się od zdrowego
+                          pęcherza. Dlatego ona sama tak długo żyje.
+                        </p>
+                      </div>
+
+                      <!-- АВАТАРКА 31.webp: мужчина 55-60 лет, заботливый, может быть с женой на заднем плане -->
+                      <div class="ittem-comment">
+                        <img src="images/31.webp" class="ava-img" />
+                        <p><strong>Sylwester Kowalski </strong></p>
+                        <p>Zamówiłem też dla żony. Póki jest, trzeba brać.</p>
+                      </div>
+
+                      <a class="button" href="#"
+                        >Zamów Cystiollę, póki jest w magazynie</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="UnderTheSun-root"></div>
+        </main>
+      </div>
+
+      <div class="App-footer">
+        <footer class="Footer-root Footer-expanded">
+          <div class="Footer-container">
+            <div class="Footer-copyright">
+              <div class="Footer-copyrightGroup">
+                <div class="Footer-copyrightItem">
+                  <div class="Footer-giphy">
+                    Jak czytać Meduzę podczas blokady
+                  </div>
+                  <div class="Footer-copyrightItem text-center">
+                    <span>
+                      ©
+                      <span data-format="yyyy" class="date-0"> 2026</span>
+                      Meduza
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script async>
+      const LAZY = document.querySelectorAll('img');
+      for (let i = 0; i < LAZY.length; i++) {
+        LAZY[i].setAttribute('loading', 'lazy');
+      }
+    </script>
+
+    <script>
+      $('a').on('touchend, click', function (e) {
+        e.preventDefault();
+        $('body,html').animate(
+          {
+            scrollTop: $('#oneform').offset().top,
+          },
+          400
+        );
+      });
+    </script>
+
+    <script>
+$('[name="name"]').on("input",function(){var val=$(this).val();var cleaned=val.replace(/[^a-zA-Zа-яА-ЯёЁії ]/g,"").replace(/^\s+/,"").replace(/\s\s+/," ");var parts=cleaned.split(" ");if(parts.length>2){cleaned=parts[0]+" "+parts[1];}$(this).val(cleaned);});
+$('[name="name"]').on("change blur",function(){$(this).val($(this).val().trim());});
+$('[name="phone"]').on("input change",function(e){var val=$(this).val();$(this).val(val.replace(/\D/g,""));$(e.currentTarget).attr("pattern","[0-9]{6,}");});
+</script>
+<p style="opacity: 0;">{_box:dd5VnJk7}</p>
+  </body>
+</html>

@@ -71,6 +71,633 @@
   </style>
 
   <script src="js/dtime.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== TRUST REDESIGN — Mexico / Imira Elixir ===== */
+    :root {
+      --c-primary: #0b3d91;
+      --c-primary-dark: #072a66;
+      --c-accent: #006847;
+      --c-accent-2: #ce1126;
+      --c-gold: #c8a951;
+      --c-bg: #f5f7fb;
+      --c-card: #ffffff;
+      --c-text: #1c2536;
+      --c-muted: #5a6478;
+      --c-border: #e2e6ef;
+      --c-soft: #eef3fb;
+      --shadow-sm: 0 1px 3px rgba(15,30,60,.06), 0 1px 2px rgba(15,30,60,.04);
+      --shadow-md: 0 6px 18px rgba(15,30,60,.08), 0 2px 6px rgba(15,30,60,.05);
+      --shadow-lg: 0 12px 32px rgba(15,30,60,.12), 0 4px 10px rgba(15,30,60,.06);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+    }
+
+    html, body {
+      background: var(--c-bg) !important;
+      color: var(--c-text) !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+      background: var(--c-card);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-md);
+    }
+
+    main > p {
+      color: var(--c-text);
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+
+    /* ---- Government-style top banner ---- */
+    header {
+      max-width: 900px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
+    }
+    header::before {
+      content: "🇲🇽  GOBIERNO DE MÉXICO  •  SECRETARÍA DE SALUD  •  PORTAL OFICIAL";
+      display: block;
+      background: linear-gradient(90deg, #006847 0%, #ffffff 50%, #ce1126 100%);
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+      padding: 10px 12px;
+      border-top: 3px solid #c8a951;
+      border-bottom: 1px solid #e2e6ef;
+    }
+    header::after {
+      content: "🔒 Conexión segura · cdn.gob.mx · Verificado COFEPRIS";
+      display: block;
+      font-size: 11px;
+      color: var(--c-muted);
+      text-align: center;
+      padding: 6px 10px;
+      background: #fff;
+      border-bottom: 1px solid var(--c-border);
+      letter-spacing: 0.3px;
+    }
+
+    /* ---- Hero title ---- */
+    .h1-bg {
+      background: linear-gradient(135deg, #ffffff 0%, #eef3fb 100%) !important;
+      border: 1px solid var(--c-border);
+      border-left: 5px solid var(--c-primary);
+      border-radius: var(--radius-md) !important;
+      box-shadow: var(--shadow-md);
+      padding: 24px 22px 18px !important;
+      margin: 18px auto 26px !important;
+    }
+    .h1-bg::before { display: none !important; }
+    .title_h1 {
+      font-family: 'Merriweather', Georgia, serif !important;
+      color: var(--c-primary-dark) !important;
+      font-size: 22px !important;
+      line-height: 1.35 !important;
+      border-bottom: none !important;
+      padding: 0 !important;
+      font-weight: 800 !important;
+    }
+    .head-two-part {
+      display: block;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 19px !important;
+      font-weight: 700;
+      color: #1c2536;
+      letter-spacing: -0.2px;
+    }
+    .head-main-date {
+      margin-top: 14px !important;
+      padding: 0 !important;
+      font-size: 13px;
+      color: var(--c-muted);
+      border-top: 1px dashed var(--c-border);
+      padding-top: 10px !important;
+    }
+    .head-main-date-title {
+      display: inline !important;
+      font-style: normal !important;
+      font-weight: 600;
+      color: var(--c-text);
+    }
+    .main-subtitle {
+      background: #fbfcfe !important;
+      border: 1px solid var(--c-border) !important;
+      border-left: 4px solid var(--c-accent) !important;
+      color: var(--c-text) !important;
+      font-style: normal !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+      box-shadow: none !important;
+      padding: 14px 16px !important;
+      border-radius: var(--radius-sm) !important;
+      margin-top: 16px !important;
+    }
+
+    /* ---- Section headings ---- */
+    main h2 {
+      font-family: 'Merriweather', Georgia, serif !important;
+      color: var(--c-primary-dark) !important;
+      font-size: 24px !important;
+      font-weight: 800;
+      line-height: 1.3 !important;
+      margin: 36px 0 16px !important;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--c-border);
+      position: relative;
+    }
+    main h2::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 80px; height: 2px;
+      background: var(--c-accent-2);
+    }
+    main h2 span {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 17px !important;
+      font-weight: 500;
+      color: var(--c-muted);
+      display: block;
+      margin-top: 10px !important;
+    }
+    main h3 {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--c-primary-dark);
+      margin: 22px 0 10px;
+    }
+
+    /* ---- Lists ---- */
+    main ul:not(.my-ul-0-green) {
+      background: #fbfcfe;
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px 14px 36px;
+      margin: 14px 0 20px;
+    }
+    main ul:not(.my-ul-0-green) li {
+      padding: 4px 0;
+      color: var(--c-text);
+    }
+    main ul:not(.my-ul-0-green) li::marker {
+      color: var(--c-accent-2);
+      font-weight: 700;
+    }
+
+    /* ---- Doctor block ---- */
+    .doc-block {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%) !important;
+      border: 1px solid var(--c-border) !important;
+      border-top: 4px solid var(--c-primary) !important;
+      border-radius: var(--radius-md) !important;
+      box-shadow: var(--shadow-md);
+      padding: 18px !important;
+      max-width: 720px !important;
+      margin: 22px auto !important;
+      position: relative;
+    }
+    .doc-block::before {
+      content: "✓ DECLARACIÓN OFICIAL DEL ESPECIALISTA";
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--c-accent);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .doc-block img {
+      border-radius: var(--radius-sm);
+      border: 4px solid #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .doc-block p {
+      font-size: 16px !important;
+      line-height: 1.65;
+      text-align: left;
+    }
+
+    /* ---- Review / testimonial blocks ---- */
+    .rev-block {
+      background: linear-gradient(180deg, #ffffff 0%, #fdfaf3 100%) !important;
+      border: 1px solid #ecd9a8 !important;
+      border-left: 5px solid var(--c-gold) !important;
+      box-shadow: var(--shadow-md) !important;
+      border-radius: var(--radius-md) !important;
+      padding: 20px !important;
+      position: relative;
+    }
+    .rev-block::before {
+      content: "“";
+      position: absolute;
+      top: -8px; left: 14px;
+      font-family: Georgia, serif;
+      font-size: 64px;
+      color: var(--c-gold);
+      opacity: 0.5;
+      line-height: 1;
+    }
+    .rev-block p { font-size: 16px; line-height: 1.65; }
+    .rev-block font {
+      font-style: normal;
+      color: var(--c-primary-dark);
+      font-size: 15px;
+      padding-top: 8px;
+      border-top: 1px solid #ecd9a8;
+      margin-top: 14px !important;
+    }
+    .img-card2 {
+      border-radius: var(--radius-md) !important;
+      border: 6px solid #fff !important;
+      box-shadow: var(--shadow-md) !important;
+    }
+
+    /* ---- Figures ---- */
+    figure {
+      margin: 22px 0;
+      background: #fbfcfe;
+      padding: 14px;
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    figure img.img-card {
+      margin-top: 0 !important;
+      border: 6px solid #fff !important;
+      outline: 1px solid var(--c-border) !important;
+      border-radius: var(--radius-sm) !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+    figcaption, .Figure-caption {
+      display: block;
+      font-size: 14px;
+      color: var(--c-muted);
+      font-style: italic;
+      text-align: center;
+      margin-top: 10px;
+      padding: 0 6px;
+    }
+
+    /* ---- Warning frames ---- */
+    .pachino-ramka312 {
+      background: linear-gradient(180deg, #fff6f6 0%, #fff 100%) !important;
+      border: 1px solid #f4c4c4 !important;
+      border-left: 5px solid var(--c-accent-2) !important;
+      color: #2a1414 !important;
+      box-shadow: var(--shadow-sm) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 16px 18px !important;
+      font-weight: 500 !important;
+      position: relative;
+      padding-left: 56px !important;
+    }
+    .pachino-ramka312::before {
+      content: "⚠";
+      position: absolute;
+      left: 16px; top: 14px;
+      font-size: 26px;
+      color: var(--c-accent-2);
+    }
+    .pachino-ramka2 {
+      background: linear-gradient(180deg, #f4fbf6 0%, #fff 100%) !important;
+      border: 1px solid #b9e0c5 !important;
+      border-left: 5px solid var(--c-accent) !important;
+      color: #0a3a23 !important;
+      box-shadow: var(--shadow-sm) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 16px 18px !important;
+      font-weight: 500 !important;
+    }
+    .pachino-ramka {
+      background: #fff8ef !important;
+      border: 1px solid #f0c98a !important;
+      border-left: 5px solid #e89117 !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 16px !important;
+      box-shadow: var(--shadow-sm);
+    }
+    .ramka-title {
+      background: transparent !important;
+      color: #6a3d00 !important;
+      font-weight: 700 !important;
+      padding: 0 0 6px !important;
+      margin-bottom: 8px !important;
+      border-bottom: 1px dashed #f0c98a;
+    }
+    .red-txt { color: var(--c-accent-2) !important; }
+
+    /* ---- Recipe / ingredients ---- */
+    .recept {
+      background: linear-gradient(180deg, #fbfcfe 0%, #eef3fb 100%) !important;
+      border: 1px solid var(--c-border) !important;
+      border-top: 4px solid var(--c-accent) !important;
+      box-shadow: var(--shadow-md) !important;
+      border-radius: var(--radius-md) !important;
+      padding: 18px 22px !important;
+    }
+    .recept > p > b { color: var(--c-primary-dark); }
+    .my-ul-0-green li {
+      background: #fff;
+      padding: 10px 12px 10px 36px !important;
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px !important;
+      border: 1px solid var(--c-border);
+    }
+    .my-ul-0-green li:before {
+      content: "✓" !important;
+      color: var(--c-accent) !important;
+      font-size: 16px !important;
+      left: 14px !important;
+      top: 9px !important;
+    }
+    .my-ul-0-green li b { color: var(--c-primary-dark); }
+    .my-ul-0-green li font { color: var(--c-muted) !important; font-size: 14px !important; }
+
+    /* ---- 4 effects block ---- */
+    .obertk512 {
+      box-shadow: var(--shadow-md) !important;
+      border: 1px solid var(--c-border) !important;
+      border-radius: var(--radius-md) !important;
+      background: #fff;
+      overflow: hidden;
+    }
+    .obertk512 h1 {
+      background: linear-gradient(90deg, var(--c-primary) 0%, var(--c-primary-dark) 100%) !important;
+      color: #fff !important;
+      border: none !important;
+      padding: 16px 18px !important;
+      font-family: 'Merriweather', serif !important;
+      font-size: 19px !important;
+      font-weight: 800 !important;
+    }
+    .block-offer-actions-block {
+      border: none !important;
+      padding: 18px 22px !important;
+    }
+    .obertk512 li font { color: var(--c-primary-dark) !important; font-weight: 700; }
+    .obertk512 li::marker { color: var(--c-accent-2) !important; }
+    .block-offer-actions-block li span {
+      color: var(--c-text) !important;
+      border-bottom: 1px solid var(--c-border) !important;
+    }
+
+    /* ---- Results table ---- */
+    .table-block {
+      border: 1px solid var(--c-border) !important;
+      border-radius: var(--radius-md) !important;
+      overflow: hidden;
+      box-shadow: var(--shadow-md) !important;
+      background: #fff;
+    }
+    .table-block h1 {
+      background: linear-gradient(90deg, var(--c-accent) 0%, #00865d 100%) !important;
+      color: #fff !important;
+      border: none !important;
+      font-family: 'Merriweather', serif !important;
+      padding: 16px 18px !important;
+      font-weight: 800 !important;
+    }
+    .table td { border: none !important; border-bottom: 1px solid var(--c-border) !important; }
+    .table tr:nth-child(even) td { background: #fbfcfe !important; }
+    .table td.one { color: var(--c-text) !important; font-size: 15px !important; padding: 12px 14px !important; }
+    .table td.two {
+      color: var(--c-accent) !important;
+      font-weight: 800 !important;
+      font-size: 20px !important;
+      text-align: right !important;
+      white-space: nowrap;
+      padding-right: 18px !important;
+    }
+
+    /* ---- CTA pre-form ---- */
+    .noclose-cta {
+      background: #fff6f6;
+      border: 1px solid #f4c4c4;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      color: var(--c-accent-2) !important;
+      font-weight: 600;
+    }
+    .pre-cta {
+      display: inline-block;
+      background: #f4fbf6;
+      border: 1px solid #b9e0c5;
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      color: #0a3a23 !important;
+      margin-top: 10px;
+    }
+
+    /* ---- Order form ---- */
+    .pachinoform {
+      border: none !important;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%) !important;
+      box-shadow: var(--shadow-lg) !important;
+      border-radius: var(--radius-lg) !important;
+      padding: 24px !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .pachinoform::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #006847 0%, #ffffff 50%, #ce1126 100%);
+    }
+    .pachinoform_title_text > b { color: var(--c-primary-dark); font-size: 18px; }
+    .pachinoform_order {
+      background: #fff8ef;
+      border: 1px solid #f0c98a;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 15px !important;
+    }
+    .pachinoform_order > b { color: var(--c-accent-2); }
+    .pachinoform_value { color: var(--c-primary-dark) !important; }
+    .pachinoform_value_current {
+      background: #fff;
+      border: 2px solid var(--c-accent-2) !important;
+      color: var(--c-accent-2) !important;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    .pachinoform_price_old span { color: var(--c-muted) !important; }
+    .pachinoform_price_new span {
+      background: linear-gradient(135deg, var(--c-accent-2) 0%, #a40d1f 100%) !important;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      text-shadow: 0 1px 2px rgba(0,0,0,.35) !important;
+    }
+    .pachinoform .name-input input,
+    .pachinoform .phone-input input {
+      border: 2px solid var(--c-border) !important;
+      border-radius: var(--radius-sm) !important;
+      transition: border-color .2s, box-shadow .2s;
+      padding-left: 16px !important;
+    }
+    .pachinoform .name-input input:focus,
+    .pachinoform .phone-input input:focus {
+      border-color: var(--c-primary) !important;
+      box-shadow: 0 0 0 3px rgba(11,61,145,.15) !important;
+    }
+    .pachinoform .button-submit {
+      background: linear-gradient(135deg, var(--c-accent) 0%, #00865d 100%) !important;
+      border: none !important;
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-sm) !important;
+      font-size: 19px !important;
+      letter-spacing: 0.5px;
+      padding: 16px 0 !important;
+      text-transform: uppercase;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .pachinoform .button-submit:hover {
+      background: linear-gradient(135deg, #00865d 0%, var(--c-accent) 100%) !important;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+    .pachinoform_footer {
+      background: #fbfcfe;
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-top: 16px !important;
+      font-size: 13px !important;
+      color: var(--c-muted);
+    }
+
+    /* ---- Trust badges row (injected via comments header) ---- */
+    .comments__header {
+      background: linear-gradient(180deg, #fbfcfe 0%, #eef3fb 100%);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin: 28px 0 16px;
+    }
+    .comments__header-title {
+      color: var(--c-primary-dark) !important;
+      font-weight: 800 !important;
+      font-size: 18px !important;
+      letter-spacing: 0.5px;
+      margin: 0 !important;
+    }
+
+    /* ---- Comments ---- */
+    .comments__item {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .comments__item.reply,
+    .comm-obert-reply .comments__item {
+      background: #fbfcfe;
+      margin-left: 28px;
+      border-left: 3px solid var(--c-primary);
+    }
+    .comments__item-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .comments__item-avatar {
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px var(--c-border);
+    }
+    .comments__item-name {
+      font-weight: 700 !important;
+      color: var(--c-primary-dark) !important;
+      margin: 0 !important;
+      font-size: 15px !important;
+    }
+    .comments__item-info p:last-child {
+      color: var(--c-muted);
+      font-size: 12px;
+      margin: 2px 0 0 !important;
+    }
+    .comments__item-content {
+      color: var(--c-text);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ---- Comment form ---- */
+    .custom-form {
+      border-radius: var(--radius-md) !important;
+      border: 1px solid var(--c-border) !important;
+      background: #fbfcfe !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+    .custom-form__name,
+    .custom-form__message {
+      border-radius: var(--radius-sm) !important;
+      border: 1px solid var(--c-border) !important;
+    }
+    .custom-form__btn {
+      background: var(--c-primary) !important;
+      color: #fff !important;
+      border: none !important;
+      border-radius: var(--radius-sm) !important;
+    }
+    .custom-form__btn:hover {
+      background: var(--c-primary-dark) !important;
+    }
+
+    /* ---- Images ---- */
+    main > img {
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+    .img-card {
+      border-radius: var(--radius-sm) !important;
+    }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      main { padding: 0 12px 30px; border-radius: 0; }
+      .head-two-part { font-size: 17px !important; }
+      main h2 { font-size: 20px !important; }
+      .pachinoform { padding: 18px !important; }
+      .pachinoform_price_new span { font-size: 36px !important; }
+      header::before { font-size: 10px; letter-spacing: 1px; }
+      .comments__item.reply,
+      .comm-obert-reply .comments__item { margin-left: 12px; }
+    }
+  </style>
 </head>
 
 <body>

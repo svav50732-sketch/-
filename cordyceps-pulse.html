@@ -1,0 +1,2650 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <meta charset="utf-8">
+  <title>Magyarország Egészségügyi Minisztériuma – Az idegrendszer regenerálásának új módszere, amelyet Dr. Horváth
+    Eszter fejlesztett ki</title>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="no-cache" http-equiv="Cache-Control">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="no-referrer" name="referrer">
+  <meta content="noindex, nofollow" name="robots">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="коряжма.png?=v1">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f7f5f0;
+      --bg-tint: #faf8f3;
+      --text: #1a1a1a;
+      --text-muted: #4a4a4a;
+      --text-light: #767068;
+      --border: #d8d4cb;
+      --border-soft: #ebe6dc;
+      --border-strong: #1a1a1a;
+      --accent: #a8261e;
+      --accent-dark: #7d1c16;
+      --accent-soft: #f7eeec;
+      --gold: #8b6f3d;
+      --serif: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern" 1, "liga" 1;
+    }
+
+    .sf-hidden { display: none !important; }
+
+    /* MASTHEAD */
+    header {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .bg-image {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 24px 18px;
+      text-align: center;
+    }
+    .bg-image::before {
+      content: "EGÉSZSÉGÜGYI HÍRMAGAZIN";
+      display: block;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: var(--text-light);
+      font-weight: 600;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .bg-image::after {
+      content: "Egészség & Társadalom · Különszám";
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      margin-top: 14px;
+    }
+    .bg-image img { display: none; }
+    .text-container { display: none; }
+
+    /* H1 BLOCK */
+    .h1-bg {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px 28px;
+      background: transparent;
+      position: static;
+      border: 0;
+    }
+    .h1-bg::before { display: none; }
+
+    .title_h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin: 0 0 20px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      display: block;
+    }
+    .head-one-part {
+      display: block;
+      color: var(--accent);
+      font-size: 13px;
+      font-family: var(--sans);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .head-one-part:empty::before {
+      content: "Exkluzív · Riport";
+    }
+    .head-two-part {
+      display: block;
+      font-size: 38px;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+
+    .head-main-date {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--text-light);
+      padding: 0;
+      margin: 0 0 24px;
+      display: flex;
+      gap: 6px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .head-main-date-title {
+      display: inline;
+      font-style: normal;
+      color: var(--text-light);
+    }
+
+    .main-subtitle {
+      display: block;
+      margin: 0;
+      padding: 0 0 28px;
+      border: 0;
+      box-shadow: none;
+      background: transparent;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      font-weight: 400;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* MAIN */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px 60px;
+      background: var(--bg);
+    }
+
+    main p {
+      margin: 0 0 22px;
+      font-size: 19px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    main p:first-of-type::first-letter {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 0.9;
+      float: left;
+      padding: 6px 10px 0 0;
+      color: var(--text);
+    }
+
+    main img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 28px auto;
+      border-radius: 0;
+    }
+
+    main h2 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin: 48px 0 18px;
+      padding-top: 28px;
+      border-top: 2px solid var(--text);
+    }
+    main h2 span {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-top: 12px;
+      letter-spacing: 0;
+    }
+
+    main h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--text);
+      margin: 32px 0 14px;
+    }
+
+    main b, main strong {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .red-txt {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* LISTS */
+    main ul {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 28px;
+      border: 0;
+      background: transparent;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    main ul li {
+      position: relative;
+      padding: 12px 0 12px 28px;
+      margin: 0;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    main ul li:last-child { border-bottom: 0; }
+    main ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      width: auto;
+      height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    /* DOC BLOCK */
+    .doc-block {
+      margin: 36px auto;
+      padding: 28px 30px;
+      max-width: 660px;
+      background: var(--bg-tint);
+      border: 0;
+      border-left: 3px solid var(--text);
+      border-radius: 0;
+      text-align: left;
+      box-shadow: none;
+    }
+    .doc-block img {
+      max-width: 140px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 0 18px;
+      float: left;
+      shape-outside: circle();
+      margin-right: 22px;
+      filter: grayscale(15%);
+    }
+    .doc-block p {
+      font-size: 17px;
+      line-height: 1.65;
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+    .doc-block p:last-child { margin-bottom: 0; }
+    .doc-block p b { color: var(--text); }
+    .doc-block::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* FIGURE */
+    figure {
+      margin: 36px 0;
+      padding: 0;
+      text-align: center;
+    }
+    figure img {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      filter: grayscale(20%);
+    }
+    .Figure-caption,
+    figure figcaption,
+    figure .Figure-caption {
+      display: block;
+      margin: 14px 0 0;
+      font-family: var(--sans);
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-light);
+      letter-spacing: 0.01em;
+      padding: 0 8px;
+      text-align: left;
+      border-left: 2px solid var(--border);
+      padding-left: 14px;
+    }
+    figure .Figure-caption b {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .img-card, .img-card2 {
+      box-shadow: none;
+      border: 0;
+      padding: 0;
+      outline: 0;
+      filter: grayscale(20%);
+    }
+
+    /* DANGER BOX */
+    .pachino-ramka312-block {
+      margin: 32px 0;
+    }
+    .pachino-ramka312 {
+      background: transparent;
+      border: 0;
+      border-top: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      border-radius: 0;
+      padding: 22px 4px;
+      margin: 0;
+      box-shadow: none;
+      color: var(--text);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.65;
+      font-family: var(--serif);
+      position: relative;
+    }
+    .pachino-ramka312::before {
+      content: "FIGYELMEZTETÉS";
+      display: block;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .pachino-ramka312 .obertka-1 { display: block; }
+
+    /* GREEN INFO BOX */
+    .pachino-ramka2 {
+      margin: 30px 0;
+      padding: 22px 26px;
+      background: var(--bg-tint);
+      border: 0;
+      border-left: 3px solid var(--gold);
+      border-radius: 0;
+      box-shadow: none;
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    /* WARNING BOX */
+    .pachino-ramka {
+      margin: 30px 0;
+      padding: 20px 24px;
+      background: var(--bg-soft);
+      border: 0;
+      border-left: 3px solid var(--gold);
+      border-radius: 0;
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    .ramka-title {
+      display: block;
+      background: transparent !important;
+      color: var(--gold) !important;
+      font-family: var(--sans) !important;
+      font-size: 11px !important;
+      letter-spacing: 0.2em;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0 0 8px;
+    }
+    .pachino-ramka font {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* RECIPE BLOCK */
+    .recept {
+      margin: 32px 0;
+      padding: 30px 32px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+    }
+    .recept::before {
+      content: "Formula";
+      display: block;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .recept p { margin: 0 0 14px; font-size: 17px; }
+    .recept p b { color: var(--text); font-size: 17px; }
+
+    .my-ul-0-green {
+      margin: 12px 0 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      list-style: none;
+    }
+    .my-ul-0-green li {
+      position: relative;
+      display: block;
+      padding: 14px 0 14px 32px !important;
+      margin: 0 !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--border-soft) !important;
+      line-height: 1.45;
+    }
+    .my-ul-0-green li:last-child { border-bottom: 0 !important; }
+    .my-ul-0-green li::before {
+      content: counter(formula, decimal-leading-zero) !important;
+      counter-increment: formula;
+      position: absolute;
+      left: 0;
+      top: 14px;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      width: auto;
+      height: auto;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+    .my-ul-0-green {
+      counter-reset: formula;
+    }
+    .my-ul-0-green li b {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text);
+    }
+    .my-ul-0-green font {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-light);
+    }
+
+    /* BENEFITS BOX */
+    .obertk512 {
+      margin: 32px 0;
+      max-width: none;
+      box-shadow: none;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      background: var(--bg);
+      padding: 0;
+      width: 100%;
+      font-family: var(--serif);
+    }
+    .obertk512 h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.3;
+      color: var(--text);
+      background: var(--bg-tint);
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 20px 28px;
+      margin: 0;
+    }
+    .block-offer-actions-block {
+      padding: 8px 28px 24px;
+      border: 0;
+    }
+    .obertk512 ol {
+      padding: 0;
+      margin: 0;
+      counter-reset: benefit;
+      list-style: none;
+    }
+    .obertk512 li {
+      position: relative;
+      padding: 22px 0 22px 56px;
+      border-bottom: 1px solid var(--border-soft);
+      counter-increment: benefit;
+      line-height: 1.5;
+    }
+    .obertk512 li:last-child { border-bottom: 0; }
+    .obertk512 li::marker { content: none; }
+    .obertk512 li::before {
+      content: counter(benefit, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 23px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      width: auto;
+      background: transparent;
+      border: 0;
+    }
+    .obertk512 li::after {
+      content: "";
+      position: absolute;
+      left: 32px;
+      top: 28px;
+      width: 14px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .obertk512 li font {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 19px;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .block-offer-actions-block li span {
+      display: block;
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    /* TABLE */
+    .table-block {
+      margin: 36px 0;
+      max-width: none;
+      width: 100%;
+      box-shadow: none;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      background: var(--bg);
+      padding: 0;
+      font-family: var(--serif);
+    }
+    .table-block h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.35;
+      color: var(--text);
+      background: var(--bg-tint);
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 18px 24px;
+      margin: 0;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--serif);
+      margin: 0;
+      background: transparent;
+    }
+    .table td {
+      border: 0 !important;
+      border-bottom: 1px solid var(--border-soft) !important;
+      padding: 14px 24px !important;
+      background: transparent !important;
+      vertical-align: middle;
+    }
+    .table tr:last-child td { border-bottom: 0 !important; }
+    .table td.one {
+      text-align: left;
+      width: 70%;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .table td.two {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      text-align: right;
+      width: 30%;
+      white-space: nowrap;
+      letter-spacing: -0.01em;
+    }
+    .table td.two::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      margin-left: auto;
+      margin-top: 4px;
+    }
+
+    /* CTA WARNING */
+    .noclose-cta {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 20px auto 10px;
+      display: block;
+      padding: 14px 18px;
+      background: var(--accent-soft);
+      border: 0;
+      border-left: 3px solid var(--accent);
+      color: var(--accent-dark);
+      font-weight: 500;
+      text-align: left;
+    }
+    .pre-cta {
+      display: block;
+      font-family: var(--sans);
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .pre-cta .nowrap { color: var(--text); }
+    .pre-cta font {
+      color: var(--accent) !important;
+      font-weight: 700;
+      border-bottom: 0 !important;
+      font-family: var(--serif);
+      font-size: 17px;
+    }
+    .nowrap { white-space: nowrap; }
+
+    /* ORDER FORM */
+    .pachinoform {
+      max-width: none;
+      width: 100%;
+      margin: 32px 0;
+      padding: 0;
+      background: var(--bg);
+      border: 1px solid var(--border-strong);
+      border-radius: 0;
+      box-shadow: none;
+      font-family: var(--serif);
+      display: block;
+      color: var(--text);
+      overflow: hidden;
+    }
+    .pachinoform_title {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 22px 28px;
+      max-width: none;
+      background: var(--text);
+      color: #fff;
+      text-align: left;
+      align-self: stretch;
+      border: 0;
+    }
+    .pachinoform_title_logo {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .pachinoform_title_logo img { max-width: 100%; height: auto; }
+    .pachinoform_title_text {
+      align-self: center;
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .pachinoform_title_text > b {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .pachinoform_order {
+      max-width: none;
+      margin: 0;
+      padding: 18px 28px;
+      background: var(--bg-tint);
+      border-bottom: 1px solid var(--border);
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--text);
+      text-align: left;
+    }
+    .pachinoform_order > b {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pachinoform_value {
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-start;
+      padding: 22px 28px 0;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .pachinoform_value_current {
+      border: 0;
+      background: transparent;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
+    }
+    .pachinoform_value_total {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-light);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .pachinoform_price {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin: 14px 0 4px;
+      padding: 0 28px;
+    }
+    .pachinoform_price_old span {
+      display: block;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text-light);
+      position: relative;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .pachinoform_price_old span::before {
+      position: absolute;
+      content: "";
+      left: -3px;
+      top: 52%;
+      right: -3px;
+      border-top: 1.5px solid var(--accent);
+      transform: rotate(-10deg);
+    }
+    .pachinoform_price_new span {
+      display: inline-block;
+      background: transparent;
+      color: var(--text);
+      text-shadow: none;
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      padding: 0;
+      line-height: 1;
+    }
+    .pachinoform form {
+      padding: 24px 28px 28px;
+    }
+    .pachinoform .name-input,
+    .pachinoform .phone-input {
+      color: var(--text);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .pachinoform .name-input label,
+    .pachinoform .phone-input label {
+      display: block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin: 0 0 8px;
+    }
+    .pachinoform .name-input input,
+    .pachinoform .phone-input input {
+      font-family: var(--serif);
+      font-size: 18px !important;
+      color: var(--text);
+      box-sizing: border-box;
+      width: 100%;
+      border: 0;
+      border-bottom: 1.5px solid var(--text);
+      border-radius: 0;
+      padding: 8px 0 10px;
+      background: transparent;
+      transition: border-color 0.15s ease;
+    }
+    .pachinoform .name-input input:focus,
+    .pachinoform .phone-input input:focus,
+    .pachinoform input:focus {
+      outline: 0;
+      box-shadow: none;
+      border-bottom-color: var(--accent);
+    }
+    .pachinoform ::placeholder {
+      color: var(--text-light);
+      opacity: 1;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 17px !important;
+    }
+    .pachinoform .button-submit {
+      width: 100%;
+      margin: 16px 0 0;
+      padding: 18px 22px;
+      border: 0;
+      border-radius: 0;
+      background: var(--text);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      box-shadow: none;
+    }
+    .pachinoform .button-submit:hover { background: var(--accent); }
+    .pachinoform .button-submit:active { transform: translateY(1px); }
+    .pachinoform .button-submit:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px var(--accent-soft);
+    }
+    .pachinoform_footer {
+      text-align: center;
+      padding: 18px 28px 22px;
+      background: var(--bg-tint);
+      border-top: 1px solid var(--border);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .pachinoform_footer img {
+      margin-top: 10px;
+      max-width: 220px;
+      width: auto;
+      height: auto;
+      opacity: 0.7;
+    }
+
+    /* CENTER CONTENT */
+    main center { display: block; text-align: center; }
+
+    /* COMMENTS */
+    .comments {
+      margin: 60px 0 20px;
+      background: var(--bg);
+      border: 0;
+      border-top: 2px solid var(--text);
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    .comments__header {
+      padding: 18px 0;
+      background: transparent;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .comments__header-title {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin: 0;
+    }
+    .comments__item-list { padding: 4px 0; }
+    .comments__item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .comments__item:last-child { border-bottom: 0; }
+    .comments__item-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .comments__item-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 0;
+      filter: grayscale(40%);
+    }
+    .comments__item-info { flex: 1; min-width: 0; }
+    .comments__item-name {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text);
+      margin: 0 0 2px;
+      letter-spacing: -0.005em;
+    }
+    .comments__item-info p:last-child,
+    .comments__item-info .startdate,
+    .comments__item-info .nowdate {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin: 0;
+      font-weight: 500;
+    }
+    .comments__item-body {
+      padding-left: 54px;
+    }
+    .comments__item-content {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      margin: 0;
+    }
+    .comments__item-content img {
+      margin-top: 12px;
+      max-width: 100%;
+      filter: grayscale(20%);
+    }
+    .comm-obert-reply {
+      padding-left: 32px;
+      border-left: 2px solid var(--border);
+      margin-left: 24px;
+    }
+    .comm-obert-reply .comments__item.reply { border-bottom: 1px solid var(--border-soft); }
+
+    /* CUSTOM COMMENT FORM */
+    .form-container { max-width: none; margin: 0; padding: 0; }
+    .custom-form {
+      max-width: 100%;
+      margin: 24px 0;
+      padding: 22px;
+      border: 1px solid var(--border);
+      box-shadow: none;
+      background: var(--bg-tint);
+      font-family: var(--serif) !important;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .custom-form__top-field {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .custom-form__ava-block {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px dashed var(--border);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      overflow: hidden;
+    }
+    .custom-form__ava-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      line-height: 1.2;
+      color: var(--text-light);
+      text-align: center;
+      cursor: pointer;
+      font-weight: 500;
+      padding: 4px;
+    }
+    .custom-form__ava-label_red-text { color: var(--accent); }
+    .custom-form__name {
+      width: 100%;
+      max-width: 320px;
+      border: 0;
+      border-bottom: 1.5px solid var(--text);
+      background: transparent;
+      padding: 8px 0;
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--text);
+      box-sizing: border-box;
+      outline: none;
+      height: auto;
+      border-radius: 0;
+    }
+    .custom-form__message {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 12px 14px;
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.55;
+      min-height: 100px;
+      color: var(--text);
+      box-sizing: border-box;
+      resize: none;
+      outline: none;
+      border-radius: 0;
+    }
+    .custom-form__bottom-field {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .custom-form__btn {
+      outline: none;
+      padding: 11px 28px;
+      background: var(--text);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: background 0.15s ease;
+      border-radius: 0;
+    }
+    .custom-form__btn:hover { background: var(--accent); }
+    .custom-form__photo-label {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text);
+      text-decoration: underline;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      border: 0;
+    }
+
+    /* OVERLAY/POPUP */
+    #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 100;
+      transition: opacity 0.3s ease;
+    }
+    #popup3 {
+      background-size: cover;
+      background-position: center;
+      position: fixed;
+      top: 50%; left: 50%;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      max-width: 800px;
+      width: 93%;
+      height: 87%;
+      overflow-y: auto;
+      max-height: 100vh;
+      z-index: 999999;
+    }
+
+    /* FOOTER STRIP (CTA preceded image) */
+    .product-center {
+      max-width: 280px;
+      width: 100%;
+      margin: 24px auto;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    /* PHONE FIELD ICON BACKDROP */
+    body input[name="phone"] {
+      background-repeat: no-repeat !important;
+      background-position: left 0 center !important;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .bg-image img {
+        position: static;
+        width: 100%;
+      }
+      .text-container { margin-top: 0; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 17px; }
+      main { padding: 28px 20px 50px; }
+      main p { font-size: 17px; line-height: 1.7; }
+      main p:first-of-type::first-letter { font-size: 52px; }
+      .title_h1, .head-two-part { font-size: 28px; line-height: 1.2; }
+      .main-subtitle { font-size: 18px; }
+      main h2 { font-size: 24px; padding-top: 22px; }
+      main h2 span { font-size: 17px; }
+      .doc-block { padding: 22px 20px; }
+      .doc-block img { width: 96px; height: 96px; margin-right: 14px; margin-bottom: 10px; }
+      .pachino-ramka2, .pachino-ramka, .recept { padding: 20px 18px; }
+      .obertk512 h1, .table-block h1 { padding: 16px 20px; font-size: 17px; }
+      .block-offer-actions-block, .obertk512 li { padding-left: 44px; }
+      .obertk512 li { padding-right: 0; }
+      .obertk512 li::after { left: 26px; }
+      .block-offer-actions-block { padding: 4px 20px 18px; }
+      .pachinoform_title, .pachinoform_order, .pachinoform form, .pachinoform_footer { padding-left: 20px; padding-right: 20px; }
+      .pachinoform_value, .pachinoform_price { padding-left: 20px; padding-right: 20px; }
+      .pachinoform_price_new span { font-size: 34px; }
+      .pachinoform_price_old span { font-size: 18px; }
+      .pachinoform_value_current { font-size: 26px; }
+      .comments__item-body { padding-left: 0; }
+      .comm-obert-reply { padding-left: 18px; margin-left: 8px; }
+      .table td { padding: 12px 16px !important; }
+      .table td.one { font-size: 14px; }
+      .table td.two { font-size: 18px; }
+      .head-main-date { flex-wrap: wrap; }
+    }
+
+    @keyframes example { 0% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes blinker { from { opacity: 1.0; } to { opacity: 0.7; } }
+  </style>
+
+  <script src="js/dtime.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="bg-image">
+    </div>
+  </header>
+  <div class="text-container"></div>
+  <div class="h1-bg split">
+    <h1 class="title_h1">
+      <span class="head-one-part"></span>
+      <span class="head-two-part">„ANYUKÁM NEM ISMERT FEL ENGEM" — EGY NEUROLÓGUS FELTÁRJA, MIÉRT PUSZTULNAK EL AZ AGYSEJTEK 45 ÉV UTÁN, ÉS HOGYAN ÁLLÍTHATJA MEG, AMÍG NEM KÉSŐ.</span>
+    </h1>
+
+    <div class="tdate head-main-date">
+      <span class="head-main-date-title">Közzétéve: </span>
+      <span class="startdate">
+        <script !src="">dtime_nums(-3, true)</script>, 09:36
+      </span>
+    </div>
+
+
+    <div class="main-subtitle">
+      Hogyan képes Dr. Horváth Eszter egyedülálló módszerével megállítani a memóriavesztést, megszüntetni az agyi ködöt és visszaadni a mentális tisztaságot — gyógyszerek, injekciók vagy fájdalmas beavatkozások nélkül.
+    </div>
+  </div>
+
+  <div class="title_block_lead"></div>
+  <main>
+    <img alt="" src="https://static.joxi.pro/1776157663411-b5c29a5e-6b86-4109-9a90-64e9e051338f.jpg"
+      style="margin-bottom:14px;margin-top:0">
+    <p>
+
+      Magyarországon csendes járvány terjed: az agyi leépülés járványa. A feledékenység, az agyi köd, a szavak összekeverése, a nevek elfelejtése — amit éveken át „normális öregedésnek" neveztünk — valójában súlyos figyelmeztető jel. Az idegsejtek pusztulása gyorsan rombolja az emberek életét: először a kulcsokat keresik, aztán a szavakat, végül a szeretteiket nem ismerik fel — ez a valóság azok számára, akik nem ismerték fel időben a veszélyt.
+
+    </p>
+    <p>
+
+      Ez a helyzet kihívást jelentett Dr. Horváth Eszter számára, aki életét az idegrendszeri betegségek és a kognitív hanyatlás elleni küzdelemnek szentelte, és nem csak egyszerű embereket, hanem ismert személyiségeket is kezelt Magyarországról, Ausztriából és Németországból.
+
+    </p>
+    <p>
+
+      Az orvos ritkán ad interjút: idejének nagy részét pácienseinek és az új kezelési módszerek fejlesztésének szenteli. Mégis sikerült információt szereznünk személyes módszeréről, amely képes regenerálni az agysejteket, helyreállítani a memóriát és megállítani a kognitív hanyatlást még 70-80 éves betegeknél is.
+
+    </p>
+    <div class="doc-block">
+      <img alt="epic" class="picurl" data-src="doc1.jpg" id="epic" loading="eager"
+        src="https://static.joxi.pro/1775732842638-1f770a08-133c-4298-b167-d93788eb3687.jpg">
+      <p>Dr. Horváth Eszter: «2026-ban az agyi leépülés és a korai demencia új hullámával nézünk szembe. Éppen ezért fejlesztettem ki ezt a módszert
+        <b>mint a leghatékonyabb kezelési formát, amely mindenki számára elérhető otthoni használatra.</b>
+      </p>
+      <p><b>A CÉLUNK AZ IDEGSEJTEK REGENERÁLÁSA ÉS AZ AGYI PUSZTULÁS MEGÁLLÍTÁSA — ENNEK KÖSZÖNHETŐEN A FELEDÉKENYSÉG, AZ AGYI KÖD, A KONCENTRÁCIÓZAVAR ÉS A MEMÓRIAVESZTÉS AZ ESETEK 98,7%-ÁBAN MEGÁLLÍTHATÓ,
+          <span class="red-txt">ÉS ÚJRA TISZTA ELMÉVEL, FÉLELEM NÉLKÜL ÉLHETÜNK!"</span></b>"
+      </p>
+    </div>
+    <p>
+
+      Dr. Horváth Eszter meggyőződése, hogy minden ember teljesen regenerálhatja agysejtjeit és megállíthatja a kognitív hanyatlást közvetlenül otthon, egyszerű és természetes módon — agresszív gyógyszerek és drága klinikák nélkül.
+
+    </p>
+    <p>
+
+      Más ismert kezelési módszerekkel ellentétben az ő megközelítése kizárólag természetes összetevőkre épül, KÁROS VEGYSZEREK NÉLKÜL, amelyekkel a gyógyszertárak tele vannak, és amelyek gyakran több kárt okoznak, mint hasznot.
+
+    </p>
+    <h2>
+
+      A tabletták és nyugtatók NEM állítják meg az agyi leépülést: ez mítosz!
+
+      <br>
+
+      A gyógyszertári vegyszerek gyorsabban pusztítják az agyat, mint bármely betegség!
+
+    </h2>
+    <p>
+    </p>
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p alt="">— Valóban hiszi, hogy a gyógyszertári tabletták vagy memóriajavítók meg tudják gyógyítani ezeket a
+      problémákat? Ez veszélyes tévedés! Ezek a gyógyszerek csak ideiglenesen elfedik a tüneteket, miközben az
+      idegsejtek tovább pusztulnak. Rövid időn belül a tünetek visszatérnek — súlyosabban, mint valaha.
+    </p>
+
+    <p alt="">A legnagyobb probléma az agyban van! A kognitív hanyatlás elviselhető lehet a kezdeti szakaszban — „csak feledékeny vagyok" — ezért sokan figyelmen kívül hagyják. Idővel azonban befolyásolja a munkavégzést, a családi kapcsolatokat és a teljes önállóságot. Minden harmadik ember súlyos demenciát kockáztat a következő 5 évben, ha nem kezeli megfelelően a problémát!
+    </p>
+
+
+    <div class="pachino-ramka312-block">
+      <p class="pachino-ramka312">
+        <span class="obertka-1">
+          A feledékenység és agyi köd 45 éves kor felett szinte mindig az idegsejtek gyengülésére és fokozatos pusztulására utal.
+          <br><br>
+          A statisztikák szerint Magyarországon 5-ből 4 ember tapasztal kognitív hanyatlást 50 éves kora után. Az
+          esetek több mint 40%-ában a probléma gyorsan súlyos stádiumba lép 2-3 éven belül!
+        </span>
+      </p>
+    </div>
+
+    <p></p>
+
+    <p><b>Dr. Horváth Eszter:</b></p>
+
+    <p alt="">— Képzelje el! Néhány éven belül az agyi leépülés teljesen tönkreteheti az emlékezetet és a gondolkodást! A nevek, dátumok, események eltűnnek. A munkahelyi feladatok lehetetlenné válnak. A családtagokat nem ismeri fel. Sokan teljes ápolásra szorulnak és idősotthonban végzik!
+    </p>
+
+    <p alt="">
+      És az egyetlen, amit a modern orvostudomány ilyen helyzetben kínál, az a nyugtatók és drága terápiák! Azonban gondoljon bele! A gyógyszerek csak tompítják a tüneteket, nem állítják meg a pusztulást. A demencia-ellenes szerek mellékhatásai súlyosak: szédülés, depresszió, alvászavar — és a legtöbb esetben a betegség tovább romlik!
+    </p>
+
+    <figure alt="" class="Figure" style="text-align:center">
+      <img src="https://static.joxi.pro/1776157164125-8cbb377e-7026-437c-90fd-e61835f1b93e.jpg" style="margin:0 auto">
+      <span class="Figure-caption">
+        <b>Az agyi leépülés kezelése hagyományos módszerekkel kockázatos. 10-ből csak 2 ember tapasztal tartós javulást, míg a többiek folyamatos romlással és az önállóság elvesztésével néznek szembe.</b>
+      </span>
+    </figure>
+
+    <p class="red-txt">
+      Fontos hangsúlyozni, hogy az esetek 9-ből 10 esetében a tünetek tovább romlanak a hagyományos
+      kezelések után. A gyógyszerek nemcsak hatástalanok, hanem károsak is, ha nem szüntetik meg a pusztulás valódi okát!
+    </p>
+
+    <p class="red-txt">
+      Ráadásul a nyugtatók és memóriajavítók után a betegek gyakran nem csak az egészségüket rombolják le,
+      hanem az utolsó reményt is a tiszta elmére. Mellékhatások, függőség, személyiségváltozás: ez csak a
+      kezdete egy szenvedéssel és függőséggel teli útnak!
+    </p>
+
+    <h2>
+      Ezen tünetek figyelmen kívül hagyása visszafordíthatatlan következményekhez vezet! És ha már 45-50 éves, a
+      problémák elkerülhetetlenek!
+    </h2>
+
+    <p>
+      — Ha felismeri ezeket a tüneteket, NINCS TÖBB IDEJE VESZTEGETNI! Meddig őrizheti meg még az emlékeit? A válasz attól függ, mennyi
+      ideig hagyta figyelmen kívül teste jelzéseit! <span class="startdate" daysago="200" format="year">
+        <script !src="">dtime_nums(-201)</script>
+      </span>-ban Magyarországon több mint 280.000 embernél diagnosztizáltak kognitív hanyatlást vagy korai demenciát, akik közül
+      közel 95.000 vált teljesen ápolásra szorulóvá!
+    </p>
+    <p><b>Ezért kulcsfontosságú felismerni a tüneteket és gyorsan cselekedni — amíg a teljes memóriavesztés és az önállóság elvesztése még elkerülhető!</b></p>
+    <h3>Bemutatom azokat a tüneteket, amelyek a praxisomban a legmegbízhatóbbnak bizonyultak:</h3>
+    <ul>
+      <li>Nevek és szavak elfelejtése beszéd közben;</li>
+      <li>Agyi köd — mintha ködben járna az elméje;</li>
+      <li>Koncentrációzavar — nem tud egy feladatra összpontosítani;</li>
+      <li>Kulcsok, telefon, szemüveg állandó keresése;</li>
+      <li>Ugyanazt a kérdést többször felteszi;</li>
+      <li>Eltéved ismerős helyeken;</li>
+      <li>Nem emlékszik, mit akart mondani;</li>
+      <li>Zsibbadás és bizsergés a kezekben és lábakban;</li>
+      <li>Éjszakai görcsök, amelyek felébresztik;</li>
+      <li>Krónikus fáradtság és ingerlékenység;</li>
+      <li>Szorongás és félelem a jövőtől;</li>
+    </ul>
+    <p>
+      Ha felismer legalább 2-3 tünetet, cselekedjen azonnal! Ne várjon, amíg túl késő lesz! Az agyi leépülést helyesen,
+      alaposan és a lehető leghamarabb kell kezelni. Ha halogatja, súlyos memóriavesztés, személyiségváltozás, teljes függőség — és végül idősotthon alakulhat ki!
+    </p>
+
+
+    </figure>
+    <div class="pachino-ramka312-block">
+      <p class="pachino-ramka312">
+        <span class="obertka-1">
+          Minden nap, amit kezeletlen kognitív hanyatlással tölt, közelebb viszi a demenciához!
+          Emberek ezrei már elvesztették az emlékezőképességüket és az önállóságukat.
+          Ezek a problémák nem múlnak el maguktól: cselekedjen most, amíg nem késő!
+        </span>
+      </p>
+    </div>
+
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>
+      — Mindannyian meg voltak győződve, hogy ez nem érheti őket, de íme az eredmények:
+      teljes memóriavesztés, a szeretteik arcának elfelejtése, idősotthon és a családtól való teljes függés!
+      Az emberek több mint 90%-a kerül ebbe a helyzetbe, mert nem tett időben megfelelő lépéseket.
+      AZ AGYI LEÉPÜLÉS CSENDBEN KEZDŐDIK — a tünetek figyelmen kívül hagyásával saját emlékeit veszíti el!
+    </p>
+    <p>
+      Vegye figyelembe: ha már 45 vagy 55 éves, nagyon kevés ideje maradt
+      megmenteni az agysejtjeit a további pusztulástól. Sürgősen kezelésre van szüksége!
+      <b><span class="red-txt">FENNÁLL A VESZÉLYE A SÚLYOS MEMÓRIAVESZTÉSNEK, A SZEMÉLYISÉGVÁLTOZÁSNAK ÉS A TELJES DEMENCIÁNAK!</span>
+        Az egyetlen esély az idegsejt-pusztulás azonnali megállítása
+        és a megfelelő terápia megkezdése, amely az agysejtek regenerálására
+        és a kognitív funkciók teljes helyreállítására irányul!</b>
+    </p>
+
+    <h2>
+      Dr. Horváth Eszter receptje, amely beindítja az agysejtek regenerálását és teljesen megállítja a kognitív hanyatlást,
+      visszaadva az embereknek a tiszta elmét!
+      <span>
+        Nemcsak a memóriazavarokat gyógyítja, hanem az idegrendszer összes betegségét!
+      </span>
+    </h2>
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>
+      — A kognitív hanyatlás helyzete ma kritikussá vált,
+      ezért fejlesztettem ki ezt a receptet. Hatékonysága példátlan,
+      mert aktiválja a szervezet természetes erőforrásait az agysejtek regenerálására
+      és a pusztulás megállítására.
+      Több mint 10 évig kerestem ezt a kombinációt — és egyetlen memóriajavító vagy nyugtató
+      sem képes hasonló hatást elérni!
+    </p>
+    <p>
+      Maga a recept nem bonyolult, de az összetevők pontos kiválasztása a kulcs —
+      minden milligramm számít. Az agyi regeneráció folyamatai csak akkor indulnak el,
+      ha minden arány helyesen van betartva, mert minden természetes összetevő
+      sajátos szerepet játszik.
+    </p>
+    <div class="recept">
+      <p><b>A készítmény formulája a következő hatóanyagokat tartalmazza:</b></p>
+      <ul class="my-ul-0-green size1">
+        <li><b>Oroszlánsörény gomba (Lion's Mane)</b>
+          <font>Serkenti az idegsejtek növekedését és a mielinhüvely regenerációját: 2500 mg</font>
+        </li>
+        <li><b>Cordyceps gomba kivonat</b>
+          <font>Javítja az agyi vérkeringést és oxigénellátást: 4500 mg</font>
+        </li>
+        <li><b>Alfa-liponsav (ALA)</b>
+          <font>Védi az agysejteket a szabadgyökök károsításától: 600 mg</font>
+        </li>
+        <li><b>B12-vitamin (metilkobalamin)</b>
+          <font>Nélkülözhetetlen az idegsejtek működéséhez és a memóriához: 1000 mcg</font>
+        </li>
+        <li><b>B1-vitamin (benfotiamin)</b>
+          <font>Védi az agyat a cukorkárosodástól: 320 mg</font>
+        </li>
+        <li><b>Magnézium</b>
+          <font>Csökkenti a görcsöket és támogatja az idegi kommunikációt: 400 mg</font>
+        </li>
+        <li><b>Kurkumin</b>
+          <font>Csökkenti az agyi gyulladást és támogatja a regenerációt: 2300 mg</font>
+        </li>
+      </ul>
+    </div>
+
+    <p>
+      Sajnos ezen összetevők többségét nagyon nehéz beszerezni Magyarországon. Sokukat a világ különböző részeiről kell
+      beszerezni. Ráadásul az arányok helyes kombinációja kulcsfontosságú — az adagolás pontosságának 0,1 mg-nak kell
+      lennie.
+    </p>
+    <p>
+      Pontosan ezért a recept otthoni vagy engedély nélküli elkészítése valószínűleg nem hozza meg a kívánt hatást, és a
+      legrosszabb esetben teljesen hatástalannak bizonyulhat.
+    </p>
+    <h2>
+      De van jó hír! Létezik egy egyedülálló termék, amely tartalmazza az összes összetevőt, plusz további 23 ritka
+      kivonatot, amelyekről bizonyított, hogy támogatják az agy és az idegrendszer egészségét.
+    </h2>
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>
+      — Eddig csak egyetlen ilyen készítményt sikerült előállítanunk, és az összetevők nagy mennyiségben való beszerzése
+      nem egyszerű. A termék neve: Cordyceps Pulse. Jelenleg ez az egyetlen készítmény,
+      amely képes beindítani az agysejtek regenerálását sejtes szinten. Tartalmazza az összes komponenst
+      pontos arányban, beleértve 23 rendkívül ritka kivonatot és vitaminkomplexet,
+      amelyek megsokszorozzák az agy regenerációs képességét.
+      Ez az egyetlen formula, amely képes helyreállítani a memóriát és megállítani a kognitív hanyatlást még idősebb
+      korban is, 60 és 80 év között!
+    </p>
+    <img src="https://static.joxi.pro/1776157017669-9fafd175-6d80-4d93-999d-55b491942567.jpg"
+      style="width:78%;max-width:340px">
+    <p>
+      A Cordyceps Pulse túlzás nélkül áttörés a neurológiában. Személyesen vezettem a fejlesztését,
+      magyar és német tudósok részvételével,
+      és az elért eredmények felülmúltak minden várakozást. A titok
+      a kiegyensúlyozott formulában és a speciális hideg extrakciós technológiában rejlik, amely megőrzi az összetevők
+      összes aktív tulajdonságát.
+    </p>
+    <p class="pachino-ramka2">
+      A "Cordyceps Pulse" páratlan. A formula a világ legritkább összetevőiből áll,
+      amelyek mindegyike — a megfelelő dózisban — beindítja az agysejtek regenerációját és megállítja a pusztulást.
+      Ez az egyetlen készítmény, amely képes visszafordítani a kognitív hanyatlást
+      még súlyos esetekben és idősebb korban is.
+    </p>
+    <p>
+      Nem találok megfelelő összehasonlítást — ez a formula valóban egyedülálló.
+      A Cordyceps Pulse legnagyobb előnye az agysejtek regenerációjának aktiválása.
+      Nemcsak csökkenti a feledékenységet és tisztítja az agyi ködöt, hanem regenerálja az idegsejteket, javítja a
+      koncentrációt és megakadályozza a demencia kialakulását.
+    </p>
+    <p>
+      Ez a készítmény 15-20-szor hatékonyabb bármely memóriajavítónál vagy eddig tesztelt hagyományos kezelésnél. A
+      Cordyceps Pulse legnagyobb előnye a teljes biztonsága. Nem terheli a májat, nem károsítja a bélflórát és nem
+      okoz függőséget.
+    </p>
+
+    <h2>
+      A Cordyceps Pulse beindítja az agysejtek regenerálását és teljesen megállítja a kognitív hanyatlást bármely életkorban,
+      ennek a 4 kulcsfontosságú hatásmechanizmusnak köszönhetően!
+    </h2>
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>
+      — A Cordyceps Pulse fejlesztése során azonosítottuk az agysejt-regenerálás kulcsfontosságú fázisait,
+      hogy biztosítsuk a folyamatos és hatékony gyógyulási folyamatot.
+      Ezek a mechanizmusok beindítják az idegsejtek regenerációját, megállítják a pusztulást
+      és hosszú távú védelmet nyújtanak, 98,7%-os javulást érve el
+      — még idősebb betegeknél is.
+    </p>
+    <div class="obertk512">
+      <h1>
+        A "Cordyceps Pulse" 4 fő hatása:
+      </h1>
+      <div class="block-offer-actions-block">
+        <ol>
+          <li>
+            <font>Az agyi köd tisztítása és a mentális tisztaság visszaállítása:</font>
+            <span>
+              Már 1-2 alkalmazás után a Cordyceps Pulse elkezdi javítani az agyi vérkeringést. A köd felszáll,
+              a gondolatok tisztábbá válnak, a koncentráció javul.
+            </span>
+          </li>
+          <li>
+            <font>A memória helyreállítása és a feledékenység megszüntetése:</font>
+            <span>
+              7-14 napon belül az aktív összetevők hatnak az agysejtekre, serkentik a regenerációt. A nevek, dátumok, események visszatérnek. Nem kell többé keresgélnie a szavakat.
+            </span>
+          </li>
+          <li>
+            <font>Az idegsejtek regenerálása és a kognitív funkciók helyreállítása:</font>
+            <span>
+              A formula serkenti a sérült idegsejtek regenerációját, megszünteti a tartós károsodást és jelentősen
+              javítja az életminőséget. A gondolkodás élesebbé válik, a döntéshozatal könnyebbé.
+            </span>
+          </li>
+          <li>
+            <font>A demencia megelőzése és hosszú távú védelem:</font>
+            <span>
+              A 20. naptól a pusztulás teljesen megáll, az agysejtek visszanyerik normális működésüket. A természetes
+              összetevőknek köszönhetően a demencia kockázata jelentősen csökken évekre.
+            </span>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+
+    <p>
+      Ezen hatások mindegyike évek kutatásának és a legmodernebb extrakciós technológiák alkalmazásának eredménye,
+      amelyek lehetővé tették a kulcsfontosságú összetevők integrálását. Ez nem ideiglenes megoldás,
+      hanem átfogó megközelítés, amely tartós eredményeket és az agy teljes védelmét garantálja hosszú évekre.
+    </p>
+    <h2>
+      A Cordyceps Pulse tesztelése valódi embereken 28 és 76 év között,
+      amelyet Magyarország és Németország legjobb tudóscsapatai végeztek — az eredmények lenyűgözőek!
+    </h2>
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>
+      — Eredményeink közzététele a vezető orvosi folyóiratokban valódi forradalom volt —
+      a vezető országok azonnal érdeklődést mutattak a Cordyceps Pulse iránt, kérve, hogy teszteljék saját pácienseiken.
+      Már akkor nyilvánvaló volt, hogy a formula hatalmas potenciállal rendelkezik,
+      amelyet korábban lehetetlennek tartottak.
+      Ez a módszer nemcsak javítja a kognitív funkciókat — lehetővé teszi az agy teljes regenerálását,
+      még súlyos memóriazavar esetén is.
+    </p>
+    <p>
+      A kutatások valódi betegeken Magyarország vezető kutatóközpontjaiban
+      óriási siker volt. Egyetlen korábbi módszer sem hasonlítható a Cordyceps Pulse-hoz.
+      Ez a készítmény olyan eredményeket ért el, amelyeket az orvostudomány évek óta nem látott:
+      a memória teljes helyreállítása, az agyi köd eltűnése és a koncentráció normalizálódása.
+      Az orvosok hitetlenkedve nézik, ahogy pácienseik visszakapják az emlékezőképességüket és újra önállóan élnek!
+    </p>
+    <div class="table-block">
+      <h1 class="title_h1">
+        A "Cordyceps Pulse" vizsgálatának eredményei 1980 fős kontrollcsoportban, 28 és 76 év közötti személyeknél
+        kognitív hanyatlással és memóriazavarral
+      </h1>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="one">
+              A memória javulása
+            </td>
+            <td class="two">
+              98,7%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              Az agyi köd megszűnése
+            </td>
+            <td class="two">
+              99,2%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              A koncentráció javulása
+            </td>
+            <td class="two">
+              96,8%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              A szavak megtalálásának könnyebbsége
+            </td>
+            <td class="two">
+              97,4%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              Az éjszakai görcsök csökkenése
+            </td>
+            <td class="two">
+              95,1%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              A zsibbadás megszűnése
+            </td>
+            <td class="two">
+              96,3%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              A hangulat és energiaszint javulása
+            </td>
+            <td class="two">
+              98,9%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              A demencia kockázatának csökkenése 24 hónapon belül
+            </td>
+            <td class="two">
+              94,2%
+            </td>
+          </tr>
+          <tr>
+            <td class="one">
+              A betegek általános elégedettsége
+            </td>
+            <td class="two">
+              99,8%
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><b>Pontos határidők vannak a "Cordyceps Pulse" terápia időtartamára.</b></p>
+    <p>
+      Jelenleg sok nemzetközi orvosi központ próbálja reprodukálni a Cordyceps Pulse formuláját.
+      Eddig azonban ezek csak laboratóriumi kutatások, és a gyakorlatban az általunk elért eredmények legalább
+      10-15-ször jobbak. Ilyen hatékonyságot hagyományos módszerekkel nem lehet elérni.
+    </p>
+
+    <div id="overlay" style="display:none;opacity:0"></div>
+    <div id="popup3" style="display:none;opacity:0;transform:translate(-50%,-50%) scale(0.8)"></div>
+
+    <h2>
+      Mennyi ideig tart ez a terápia? És mennyi időre van szükség az agy teljes regenerálásához?
+    </h2>
+
+    <p><b>Dr. Horváth Eszter:</b></p>
+
+    <p>
+      — A terápia minimális időtartama 30 nap, de súlyosabb esetekben 2 vagy akár 3 hónap használat is szükséges lehet.
+      Minden esetben azonban — kivétel nélkül —
+      az agysejtek jelentős regenerálását tapasztaltuk, függetlenül a beteg életkorától
+      és a kognitív hanyatlás súlyosságától. Ez egyedülálló lehetőség arra, hogy egyszer s mindenkorra megállítsa a pusztulást
+      és ÖRÖKRE VISSZAKAPJA A TISZTA ELMÉJÉT ÉS EMLÉKEIT!
+    </p>
+
+    <p>
+      Ráadásul a Cordyceps Pulse nemcsak javítja a memóriát és tisztítja az agyi ködöt MÁR AZ ELSŐ NAPOKTÓL,
+      hanem támogatja az agy hosszú távú egészségét is.
+      Segít hatékonyan megelőzni a demenciát, felgyorsítja az agyi regenerációt
+      ÉS TELJESEN HELYREÁLLÍTJA A KOGNITÍV FUNKCIÓKAT.
+      <b class="red-txt">
+        És ami a legfontosabb — szó szerint visszaadja az embereknek a tiszta elmét,
+        félelem, feledékenység és bizonytalanság nélkül hosszú évekre!
+      </b>
+    </p>
+
+
+    <h2>
+      Hiány és 4-6 hónap várakozás a Cordyceps Pulse listáján!
+      <span>
+        Miért nem kapható a Cordyceps Pulse a gyógyszertárakban?
+        Igaz, hogy nagyon nehéz beszerezni?
+      </span>
+    </h2>
+
+    <p>
+      Sajnos igen. Ahogy már említettem, a Cordyceps Pulse gyártása rendkívül bonyolult és költséges folyamat.
+      Fizikailag lehetetlen minden igényt kielégíteni.
+      Jelenleg a készítmény nagyon korlátozott mennyiségben érhető el —
+      és ez csak töredéke azoknak, akiknek sürgősen szükségük van a terápiára.
+    </p>
+
+    <p>
+      Véleményem szerint még legalább 3 év kell,
+      amíg a Cordyceps Pulse széles körben elérhetővé válik.
+      Addig a gyártási korlátok miatt
+      a készítményt kizárólag interneten keresztül, támogatási program keretében forgalmazzák — évente kétszer.
+      Igen, a készletek korlátozottak, de a tárgyalások még folyamatban vannak.
+    </p>
+
+    <p>
+      Ennek a rendszernek azonban vannak előnyei is —
+      <font class="red-txt">akár 50%-os kedvezmények lehetségesek</font>
+      a támogatási programokban való közvetlen részvételnek köszönhetően.
+      Ez különösen fontos a nyugdíjasok számára,
+      akik nem engedhetik meg maguknak a drága gyógyszereket.
+      Tanácsom: NE HAGYJA KI A TÁMOGATÁSI PROGRAMOT —
+      évente csak néhányszor érhető el.
+    </p>
+
+    <p class="red-txt">
+      <b>
+        A rendeléshez használja gyárunk online rendelési űrlapját.
+      </b>
+    </p>
+
+    <h2>
+      Utolsó lehetőség idén megszerezni a Cordyceps Pulse-t —
+      ragadja meg a pillanatot, mielőtt mások teszik!
+    </h2>
+
+    <img alt="epic2" class="picurl" id="epic2" loading="eager"
+      src="https://static.joxi.pro/1775734545128-3e806239-9633-4ceb-a3ab-5b078e3de989.jpg"
+      style="margin:0 auto;display:block;max-width:500px;width:100%;margin-top:24px;margin-bottom:20px">
+
+    <p><b>Dr. Horváth Eszter:</b></p>
+
+    <p>
+      — Idén sikerült forrásokat biztosítanunk és 20.000 csomagot lefoglalnunk
+      kizárólag a portál olvasói számára, de ez csak töredéke a valódi igénynek.
+      Kérem, ne halogassa a döntést — a következő támogatási program csak az év végén kezdődik!
+      A program utasításai szerint minden 45 év feletti magyarországi lakos
+      <font class="red-txt">akár 50%-os kedvezményt</font> kaphat, de a program
+      <span>
+        <script>dtime_nums(0, true)</script>
+      </span>-án véget ér.
+      Hamarosan nem lesz más lehetőség.
+    </p>
+
+    <p>
+      A komoly problémák váratlanul jelentkeznek. Ne várjon, amíg túl késő lesz!
+      A Cordyceps Pulse iránti érdeklődés napról napra nő.
+      Amíg a támogatási program aktív, használja ki a lehetőséget,
+      hogy megvédje agyát a további pusztulástól
+      és megőrizze emlékeit hosszú évekre.
+      A készítménynek kumulatív hatása van, és elegendő 3-4 évente egyszer használni.
+    </p>
+
+    <p>
+      A programban való részvételhez elegendő beírni nevét és telefonszámát az űrlapba.
+      Egy tanácsadó felveszi Önnel a kapcsolatot, személyre szabott kezelési tervet készít
+      és megszervezi a kiszállítást Magyarország bármely régiójába 2-3 napon belül,
+      postán vagy futárszolgálattal, közvetlenül a megadott címre.
+    </p>
+
+    <p>
+      <b>Sok egészséget kívánok mindenkinek! Vigyázzon az agyára!
+        Szeretettel, Dr. Horváth Eszter.</b>
+    </p>
+
+    <p class="pachino-ramka">
+      <span class="ramka-title">
+        Frissítés:
+        <span>
+          <script>dtime_nums(-3, true)</script>
+        </span>:
+      </span>
+
+      A Cordyceps Pulse iránti nagy érdeklődés miatt a készletek a vártnál hamarabb elfogyhatnak!
+      Ne feledje, hogy ma —
+      <font><span>
+          <script>dtime_nums(1, true)</script>
+        </span> — a program utolsó napja</font>
+      vagy amíg a készlet tart.
+    </p>
+
+
+    <br>
+
+    <center><img src="коряжма.png?=v1" class="product-center"></center><br>
+
+    <center>
+      <p class="noclose-cta red-txt">
+        Figyelem! Ne zárja be és ne frissítse az oldalt,
+        különben más személy kapja meg a lefoglalt Cordyceps Pulse csomagot!
+      </p>
+      <span class="pre-cta">
+        Részt vehet az ajánlatban — helye lefoglalva:
+        <span class="nowrap">Szám <font class="number-me">19&nbsp;974</font>
+        </span>
+      </span>
+    </center>
+    <span id="form"></span>
+    <span id="oneform"></span>
+    <div class="pachinoform">
+      <div class="pachinoform_title">
+        <div class="pachinoform_title_logo">
+          <img alt="" src="images/56d9b0017d1d_d58505c9.png">
+        </div>
+        <div class="pachinoform_title_text">
+          <b>Hivatalos rendelési űrlap</b>
+          № <font class="number-me nowrap">19&nbsp;974</font> / <font class="nowrap">20 000</font>
+        </div>
+      </div>
+      <div class="pachinoform_order">
+        Az <b>50%-os kedvezmény</b> igénybevételéhez írja be nevét és telefonszámát
+        az alábbi mezőkbe, majd kattintson a "MEGRENDELÉS" gombra.
+      </div>
+      <div class="pachinoform_value">
+        Raktáron:
+        <span class="blc-pck">
+          <strong class="pachinoform_value_current left-pack">33</strong>
+          <strong class="pachinoform_value_total"> /1000</strong>
+        </span>
+      </div>
+      <div class="pachinoform_price">
+        <div class="pachinoform_price_old"><span class="price_old">25800 Ft</span></div>
+        <div class="pachinoform_price_new"><span class="price_main">12900 Ft</span></div>
+      </div>
+      <form action="/order.php" method="post">
+        <input type="hidden" name="fbpx" value="{fbpx}">
+        <input type="hidden" name="utm_code" value="{subid}">
+        <input type="hidden" name="cid" value="{campaign_id}">
+        <input type="hidden" name="sid" value="3548">
+        <input type="hidden" name="hash" value="{hash}">
+        <input type="hidden" name="country" value="HU">
+        <div class="name-input">
+          <label for="name-input">Név</label>
+          <input autocomplete="name" id="name-input" name="name" placeholder="Az Ön neve" required="" type="text"
+            value="">
+        </div>
+        <div class="phone-input">
+          <label for="phone-input">Telefonszám</label>
+          <input autocomplete="tel" id="phone-input" maxlength="20" name="phone" pattern="^[\-+() 0-9]{8,20}$"
+            placeholder="Az Ön telefonszáma" required="" type="tel" value="">
+        </div>
+        <button class="button-submit" type="submit">MEGRENDELÉS</button>
+      </form>
+      <div class="pachinoform_footer">
+        ✔️ A kiszállítást az Országos Egészségügyi Központ végzi<br><b></b> közvetlenül a megadott címre
+        <br>
+        <img alt="" src="images/b0110a32ff2e_8322b1b5.png" style="width:auto">
+      </div>
+    </div>
+
+    <div class="comments comments-fb" id="pluginComments">
+      <div class="comments__header">
+        <div class="comments__left-box">
+          <p class="comments__header-title">HOZZÁSZÓLÁSOK:</p>
+        </div>
+      </div>
+
+      <div class="comments__item-list">
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/7da17fc86c6c_2f1260d0.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Kovács Mária</p>
+              <p class="startdate" daysago="7" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Köszönöm ezeket az információkat! Évek óta küzdöttem a feledékenységgel és az agyi köddel, azt hittem, ez normális az öregedéssel… Most már sok ismerősömtől hallottam jókat a Cordyceps Pulse-ról. Nagyon örülök, hogy megtaláltam ezt a cikket és nagy kedvezménnyel tudok rendelni. Köszönöm!
+            </p>
+          </div>
+        </div>
+
+        <div id="first-comment">
+          <div class="comments__item">
+            <div class="comments__item-header">
+              <img alt="" class="comments__item-avatar" loading="eager" src="images/8ba73d45c164_4ede289a.jpg">
+              <div class="comments__item-info">
+                <p class="comments__item-name">Szabó Erzsébet</p>
+                <p class="startdate" daysago="7" format="day/month/year">
+                  <script>dtime_nums(-3, true)</script>
+                </p>
+              </div>
+            </div>
+
+            <div class="comments__item-body">
+              <p class="comments__item-content">
+                Múlt hétfőn kaptam meg a csomagot. Már egy hét után óriási változást érzek! Nem keresem a szavakat beszéd közben, a neveket könnyebben felidézem. Szeretném befejezni a teljes kúrát. Korábban semmi nem segített. Alig várom, hogy újra tiszta fejjel gondolkodjak!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/fa7f61c1431c_7946ff6c.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Tóth Anna</p>
+              <p class="startdate" daysago="7" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              69 éves vagyok és több mint három éve szenvedtem a feledékenységtől és az agyi ködtől. A menopauza után kezdődött, aztán egyre rosszabb lett. Azt mondták, ez a korom miatt van és el kell viselnem. Különböző gyógyszereket írtak fel, de semmi nem segített. 2 hónap Cordyceps Pulse használat után az agyam teljesen újjáéledt, nem keresem a szavakat és újra könyveket tudok olvasni! Ez a készítmény valódi forradalom. Köszönöm!
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/dcc5cfe80d60_5aa7f8f7.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Kiss Katalin</p>
+              <p class="startdate" daysago="7" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Ez a készítmény megmentett a munkám elvesztésétől! Irodában dolgozom, a koncentrációzavar és feledékenység elviselhetetlen volt, hibákat csináltam, az orvosok vállat vontak, de a Cordyceps Pulse szó szerint megmentett. A problémám nagyon előrehaladott volt! Jobban teszi, ha időben cselekszik.
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/bcbe20e0b5d2_b241da99.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Nagy Terézia</p>
+              <p class="startdate" daysago="7" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Az orvosnak igaza van — jobb természetes módszerekkel kezelni az agyat, mint vegyszerekkel tönkretenni.
+              Manapság nehéz igazán jó termékeket találni a gyógyszertárakban. Abszurd azt hinni, hogy a
+              nyugtatók és memóriajavítók valóban meggyógyíthatják az agyi leépülést.
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/73d3a879cef9_4a9ce85c.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Horváth Ilona</p>
+              <p class="startdate" daysago="6" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Még gondolkodom, hogy kipróbáljam-e a Cordyceps Pulse-t. Honnan tudom, hogy nem csak üres ígéretek?
+              Valóban működik? Az édesanyám nagyon feledékeny lett mostanában és félek, hogy demencia lesz belőle…
+            </p>
+          </div>
+        </div>
+
+        <div class="comm-obert-reply">
+          <div class="comments__item reply">
+            <div class="comments__item-header">
+              <img alt="" class="comments__item-avatar" loading="eager" src="images/71deaf909b4e_ea30d07c.jpg">
+              <div class="comments__item-info">
+                <p class="comments__item-name">Varga Judit</p>
+                <p class="startdate" daysago="6" format="day/month/year">
+                  <script>dtime_nums(-3, true)</script>
+                </p>
+              </div>
+            </div>
+
+            <div class="comments__item-body">
+              <p class="comments__item-content">
+                Ilona, tökéletesen megértem a kételyeidet — én is szkeptikus voltam. Az édesanyámnak rendeltem, mert nagyon féltem, hogy demenciás lesz. De egy hónap Cordyceps Pulse használat után úgy éreztem, mintha visszakaptam volna a régi anyukámat! Tényleg nem túlzok!
+
+                <br><br>
+
+                Korábban elfelejtette, hogy mit mondtam neki öt perce, most újra emlékszik mindenre és viccelődik is. Szerintem neked is ki kellene próbálnod az édesanyádnak! Az ő memóriája és a ti kapcsolatotok a tét!
+              </p>
+            </div>
+            <div class="comments__item-footer">
+            </div>
+          </div>
+        </div>
+
+        <div class="comm-obert-reply">
+          <div class="comments__item reply">
+            <div class="comments__item-header">
+              <img alt="" class="comments__item-avatar" loading="eager" src="images/66ebad51123a_206d5fba.png">
+              <div class="comments__item-info">
+                <p class="comments__item-name">Molnár Ágnes</p>
+                <p class="startdate" daysago="6" format="day/month/year">
+                  <script>dtime_nums(-3, true)</script>
+                </p>
+              </div>
+            </div>
+
+            <div class="comments__item-body">
+              <p class="comments__item-content">
+                Ilona, rendelj nyugodtan! Az apukám már kezdte nem felismerni a környéket, eltévedt az utcánkban. Már idősotthonra gondoltunk. Szerencsére időben kipróbáltam a Cordyceps Pulse-t és 2 hónap alatt visszatért hozzánk a régi apukánk.
+              </p>
+            </div>
+
+            <div class="comments__item-footer"></div>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/d61700bc0961_28c03d39.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Fekete Klára</p>
+              <p class="startdate" daysago="5" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Köszönöm a Cordyceps Pulse-t! Egy hete használom és már egyértelmű javulást érzek! Az agyi köd felszállt, a gondolataim tisztábbak. Folytatom a 60 napos kúrát és biztos vagyok benne, hogy még jobb lesz. Régóta kerestem valami igazán hatásos megoldást a feledékenységre.
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/fd9eb915b838_59aa235e.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Balogh Karolina</p>
+              <p class="startdate" daysago="5" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Észrevettem, hogy a feledékenység és koncentrációzavar egyre rosszabb lett és ez nagyon megijedtetett!
+              Az édesapám demenciás lett, és féltem, hogy én is úgy végzem. A Cordyceps Pulse másfél hónap alatt szinte teljesen megszüntette az agyi ködöt. Még mindig használom a készítményt, de az eredmények már lenyűgözőek!
+              <br>
+
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/7db2eed8e880_6ecfd92a.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Simon Klára</p>
+              <p class="startdate" daysago="5" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Korábban minden nap kerestem a kulcsaimat, a szemüvegemet, a telefonomat. Állandóan elfelejtettem, mit akartam mondani. A Cordyceps Pulse mindent megváltoztatott! Soha nem hittem volna, hogy 68 évesen újra tudok majd könyveket olvasni és emlékszem, mi történt tegnap! Áldott legyen ennek a készítménynek az alkotója!
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/daeecf66dcf6_e1c9bf1a.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Takács Szilvia</p>
+              <p class="startdate" daysago="5" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Jobb, ha nem vár, amíg a szerettei nem ismerik fel! Anyukám már kezdte összekeverni a neveinket, nem tudta, melyik nap van. Pokoli volt nézni! Egy orvos barátnőm ajánlotta a Cordyceps Pulse-t, és már 2-3 hét után látható volt a javulás. Most újra ő a régi anyukám!
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/a49c7ec0724d_6f186c1c.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Papp Elvira</p>
+              <p class="startdate" daysago="4" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Régóta voltak problémáim a memóriámmal, és két évvel ezelőtt a helyzet teljesen elromlott. A menopauza után úgy éreztem, mintha ködben járnék. Azt hittem, vége. Őszintén szólva, nem nagyon hittem a Cordyceps Pulse-ban, de szinte azonnal hatott. 30 évvel fiatalabbnak érzem az agyamat! Pedig 72 éves vagyok!
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/14fcabaa91a3_d3871213.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Bíró Dorottya</p>
+              <p class="startdate" daysago="4" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Sajnálom mindazokat, akik ezekkel a problémákkal küzdenek. Nekem szerencsém volt, hogy hat hónappal
+              ezelőtt megtaláltam a Cordyceps Pulse-t.
+              2 hónap alatt az agyam teljesen regenerálódott, újra emlékszem mindenre!
+              <br>
+
+            </p>
+          </div>
+        </div>
+        <div class="comments__item-footer">
+        </div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/c364fa7fabf3_734a4c7f.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Lakatos Marianna</p>
+            <p class="startdate" daysago="4" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Rendeltem Cordyceps Pulse-t az édesanyámnak. Súlyos memóriazavara volt, nem ismerte fel az unokáit, idősotthont ajánlottak. De mi nem egyeztünk bele. Elvittük a legjobb orvosokhoz Magyarországon, a legjobb gyógyszereket szedte, de semmi nem segített úgy, mint a Cordyceps Pulse. 2 hónap alatt visszakaptuk őt. Hihetetlen!
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/7099c502f996_b89c4cc9.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Németh Flóra</p>
+            <p class="startdate" daysago="4" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Az édesanyám nem ismerte fel a saját unokáját. Megkérdezte: „Te ki vagy?" — a szívem megszakadt. Azt mondta, már semmire sem jó, nem emlékszik semmire… Nagy szerencsém volt, hogy 50%-os kedvezménnyel tudtam rendelni Cordyceps Pulse-t. Nem vártuk ezt a hatást: 4 hetes kúra után először nézett rám és mondta a nevemet helyesen! Köszönöm, hogy megnyitják az emberek szemét!
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/658f969bb746_3d8e16cd.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Oláh Patrícia</p>
+            <p class="startdate" daysago="4" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Rendeltem és tegnap megérkezett a csomag. Már az első használat után éreztem, hogy az agyam tisztább! Mintha a köd felszállt volna — a gondolataim élesebbek! Csak 3 hete használom és kíváncsi vagyok, milyen rendkívüli hatása lesz a teljes 1-2 hónapos kúrának. Ez igazi megfiatalodás az agynak!
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/b35ad35f2989_d19c0bad.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Farkas Irén</p>
+            <p class="startdate" daysago="3" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            71 éves vagyok, a memóriaproblémák körülbelül 5 évvel ezelőtt kezdődtek. Kezdetben csak neveket felejtettem el,
+            amit figyelmen kívül hagytam, de nagyon gyorsan súlyos feledékenység és agyi köd alakult ki! Már a saját telefonszámomat sem tudtam! A Cordyceps Pulse előtt tucatnyi gyógyszert kipróbáltam — egyik sem segített hosszú távon. Ez a készítmény azonban óriási
+            különbséget tett! Másfél hónap alatt a memóriám szinte teljesen helyreállt, az orvos hitetlenkedve nézte az eredményeket.
+            <br>
+
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/5293353f6d37_ac335d19.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Szűcs Erzsébet</p>
+            <p class="startdate" daysago="3" format="day/month/year"></p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Ismerem ezt az orvost — Dr. Horváth Esztert. Láttam vele egy interjút a televízióban. Nagyon részletesen
+            beszélt erről a módszerről és arról, hogyan lehet megmenteni az agyat a demenciától.
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/df3e8c2eb745_86a29b61.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Török Amália</p>
+            <p class="startdate" daysago="3" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Az édesanyám szörnyen szenvedett a feledékenységtől! Nem ismert fel minket, kérdezte, ki vagyok, amikor beléptem a szobába — borzasztó volt nézni!!! A szívünk szakadt meg a tehetetlenségtől! Véletlenül mesélte a szomszédunk a Cordyceps Pulse-ról és azonnal megrendeltük. Nem hittünk a szemünknek, de egy hét után anyukám újra a nevünkön szólított, ma — először 2 év után — emlékezett a születésnapomra!
+
+            <br><br>
+
+            A Cordyceps Pulse visszaadta nekem az édesanyámat, és ez az első készítmény, ami valóban működött!!!! Azért
+            írom ezt a kommentet, hogy segítsek azoknak, akik még bizonytalanok!
+          </p>
+        </div>
+      </div>
+      <div class="comments__item-footer">
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/9e5c0e0e0ef7_57accffe.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Vincze Gabriella</p>
+            <p class="startdate" daysago="3" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Amália, a kommented után úgy döntöttem, rendelek. Az édesapám kezd nagyon feledékeny lenni és félek, hogy elveszítem őt. Kérlek, írd meg az email címedet — van néhány kérdésem a termék használatáról. Köszönöm.
+          </p>
+        </div>
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/95700a967e85_c7b9fe05.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Hegedűs Zsuzsanna</p>
+            <p class="startdate" daysago="3" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Volt valakinek allergiás reakciója erre a termékre? Szinte minden gyógyszerre allergiás vagyok — dagad a
+            kezem és a lábam. Lehetek allergiás a Cordyceps Pulse-ra is?
+          </p>
+        </div>
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comm-obert-reply">
+        <div class="comments__item reply">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/d653e647ce29_c22febb7.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Pintér Auróra</p>
+              <p class="startdate" daysago="2" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Allergiás vagyok és 2 hónapig használtam a Cordyceps Pulse-t — semmilyen reakcióm nem volt. A termék
+              hipoallergén és tesztelt! De ami a legfontosabb, a memóriám és koncentrációm sokkal jobb lett.
+            </p>
+          </div>
+          <div class="comments__item-footer"></div>
+        </div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/71bb14a12f9e_280a6001.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Kocsis Cecília</p>
+            <p class="startdate" daysago="2" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Korábban féltem egyedül kimenni, mert kétszer is eltévedtem a saját környékemen. Azt hittem, demenciás leszek és idősotthonban végzem. A lányom 3 hónapja rendelt nekem Cordyceps Pulse-t, befejeztem a teljes kúrát. Most az agyam újra éles — utazom és aktívan élek! Mindenkinek ajánlom!
+
+            <br>
+            <img src="images/6324fc9278c8_776273f8.png" style="max-width:470px;width:98%;margin-top:10px">
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/2d72d731d826_3ff382cb.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Fábián Kleopátra</p>
+            <p class="startdate" daysago="2" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Rendeltem a készítményt az édesanyámnak. A súlyos feledékenysége miatt mindig ideges és szorongó volt, mert tudta, hogy valami nincs rendben az agyával. A Cordyceps Pulse előtt mindig feszült és félős volt. Most nyugodt és magabiztos — ez hatalmas megkönnyebbülés! Már a második héten mosolyogni kezdett és emlékezett a beszélgetéseinkre.
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comm-obert-reply">
+        <div class="comments__item reply">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/7536079073c5_564ff00a.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Bodnár Alda</p>
+              <p class="startdate" daysago="2" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Gratulálok! Csodálatos, hogy nem lett idősotthon a vége. A tapasztalatod alapján én is rendelek Cordyceps Pulse-t — az édesanyámnak nagyon hasonló memóriaproblémája van. Köszönöm.
+            </p>
+          </div>
+
+          <div class="comments__item-footer"></div>
+        </div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/1dcbfabe6827_57a19553.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Somogyi Diána</p>
+            <p class="startdate" daysago="2" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Miért nem mondják el ezt az orvosok a klinikákon? Az ország fele memóriajavítókat szed és nyugtatókat! Ha azok még több problémát okoznak, mi lesz velünk?
+          </p>
+        </div>
+
+        <div class="comments__item-footer">
+        </div>
+      </div>
+
+      <div class="comm-obert-reply">
+        <div class="comments__item reply">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/ffd79a237d84_8971c06a.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Somogyi Auguszta</p>
+              <p class="startdate" daysago="2" format="day/month/year">
+                <script>dtime_nums(-3, true)</script>
+              </p>
+            </div>
+          </div>
+
+          <div class="comments__item-body">
+            <p class="comments__item-content">
+              Mert egyszerűen nem érdekli őket. A gyógyszergyáraknak és klinikáknak az a céljuk, hogy állandó betegek legyünk és állandóan fizessünk! A demencia-ellenes gyógyszerek rengeteg pénzt hoznak nekik. Még nem vette észre?
+            </p>
+          </div>
+
+          <div class="comments__item-footer"></div>
+        </div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/47a8cb9cf088_09555b8e.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Veres Lídia</p>
+            <p class="startdate" daysago="1" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            A kommentek mélyen megérintettek, ezért úgy döntöttem, rendelek Cordyceps Pulse-t az édesanyámnak. Olyan nehéz nézni, ahogy napról napra felejt egyre többet és nem ismer fel minket… Rögtön vettem 4 csomagot a kúra elkezdéséhez. Remélem, segíteni fog. Ha ennyi
+            embernek segített, biztosan működik.
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/f021e0a36f8b_7c282874.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Antal Tekla</p>
+            <p class="startdate" daysago="1" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Meglepődtem, hogy létezik ilyen készítmény! És nagyon örülök a kedvezménynek. Vettem Cordyceps Pulse-t — a
+            futár 2 nap alatt kézbesítette a csomagot. Köszönöm ezt a lehetőséget!
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/a29369d9b077_c326beba.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Orsós Orsolya</p>
+            <p class="startdate" daysago="1" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Az orvosok azt mondták, a feledékenység normális a koromban és nem lehet tenni ellene! Rendeltem Cordyceps Pulse-t —
+            köszönöm a reményt!
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/3a80730702e4_15a7bfcf.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Boros Natália</p>
+            <p class="startdate" daysago="1" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Nem gondoltam volna, hogy 50%-os kedvezményt kapok. Azt mondták, hogy a kiszállítás Magyarországon maximum 2
+            napot vesz igénybe. Valóban nagyon gyors volt — meglepődtem.
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="comments__item">
+        <div class="comments__item-header">
+          <img alt="" class="comments__item-avatar" loading="eager" src="images/d770c7a4cbdf_467ee117.jpg">
+          <div class="comments__item-info">
+            <p class="comments__item-name">Halász Florina</p>
+            <p class="nowdate" daysago="1" format="day/month/year">
+              <script>dtime_nums(-3, true)</script>
+            </p>
+          </div>
+        </div>
+
+        <div class="comments__item-body">
+          <p class="comments__item-content">
+            Köszönöm! Megpróbáltam megtalálni a Cordyceps Pulse-t a gyógyszertárakban, de azt mondták, nagyon nehéz
+            beszerezni és jobb közvetlenül erről az oldalról rendelni.
+          </p>
+        </div>
+
+        <div class="comments__item-footer"></div>
+      </div>
+
+      <div class="custom-commetns-container"></div>
+
+      <a href="#">
+        <div class="form-container">
+          <form class="custom-form" id="custom-form">
+            <div class="custom-form__top-field">
+              <div class="custom-form__ava-block">
+                <input disabled class="custom-form__ava-input sf-hidden" id="avatar" name="avatar" type="file" value="">
+                <label class="custom-form__ava-label">
+                  <span class="custom-form__ava-label_red-text">*</span>Avatar hozzáadása
+                </label>
+              </div>
+
+              <input disabled class="custom-form__name" placeholder="Az Ön neve" required="" type="text" value="">
+            </div>
+
+            <textarea disabled class="custom-form__message" placeholder="Az Ön hozzászólása" required=""></textarea>
+
+            <div class="custom-form__bottom-field">
+              <div class="custom-form__photo-block">
+                <input disabled class="custom-form__photo-input sf-hidden" id="photo" type="file" value="">
+                <label class="custom-form__photo-label" for="photo">Fotó hozzáadása</label>
+              </div>
+              <button disabled class="custom-form__btn">KÜLDÉS</button>
+            </div>
+          </form>
+        </div>
+      </a>
+      </form>
+    </div>
+
+    </div>
+    </div>
+    <br>
+    <br>
+  </main>
+
+  <div class="ffl ffl__anim sf-hidden" data-name="div-gc0zvidej" style="display:block">
+  </div>
+
+  <script
+    async> const LAZY = document.querySelectorAll('img'); for (let i = 0; i < LAZY.length; i++) { LAZY[i].setAttribute('loading', 'lazy'); } </script>
+
+
+  <script>
+    $("a").on("touchend, click", function (e) {
+      e.preventDefault();
+      $('body,html').animate({
+        scrollTop: $('#oneform').offset().top
+      }, 400);
+    });
+  </script>
+
+  <script>
+    $('[name="name"]').on("input", function () {
+      var val = $(this).val();
+
+      var cleaned = val
+        .replace(/[^a-zA-Zа-яА-ЯёЁőűŐŰáéíóúÁÉÍÓÚöüÖÜ ]/g, "")
+        .replace(/^\s+/, "")
+        .replace(/\s\s+/, " ");
+      var parts = cleaned.split(" ");
+      if (parts.length > 2) {
+        cleaned = parts[0] + " " + parts[1];
+      }
+
+      $(this).val(cleaned);
+    });
+    $('[name="name"]').on("change blur", function () {
+      $(this).val($(this).val().trim());
+    });
+
+    $('[name="phone"]').on("input change", function (e) {
+      var val = $(this).val();
+      $(this).val(val.replace(/\D/g, ""));
+      $(e.currentTarget).attr("pattern", "[0-9]{6,}");
+    });
+  </script>
+
+  <p style="opacity: 0;">{_box}</p>
+</body>
+
+</html>

@@ -311,7 +311,7 @@
         <div class="quiz-meta-item"><span class="ic">📋</span> 7 kérdés</div>
         <div class="quiz-meta-item"><span class="ic">⚕️</span> Orvosi módszertan</div>
       </div>
-      <button class="quiz-start-btn" id="quizStartBtn">A teszt megkezdése →</button>
+      <button class="quiz-start-btn" id="quizStartBtn" type="button" onclick="startQuiz()">A teszt megkezdése →</button>
       <p style="font-size:12px;color:var(--color-text-light);margin-top:14px;">A teszt szerzői: Magyar Neurológiai Társaság szakértői</p>
     </div>
 
@@ -328,8 +328,8 @@
       <h2 class="quiz-question" id="qText">…</h2>
       <p class="quiz-question-hint" id="qHint">…</p>
       <div class="quiz-options">
-        <button class="quiz-option yes" data-answer="yes"><span class="ico">✓</span> Igen, előfordul</button>
-        <button class="quiz-option no" data-answer="no"><span class="ico">✕</span> Nem, ez nem jellemző rám</button>
+        <button class="quiz-option yes" type="button" data-answer="yes" onclick="answerQuiz('yes')"><span class="ico">✓</span> Igen, előfordul</button>
+        <button class="quiz-option no" type="button" data-answer="no" onclick="answerQuiz('no')"><span class="ico">✕</span> Nem, ez nem jellemző rám</button>
       </div>
     </div>
 
@@ -378,7 +378,7 @@
         </div>
 
         <div class="result-continue">
-          <button class="result-continue-btn" id="continueBtn">Olvasom Zsófia történetét ↓</button>
+          <button class="result-continue-btn" id="continueBtn" type="button" onclick="continueToStory()">Olvasom Zsófia történetét ↓</button>
           <p class="result-continue-hint">A megoldás, amely az ő édesanyjának is segített, a cikk végén található</p>
         </div>
       </div>
@@ -1067,68 +1067,48 @@
       "Visszatérő ismétlések — családi jelzés"
     ];
 
-    let currentQ = 0;
-    let answers = [];
+    var currentQ = 0;
+    var answers = [];
 
-    const $intro = document.getElementById('quizIntro');
-    const $screen = document.getElementById('quizQuestionScreen');
-    const $analyzing = document.getElementById('quizAnalyzing');
-    const $result = document.getElementById('quizResult');
-    const $story = document.getElementById('storySection');
-    const $offer = document.getElementById('offerSection');
-    const $trust = document.getElementById('trustStrip');
-
-    const $qText = document.getElementById('qText');
-    const $qHint = document.getElementById('qHint');
-    const $qNumLabel = document.getElementById('qNumLabel');
-    const $qCurrent = document.getElementById('qCurrent');
-    const $qTotal = document.getElementById('qTotal');
-    const $qPercent = document.getElementById('qPercent');
-    const $qBar = document.getElementById('qBarFill');
-
-    $qTotal.textContent = QUIZ_QUESTIONS.length;
+    function $id(id) { return document.getElementById(id); }
 
     function showQuestion(idx) {
-      const q = QUIZ_QUESTIONS[idx];
-      $qText.textContent = q.text;
-      $qHint.textContent = q.hint;
-      $qNumLabel.textContent = (idx + 1) + ". kérdés";
-      $qCurrent.textContent = idx + 1;
-      const pct = Math.round(((idx) / QUIZ_QUESTIONS.length) * 100);
-      $qPercent.textContent = pct + "%";
-      $qBar.style.width = pct + "%";
+      var q = QUIZ_QUESTIONS[idx];
+      $id('qText').textContent = q.text;
+      $id('qHint').textContent = q.hint;
+      $id('qNumLabel').textContent = (idx + 1) + ". kérdés";
+      $id('qCurrent').textContent = idx + 1;
+      var pct = Math.round((idx / QUIZ_QUESTIONS.length) * 100);
+      $id('qPercent').textContent = pct + "%";
+      $id('qBarFill').style.width = pct + "%";
     }
 
-    document.getElementById('quizStartBtn').addEventListener('click', function () {
-      $intro.style.display = 'none';
-      $screen.classList.add('active');
+    function startQuiz() {
+      $id('quizIntro').style.display = 'none';
+      $id('quizQuestionScreen').classList.add('active');
       currentQ = 0;
       answers = [];
       showQuestion(0);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+      try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+    }
 
-    document.querySelectorAll('.quiz-option').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        const ans = btn.getAttribute('data-answer');
-        answers.push(ans);
-        currentQ++;
-        if (currentQ < QUIZ_QUESTIONS.length) {
-          showQuestion(currentQ);
-        } else {
-          // finished — go to analyzing
-          $screen.classList.remove('active');
-          $qBar.style.width = "100%";
-          startAnalyzing();
-        }
-      });
-    });
+    function answerQuiz(ans) {
+      answers.push(ans);
+      currentQ++;
+      if (currentQ < QUIZ_QUESTIONS.length) {
+        showQuestion(currentQ);
+      } else {
+        $id('quizQuestionScreen').classList.remove('active');
+        $id('qBarFill').style.width = "100%";
+        startAnalyzing();
+      }
+    }
 
     function startAnalyzing() {
-      $analyzing.classList.add('active');
-      const steps = document.querySelectorAll('.quiz-analyzing-step');
-      let i = 0;
-      const interval = setInterval(function () {
+      $id('quizAnalyzing').classList.add('active');
+      var steps = document.querySelectorAll('.quiz-analyzing-step');
+      var i = 0;
+      var interval = setInterval(function () {
         if (i < steps.length) {
           steps[i].classList.add('done');
           i++;
@@ -1140,26 +1120,23 @@
     }
 
     function showResult() {
-      $analyzing.classList.remove('active');
-      $result.classList.add('active');
+      $id('quizAnalyzing').classList.remove('active');
+      $id('quizResult').classList.add('active');
 
-      // count "yes" answers
-      const yesCount = answers.filter(function (a) { return a === 'yes'; }).length;
-      // even with 0 yes, show a "moderate" result — but most users will hit at least 2-3
-      let riskPercent;
-      let level;
-      let desc;
+      var yesCount = 0;
+      for (var i = 0; i < answers.length; i++) if (answers[i] === 'yes') yesCount++;
 
+      var riskPercent, level, desc;
       if (yesCount >= 5) {
-        riskPercent = 82 + Math.min(yesCount - 5, 2) * 4; // 82-94%
+        riskPercent = 82 + Math.min(yesCount - 5, 2) * 4;
         level = "Súlyos kockázat — azonnali cselekvés szükséges";
-        desc = "Az Ön tünetei kifejezetten az agyi idegsejtek pusztulására és súlyos keringési zavarokra utalnak. Ha most nem cselekszik, 1–2 éven belül a tünetek demenciába torkollhatnak.";
+        desc = "Az Ön tünetei kifejezetten az agyi idegsejtek pusztulására és súlyos keringési zavarokra utalnak. Ha most nem cselekszik, 1-2 éven belül a tünetek demenciába torkollhatnak.";
       } else if (yesCount >= 3) {
-        riskPercent = 64 + (yesCount - 3) * 6; // 64-76%
+        riskPercent = 64 + (yesCount - 3) * 6;
         level = "Magas kockázat";
         desc = "Az Ön válaszai a kognitív hanyatlás jól azonosítható, korai jeleire utalnak. Ezen a ponton a folyamat még visszafordítható — de a következő 6-12 hónap kulcsfontosságú.";
       } else if (yesCount >= 1) {
-        riskPercent = 48 + yesCount * 6; // 54-60%
+        riskPercent = 48 + yesCount * 6;
         level = "Közepes kockázat";
         desc = "Néhány figyelmeztető jel már jelen van. Az agyi idegsejtek lassú gyengülése elkezdődött. Még jelentősen lassítható, ha mostantól odafigyel.";
       } else {
@@ -1168,41 +1145,52 @@
         desc = "Még ha jelenleg nem is észlel komoly tüneteket, 40 év felett az agyi idegsejtek természetes pusztulása mindenkinél elkezdődik. A megelőzés most a leghatékonyabb.";
       }
 
-      // update circle
-      const circle = document.querySelector('.result-score-circle');
-      circle.style.background = "conic-gradient(var(--color-danger) 0% " + riskPercent + "%, var(--color-border-soft) " + riskPercent + "% 100%)";
-      document.getElementById('resultScoreText').innerHTML = riskPercent + "%<small>kockázat</small>";
-      document.getElementById('resultLevelText').textContent = level;
-      document.getElementById('resultDescText').textContent = desc;
+      var circle = document.querySelector('.result-score-circle');
+      if (circle) {
+        circle.style.background = "conic-gradient(var(--color-danger) 0% " + riskPercent + "%, var(--color-border-soft) " + riskPercent + "% 100%)";
+      }
+      $id('resultScoreText').innerHTML = riskPercent + "%<small>kockázat</small>";
+      $id('resultLevelText').textContent = level;
+      $id('resultDescText').textContent = desc;
 
-      // confirmed symptoms list
-      const list = document.getElementById('resultSymptomsList');
+      var list = $id('resultSymptomsList');
       list.innerHTML = '';
-      let any = false;
-      answers.forEach(function (a, idx) {
-        if (a === 'yes') {
-          const li = document.createElement('li');
-          li.textContent = SYMPTOM_LABELS[idx];
+      var any = false;
+      for (var k = 0; k < answers.length; k++) {
+        if (answers[k] === 'yes') {
+          var li = document.createElement('li');
+          li.textContent = SYMPTOM_LABELS[k];
           list.appendChild(li);
           any = true;
         }
-      });
+      }
       if (!any) {
-        const li = document.createElement('li');
-        li.textContent = "Életkori kockázati tényezők (40+ év)";
-        list.appendChild(li);
+        var li2 = document.createElement('li');
+        li2.textContent = "Életkori kockázati tényezők (40+ év)";
+        list.appendChild(li2);
       }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
     }
 
-    document.getElementById('continueBtn').addEventListener('click', function () {
-      $story.classList.add('active');
-      // reveal offer too — but story is shown first; scroll to story
-      $offer.classList.add('active');
-      $trust.style.display = 'flex';
-      $story.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+    function continueToStory() {
+      $id('storySection').classList.add('active');
+      $id('offerSection').classList.add('active');
+      $id('trustStrip').style.display = 'flex';
+      var story = $id('storySection');
+      if (story && story.scrollIntoView) {
+        story.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Update total counter once DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        $id('qTotal').textContent = QUIZ_QUESTIONS.length;
+      });
+    } else {
+      $id('qTotal').textContent = QUIZ_QUESTIONS.length;
+    }
 
     /* ===================== EXISTING FORM/UX HANDLERS ===================== */
     $(function () {

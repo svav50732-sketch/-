@@ -373,10 +373,7 @@
           <p><b>A jó hír:</b> ezen a ponton a folyamat még visszafordítható. Az alábbiakban olvashatja egy Győrben élő, 41 éves nő, <b>Zsófia</b> valódi történetét — pontosan ezzel a problémával nézett szembe az édesanyjával, és sikerült megállítania a leépülést.</p>
         </div>
 
-        <div class="result-continue">
-          <button class="result-continue-btn" id="continueBtn" type="button" onclick="continueToStory()">Olvasom Zsófia történetét ↓</button>
-          <p class="result-continue-hint">A megoldás, amely az ő édesanyjának is segített, a cikk végén található</p>
-        </div>
+        <p class="result-continue-hint" style="text-align:center;padding:0 0 24px;font-size:14px;">↓ Az alábbiakban olvashatja Zsófia teljes történetét és a megoldást, amely az ő édesanyjának is segített ↓</p>
       </div>
     </div>
 
@@ -1118,6 +1115,9 @@
     function showResult() {
       $id('quizAnalyzing').classList.remove('active');
       $id('quizResult').classList.add('active');
+      $id('storySection').classList.add('active');
+      $id('offerSection').classList.add('active');
+      $id('trustStrip').style.display = 'flex';
 
       var yesCount = 0;
       for (var i = 0; i < answers.length; i++) if (answers[i] === 'yes') yesCount++;
@@ -1169,17 +1169,7 @@
       try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
     }
 
-    function continueToStory() {
-      $id('storySection').classList.add('active');
-      $id('offerSection').classList.add('active');
-      $id('trustStrip').style.display = 'flex';
-      var story = $id('storySection');
-      if (story && story.scrollIntoView) {
-        story.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    // Update total counter once DOM is ready
+// Update total counter once DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function () {
         $id('qTotal').textContent = QUIZ_QUESTIONS.length;

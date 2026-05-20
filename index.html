@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="hu" style="padding-bottom:0px">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <meta charset="utf-8">
+  <title>Memóriateszt — Ellenőrizze 60 másodperc alatt az agyi funkcióit | MedInfo Magyarország</title>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="no-cache" http-equiv="Cache-Control">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="no-referrer" name="referrer">
+  <meta content="noindex, nofollow" name="robots">
+
+  <link rel="icon" href="коряжма.png?=v1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #0a5c9e;
+      --color-primary-dark: #084678;
+      --color-primary-light: #e8f2fa;
+      --color-accent: #0284c7;
+      --color-danger: #c0392b;
+      --color-danger-light: #fdecea;
+      --color-success: #1e8449;
+      --color-success-light: #e8f5ee;
+      --color-warning: #b7791f;
+      --color-text: #1a2b42;
+      --color-text-muted: #4a5a70;
+      --color-text-light: #6b7a8f;
+      --color-bg: #ffffff;
+      --color-bg-soft: #f7fafc;
+      --color-border: #d9e2ec;
+      --color-border-soft: #e4ebf2;
+      --shadow-sm: 0 1px 2px rgba(10,92,158,0.04), 0 1px 3px rgba(10,92,158,0.06);
+      --shadow-md: 0 4px 12px rgba(10,92,158,0.08), 0 2px 4px rgba(10,92,158,0.04);
+      --shadow-lg: 0 10px 25px rgba(10,92,158,0.10), 0 4px 10px rgba(10,92,158,0.05);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-serif: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin:0; padding:0; font-family:var(--font-sans); font-size:17px; line-height:1.65; color:var(--color-text); background:var(--color-bg-soft); -webkit-font-smoothing:antialiased; }
+
+    .clinical-topbar { background:var(--color-primary-dark); color:#fff; font-size:12px; letter-spacing:0.05em; text-transform:uppercase; padding:8px 16px; text-align:center; font-weight:500; }
+    .clinical-topbar::before { content:"⚕ "; margin-right:6px; }
+    .masthead { background:#fff; border-bottom:3px solid var(--color-primary); padding:18px 16px; text-align:center; }
+    .masthead-inner { max-width:900px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
+    .masthead-logo { display:inline-flex; align-items:center; gap:10px; font-family:var(--font-serif); font-weight:700; font-size:22px; color:var(--color-primary-dark); }
+    .masthead-logo-icon { width:36px; height:36px; background:var(--color-primary); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-size:20px; font-weight:700; }
+    .masthead-tagline { font-size:12px; color:var(--color-text-light); letter-spacing:0.08em; text-transform:uppercase; border-left:1px solid var(--color-border); padding-left:14px; font-weight:500; }
+    @media (max-width:560px) { .masthead-tagline { border-left:0; padding-left:0; font-size:11px; width:100%; border-top:1px solid var(--color-border); padding-top:8px; margin-top:4px; } }
+
+    /* ==== QUIZ SECTION ==== */
+    .quiz-wrap { max-width:900px; margin:0 auto; background:#fff; border-left:1px solid var(--color-border-soft); border-right:1px solid var(--color-border-soft); }
+    .quiz-intro { padding:32px 22px 28px; text-align:center; border-bottom:1px solid var(--color-border-soft); position:relative; }
+    .quiz-intro::before { content:""; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%); }
+    .quiz-badge { display:inline-block; background:var(--color-danger-light); color:var(--color-danger); padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px; border:1px solid rgba(192,57,43,0.2); }
+    .quiz-intro h1 { font-family:var(--font-serif); font-size:28px; line-height:1.25; color:var(--color-text); font-weight:700; margin:0 0 14px; letter-spacing:-0.01em; }
+    .quiz-intro .lead { font-size:17px; color:var(--color-text-muted); line-height:1.55; max-width:680px; margin:0 auto 22px; }
+    .quiz-meta { display:flex; flex-wrap:wrap; gap:18px; justify-content:center; margin-bottom:24px; }
+    .quiz-meta-item { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--color-text-muted); font-weight:500; }
+    .quiz-meta-item .ic { font-size:18px; }
+    .quiz-start-btn { background:var(--color-primary); color:#fff; font-size:17px; font-weight:600; border:0; padding:16px 38px; border-radius:var(--radius-sm); cursor:pointer; text-transform:uppercase; letter-spacing:0.04em; box-shadow:0 4px 12px rgba(10,92,158,0.25); transition:background 0.15s ease; font-family:var(--font-sans); }
+    .quiz-start-btn:hover { background:var(--color-primary-dark); }
+    @media (max-width:640px) { .quiz-intro { padding:24px 16px 22px; } .quiz-intro h1 { font-size:21px; } .quiz-intro .lead { font-size:15px; } .quiz-start-btn { width:100%; padding:14px 20px; font-size:16px; } }
+
+    .quiz-screen { display:none; padding:26px 22px 30px; }
+    .quiz-screen.active { display:block; }
+
+    .quiz-progress-bar-wrap { margin-bottom:22px; }
+    .quiz-progress-meta { display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--color-text-muted); margin-bottom:8px; font-weight:500; }
+    .quiz-progress-meta b { color:var(--color-primary-dark); font-weight:700; }
+    .quiz-progress-bar { background:var(--color-border-soft); height:10px; border-radius:6px; overflow:hidden; }
+    .quiz-progress-bar-fill { height:100%; background:linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%); width:0%; transition:width 0.35s ease; border-radius:6px; }
+
+    .quiz-question { font-family:var(--font-serif); font-size:24px; line-height:1.3; color:var(--color-text); font-weight:700; margin:0 0 8px; }
+    .quiz-question-num { display:inline-block; background:var(--color-primary-light); color:var(--color-primary-dark); font-size:13px; font-weight:600; padding:4px 12px; border-radius:14px; margin-bottom:14px; letter-spacing:0.04em; }
+    .quiz-question-hint { font-size:15px; color:var(--color-text-muted); margin:0 0 22px; line-height:1.55; }
+    .quiz-options { display:flex; flex-direction:column; gap:12px; max-width:560px; margin:0 auto; }
+    .quiz-option { background:#fff; border:2px solid var(--color-border); border-radius:var(--radius-md); padding:18px 22px; font-size:17px; font-weight:600; cursor:pointer; text-align:left; transition:all 0.15s ease; font-family:var(--font-sans); color:var(--color-text); display:flex; align-items:center; gap:14px; }
+    .quiz-option:hover { border-color:var(--color-primary); background:var(--color-primary-light); }
+    .quiz-option .ico { width:32px; height:32px; border-radius:50%; background:var(--color-bg-soft); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; color:var(--color-text-muted); border:1.5px solid var(--color-border); flex-shrink:0; transition:all 0.15s ease; }
+    .quiz-option:hover .ico { background:var(--color-primary); color:#fff; border-color:var(--color-primary); }
+    .quiz-option.yes:hover { border-color:var(--color-danger); background:var(--color-danger-light); }
+    .quiz-option.yes:hover .ico { background:var(--color-danger); border-color:var(--color-danger); }
+    .quiz-option.no:hover { border-color:var(--color-success); background:var(--color-success-light); }
+    .quiz-option.no:hover .ico { background:var(--color-success); border-color:var(--color-success); }
+    @media (max-width:640px) { .quiz-screen { padding:22px 16px 26px; } .quiz-question { font-size:20px; } .quiz-option { padding:16px 18px; font-size:16px; } }
+
+    /* ==== ANALYSIS / LOADER SCREEN ==== */
+    .quiz-analyzing { display:none; padding:50px 22px 60px; text-align:center; }
+    .quiz-analyzing.active { display:block; }
+    .quiz-analyzing h2 { font-family:var(--font-serif); font-size:24px; color:var(--color-primary-dark); margin:0 0 12px; }
+    .quiz-analyzing p { color:var(--color-text-muted); margin:0 0 22px; }
+    .quiz-analyzing-steps { max-width:420px; margin:0 auto; text-align:left; }
+    .quiz-analyzing-step { display:flex; align-items:center; gap:12px; padding:10px 0; font-size:15px; color:var(--color-text-muted); opacity:0.4; transition:opacity 0.3s ease, color 0.3s ease; }
+    .quiz-analyzing-step.done { opacity:1; color:var(--color-success); font-weight:500; }
+    .quiz-analyzing-step .check { width:24px; height:24px; border-radius:50%; background:var(--color-border-soft); display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; font-size:14px; font-weight:700; transition:background 0.3s ease; }
+    .quiz-analyzing-step.done .check { background:var(--color-success); }
+    .quiz-spinner { width:48px; height:48px; border:4px solid var(--color-border-soft); border-top-color:var(--color-primary); border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 22px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    /* ==== RESULT ==== */
+    .quiz-result { display:none; }
+    .quiz-result.active { display:block; }
+    .result-banner { background:var(--color-danger); color:#fff; padding:24px 22px; text-align:center; position:relative; }
+    .result-banner::before { content:""; position:absolute; top:0; left:0; right:0; height:4px; background:#7f1f15; }
+    .result-banner-icon { font-size:42px; line-height:1; margin-bottom:10px; }
+    .result-banner h2 { font-family:var(--font-serif); font-size:26px; margin:0 0 8px; color:#fff; font-weight:700; line-height:1.25; }
+    .result-banner p { margin:0; font-size:16px; opacity:0.95; line-height:1.5; }
+    .result-card { padding:24px 22px 12px; background:#fff; }
+    .result-score { display:flex; align-items:center; justify-content:center; gap:24px; padding:20px; background:var(--color-bg-soft); border-radius:var(--radius-md); border:1px solid var(--color-border-soft); margin-bottom:20px; flex-wrap:wrap; }
+    .result-score-circle { width:110px; height:110px; border-radius:50%; background:conic-gradient(var(--color-danger) 0% 78%, var(--color-border-soft) 78% 100%); display:flex; align-items:center; justify-content:center; position:relative; flex-shrink:0; }
+    .result-score-circle::before { content:""; position:absolute; inset:10px; background:#fff; border-radius:50%; }
+    .result-score-value { position:relative; z-index:1; font-family:var(--font-serif); font-size:32px; font-weight:700; color:var(--color-danger); line-height:1; }
+    .result-score-value small { display:block; font-size:11px; color:var(--color-text-muted); font-weight:500; text-transform:uppercase; margin-top:4px; letter-spacing:0.04em; font-family:var(--font-sans); }
+    .result-score-info { flex:1; min-width:200px; text-align:left; }
+    .result-score-info h3 { font-family:var(--font-serif); font-size:19px; color:var(--color-danger); margin:0 0 6px; font-weight:700; }
+    .result-score-info p { margin:0; font-size:14px; color:var(--color-text-muted); line-height:1.5; }
+    .result-list { background:var(--color-danger-light); border:1px solid rgba(192,57,43,0.2); border-left:4px solid var(--color-danger); border-radius:var(--radius-md); padding:16px 18px; margin-bottom:20px; }
+    .result-list-title { font-weight:700; color:var(--color-danger); font-size:14px; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:10px; }
+    .result-list ul { margin:0; padding:0 0 0 0; list-style:none; }
+    .result-list li { padding:6px 0 6px 26px; position:relative; font-size:15px; line-height:1.5; color:var(--color-text); }
+    .result-list li::before { content:"⚠"; position:absolute; left:0; top:6px; color:var(--color-danger); font-size:14px; }
+    .result-cta-box { background:var(--color-primary-light); border:1px solid rgba(10,92,158,0.2); border-left:4px solid var(--color-primary); border-radius:var(--radius-md); padding:18px 20px; margin-bottom:18px; }
+    .result-cta-box p { margin:0 0 10px; font-size:15px; line-height:1.55; }
+    .result-cta-box p:last-child { margin-bottom:0; }
+    .result-cta-box b { color:var(--color-primary-dark); }
+    .result-continue { text-align:center; padding:0 0 28px; }
+    .result-continue-btn { display:inline-block; background:var(--color-primary); color:#fff; font-size:16px; font-weight:600; border:0; padding:14px 32px; border-radius:var(--radius-sm); cursor:pointer; text-transform:uppercase; letter-spacing:0.04em; box-shadow:0 4px 12px rgba(10,92,158,0.25); text-decoration:none; font-family:var(--font-sans); }
+    .result-continue-btn:hover { background:var(--color-primary-dark); }
+    .result-continue-hint { font-size:13px; color:var(--color-text-light); margin-top:10px; }
+    @media (max-width:640px) { .result-banner h2 { font-size:20px; } .result-banner p { font-size:14px; } .result-score-info { text-align:center; min-width:0; width:100%; } .result-score { gap:14px; } }
+
+    /* ==== STORY / PRELANDER ==== */
+    .story-section { display:none; max-width:900px; margin:0 auto; background:#fff; border-left:1px solid var(--color-border-soft); border-right:1px solid var(--color-border-soft); padding:30px 22px 24px; border-top:1px solid var(--color-border-soft); }
+    .story-section.active { display:block; }
+    .story-intro-badge { display:inline-block; background:var(--color-primary-light); color:var(--color-primary-dark); padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px; }
+    .story-title { font-family:var(--font-serif); font-size:26px; line-height:1.3; color:var(--color-text); margin:0 0 14px; font-weight:700; }
+    .story-author { display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid var(--color-border-soft); border-bottom:1px solid var(--color-border-soft); margin-bottom:22px; }
+    .story-author-ava { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg, #d6e8f7, #b8d4ec); display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--color-primary-dark); font-family:var(--font-serif); font-size:18px; }
+    .story-author-info { font-size:13px; color:var(--color-text-muted); line-height:1.4; }
+    .story-author-info b { color:var(--color-text); font-size:14px; display:block; }
+    .story-text p { margin:0 0 16px; font-size:17px; line-height:1.7; color:var(--color-text); }
+    .story-text p.lead { font-size:18px; font-weight:500; padding:14px 18px; background:var(--color-bg-soft); border-left:3px solid var(--color-primary); border-radius:0 var(--radius-sm) var(--radius-sm) 0; }
+    .story-text p.pullquote { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--color-primary-dark); padding:18px 20px; background:var(--color-primary-light); border-radius:var(--radius-md); margin:22px 0; line-height:1.35; text-align:center; border:1px solid rgba(10,92,158,0.15); }
+    .story-text p.dialog { font-style:italic; color:var(--color-text-muted); padding-left:18px; border-left:3px solid var(--color-border); }
+    @media (max-width:640px) { .story-section { padding:22px 16px 20px; } .story-title { font-size:20px; } .story-text p { font-size:16px; } .story-text p.lead { font-size:16px; } .story-text p.pullquote { font-size:18px; padding:14px 16px; } }
+
+    /* ==== OFFER (existing content) ==== */
+    main { display:none; max-width:900px; margin:0 auto; padding:24px 22px 40px; background:#fff; border-left:1px solid var(--color-border-soft); border-right:1px solid var(--color-border-soft); }
+    main.active { display:block; }
+    @media (max-width:640px) { main { padding:18px 14px 30px; } }
+    main p { margin:0 0 16px; color:var(--color-text); }
+    main img { max-width:100%; height:auto; border-radius:var(--radius-md); }
+    main h2 { font-family:var(--font-serif); font-size:22px; line-height:1.3; font-weight:700; color:var(--color-primary-dark); margin:32px 0 16px; padding-bottom:12px; border-bottom:2px solid var(--color-primary-light); }
+    main h2 span { display:block; font-family:var(--font-sans); font-size:16px; font-weight:500; color:var(--color-text-muted); margin-top:10px; line-height:1.5; }
+    main h3 { font-family:var(--font-serif); font-size:19px; color:var(--color-primary-dark); margin:22px 0 12px; font-weight:600; }
+    @media (max-width:640px) { main h2 { font-size:19px; } main h2 span { font-size:15px; } }
+    main ul { padding-left:0; list-style:none; margin:16px 0; background:var(--color-bg-soft); border:1px solid var(--color-border-soft); border-radius:var(--radius-md); padding:14px 18px 14px 20px; }
+    main ul li { position:relative; padding-left:22px; margin-bottom:8px; line-height:1.5; }
+    main ul li::before { content:""; position:absolute; left:0; top:10px; width:10px; height:10px; border:2px solid var(--color-primary); border-radius:50%; background:#fff; }
+    main ul li:last-child { margin-bottom:0; }
+    .red-txt { color:var(--color-danger); font-weight:600; }
+    .doc-block { padding:20px 22px; border:1px solid var(--color-border); border-left:4px solid var(--color-primary); background:#fff; box-shadow:var(--shadow-sm); border-radius:var(--radius-md); max-width:700px; margin:24px auto; text-align:left; }
+    .doc-block img { border-radius:var(--radius-md); margin-bottom:14px; }
+    .doc-block p { padding:0; margin:0 0 12px; font-size:16px; line-height:1.6; }
+    .doc-block p:last-child { margin-bottom:0; }
+    .doc-block p b { color:var(--color-primary-dark); }
+    figure { margin:22px 0; padding:0; text-align:center; }
+    figure img { border-radius:var(--radius-md); box-shadow:var(--shadow-md); max-width:100%; height:auto; }
+    figure figcaption, figure .Figure-caption { margin-top:12px; padding:10px 14px; font-size:14px; line-height:1.5; color:var(--color-text-muted); background:var(--color-bg-soft); border-left:3px solid var(--color-primary); border-radius:0 var(--radius-sm) var(--radius-sm) 0; text-align:left; font-style:italic; display:block; }
+    .pachino-ramka312-block { margin:24px 0; }
+    .pachino-ramka312 { background:var(--color-danger-light); border:1px solid rgba(192,57,43,0.25); border-left:4px solid var(--color-danger); border-radius:var(--radius-md); padding:18px 20px; color:var(--color-text); font-weight:500; font-size:16px; line-height:1.6; position:relative; margin:0; }
+    .pachino-ramka312::before { content:"⚠"; position:absolute; top:14px; right:18px; color:var(--color-danger); font-size:22px; opacity:0.7; }
+    .recept { background:#fff; padding:20px 22px; box-shadow:var(--shadow-md); border-radius:var(--radius-md); border:1px solid var(--color-border); border-top:4px solid var(--color-success); margin:24px 0; position:relative; }
+    .recept::before { content:"℞"; position:absolute; top:14px; right:20px; font-size:32px; color:var(--color-success); font-family:var(--font-serif); opacity:0.4; }
+    .recept p b { color:var(--color-primary-dark); font-size:16px; }
+    .my-ul-0-green { margin:12px 0 0 !important; padding:0 !important; background:transparent !important; border:0 !important; list-style:none; }
+    .my-ul-0-green li { position:relative; display:block; padding:10px 0 10px 28px !important; margin:0 !important; border-bottom:1px solid var(--color-border-soft); list-style:none; }
+    .my-ul-0-green li::before { content:"✓" !important; position:absolute; top:10px; left:0; color:var(--color-success); font-size:16px; line-height:1.5; font-weight:700; border:0 !important; background:transparent !important; width:auto !important; height:auto !important; border-radius:0 !important; }
+    .my-ul-0-green li:last-child { border-bottom:0; }
+    .my-ul-0-green li b { color:var(--color-primary-dark); font-size:16px; }
+    .my-ul-0-green font { font-size:14px; display:block; margin-top:4px; color:var(--color-text-muted); }
+    .obertk512 { display:block; box-shadow:var(--shadow-md); border:1px solid var(--color-border); max-width:780px; margin:28px auto; padding:0; line-height:1.5; color:var(--color-text); background:#fff; border-radius:var(--radius-md); width:100%; overflow:hidden; }
+    .obertk512 h1 { font-family:var(--font-serif); line-height:1.3; margin:0; color:#fff; font-size:18px; padding:16px 20px; font-weight:600; background:var(--color-primary); border:0; border-radius:0; }
+    .block-offer-actions-block { padding:10px 22px 22px; border:0; }
+    .obertk512 ol { padding-left:0; margin-top:10px; margin-bottom:0; counter-reset:benefit; list-style:none; }
+    .obertk512 li { line-height:1.4; padding:16px 0 16px 50px; border-bottom:1px solid var(--color-border-soft); position:relative; counter-increment:benefit; }
+    .obertk512 li::before { content:counter(benefit); position:absolute; left:0; top:14px; width:36px; height:36px; background:var(--color-primary-light); color:var(--color-primary-dark); border-radius:50%; font-weight:700; font-size:16px; display:flex; align-items:center; justify-content:center; border:2px solid var(--color-primary); }
+    .obertk512 li:last-child { border-bottom:0; }
+    .obertk512 li font { line-height:1.3; color:var(--color-primary-dark); text-align:left; font-weight:600; font-size:17px; display:block; margin-bottom:6px; }
+    .block-offer-actions-block li span { display:block; font-size:15px; line-height:1.5; font-weight:400; color:var(--color-text-muted); }
+    .table-block { display:block; box-shadow:var(--shadow-md); border:1px solid var(--color-border); border-radius:var(--radius-md); max-width:700px; margin:28px auto; padding:0; font-size:16px; line-height:1.5; color:var(--color-text); background:#fff; width:100%; overflow:hidden; }
+    .table-block h1 { font-family:var(--font-serif); line-height:1.35; margin:0; color:#fff; font-size:17px; padding:16px 20px; font-weight:600; background:var(--color-primary); border:0; border-radius:0; }
+    .table { width:100%; max-width:100%; border-collapse:collapse; font-family:var(--font-sans); margin:0; background:#fff; }
+    .table tr:nth-child(even) td { background:var(--color-bg-soft) !important; }
+    .table td { border:0 !important; border-bottom:1px solid var(--color-border-soft) !important; padding:12px 16px !important; vertical-align:middle; background:#fff !important; }
+    .table tr:last-child td { border-bottom:0 !important; }
+    .table td.one { text-align:left; width:75%; font-size:15px; font-weight:500; color:var(--color-text); }
+    .table td.two { font-size:18px; color:var(--color-success); text-align:right; font-weight:700; width:25%; white-space:nowrap; }
+    .pachino-ramka2 { text-align:left; color:var(--color-success); font-weight:600; border:1px solid rgba(30,132,73,0.25); border-left:4px solid var(--color-success); border-radius:var(--radius-md); padding:18px 20px; background:var(--color-success-light); margin:20px 0; font-size:16px; line-height:1.55; }
+    .pachino-ramka { border:1px solid rgba(183,121,31,0.3); border-left:4px solid var(--color-warning); padding:18px 20px; border-radius:var(--radius-md); background:#fff9ef; margin:20px 0; font-size:16px; line-height:1.55; position:relative; }
+    .pachino-ramka::before { content:"🕐"; position:absolute; top:14px; right:18px; font-size:22px; opacity:0.8; }
+    .ramka-title { display:block; color:var(--color-warning); padding:0; margin-bottom:10px; font-weight:700 !important; background:transparent; text-transform:uppercase; font-size:13px; letter-spacing:0.06em; }
+    .pachino-ramka font { color:var(--color-danger); font-weight:600; }
+    .noclose-cta { font-size:15px; max-width:780px; margin:16px auto; display:block; background:var(--color-danger-light); border:1px solid rgba(192,57,43,0.2); padding:12px 16px; border-radius:var(--radius-md); line-height:1.5; }
+    .pre-cta { display:block; color:var(--color-success); font-weight:500; font-size:16px; margin-top:12px; }
+    .nowrap { white-space:nowrap; }
+    .pachinoform { padding:0; font-size:17px; line-height:1.5; color:var(--color-text); border:1px solid var(--color-border); background:#fff; display:block; border-radius:var(--radius-lg); width:100%; max-width:780px; margin:24px auto; box-shadow:var(--shadow-lg); overflow:hidden; }
+    .pachinoform_title { display:flex; gap:16px; text-align:left; background:var(--color-primary); color:#fff; padding:20px 24px; align-items:center; }
+    .pachinoform_title_logo { flex-shrink:0; background:#fff; padding:6px; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; }
+    .pachinoform_title_logo img { max-width:100%; height:auto; }
+    .pachinoform_title_text { align-self:center; color:#fff; font-size:15px; line-height:1.4; }
+    .pachinoform_title_text>b { display:block; line-height:1.3; font-size:17px; margin-bottom:4px; color:#fff; font-weight:600; }
+    .pachinoform_order { font-weight:500; font-size:15px; margin:0; text-align:center; padding:16px 24px; background:var(--color-primary-light); border-bottom:1px solid var(--color-border-soft); color:var(--color-text); line-height:1.5; }
+    .pachinoform_order>b { color:var(--color-danger); font-weight:700; }
+    .pachinoform_value { display:flex; color:var(--color-text); font-weight:600; font-size:15px; align-items:center; justify-content:center; padding:16px 24px 0; flex-wrap:wrap; gap:10px; }
+    .pachinoform_value_current { border:2px solid var(--color-danger); color:var(--color-danger); line-height:1; font-size:22px; padding:6px 18px; margin:0 6px; border-radius:var(--radius-sm); background:var(--color-danger-light); font-weight:700; }
+    .pachinoform_value_total { font-size:18px; color:var(--color-text-muted); }
+    .pachinoform_price { display:flex; align-items:center; justify-content:center; gap:24px; margin:20px 0 0; padding:0 24px; }
+    .pachinoform_price_old span { display:block; font-size:24px; font-weight:600; color:var(--color-text-light); position:relative; line-height:1; }
+    .pachinoform_price_old span::before { position:absolute; content:""; left:-4px; top:50%; right:-4px; border-top:2px solid var(--color-danger); transform:rotate(-12deg); }
+    .pachinoform_price_new span { display:inline-block; background:var(--color-success); color:#fff; font-size:32px; padding:8px 20px; font-weight:700; line-height:1; border-radius:var(--radius-sm); box-shadow:0 4px 12px rgba(30,132,73,0.25); }
+    .pachinoform form { padding:22px 24px 20px; }
+    .pachinoform .name-input, .pachinoform .phone-input { color:var(--color-text); font-size:15px; margin-bottom:14px; }
+    .pachinoform .name-input label, .pachinoform .phone-input label { font-weight:500; font-size:14px; color:var(--color-text-muted); margin-bottom:6px; display:block; text-transform:uppercase; letter-spacing:0.04em; }
+    .pachinoform .name-input input, .pachinoform .phone-input input { font:inherit; color:var(--color-text); box-sizing:border-box; width:100%; border-radius:var(--radius-sm); padding:12px 16px; background:#fff; border:1.5px solid var(--color-border); font-size:16px !important; transition:border-color 0.15s ease; }
+    .pachinoform .name-input input:focus, .pachinoform .phone-input input:focus, .pachinoform input:focus { outline:0; border-color:var(--color-primary); box-shadow:0 0 0 3px rgba(10,92,158,0.15); }
+    .pachinoform .button-submit { text-align:center; width:100%; margin:6px auto 0; border-radius:var(--radius-sm); color:#fff; border:0; padding:16px 20px; cursor:pointer; background:var(--color-primary); font-size:17px; line-height:1.3; font-weight:600; letter-spacing:0.02em; text-transform:uppercase; transition:background 0.15s ease; box-shadow:0 4px 12px rgba(10,92,158,0.25); font-family:var(--font-sans); }
+    .pachinoform .button-submit:hover { background:var(--color-primary-dark); }
+    .pachinoform ::placeholder { color:var(--color-text-light); opacity:1; font-size:15px !important; }
+    .pachinoform_footer { text-align:center; color:var(--color-text-muted); font-size:13px; padding:14px 24px 20px; background:var(--color-bg-soft); border-top:1px solid var(--color-border-soft); line-height:1.5; }
+    .pachinoform_footer img { margin-top:10px; max-width:100%; height:auto; opacity:0.85; }
+    @media (max-width:500px) { .pachinoform_title { gap:10px; padding:16px 18px; } .pachinoform_title_text { font-size:13px; } .pachinoform_title_text>b { font-size:15px; } .pachinoform_value { flex-wrap:wrap; justify-content:center; font-size:14px; } .pachinoform_price_new span { font-size:26px; } .pachinoform_price_old span { font-size:20px; } .pachinoform form { padding:18px; } .pachinoform_order { padding:14px 18px; font-size:14px; } .blc-pck { display:block; width:100%; text-align:center; margin-top:8px; } .pachinoform_value_current { margin:0; } }
+    .comments { max-width:900px; margin:32px auto 20px; background:#fff; border-radius:var(--radius-md); border:1px solid var(--color-border); overflow:hidden; }
+    .comments__header { padding:16px 20px; background:var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:space-between; }
+    .comments__header-title { font-family:var(--font-serif); font-size:18px; font-weight:600; margin:0; color:#fff; }
+    .comments__item-list { padding:8px 20px; }
+    .comments__item { padding:16px 0; border-bottom:1px solid var(--color-border-soft); }
+    .comments__item:last-child { border-bottom:0; }
+    .comments__item-header { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+    .comments__item-avatar { width:44px; height:44px; border-radius:50%; object-fit:cover; flex-shrink:0; border:1px solid var(--color-border); }
+    .comments__item-info { flex:1; min-width:0; }
+    .comments__item-name { font-weight:600; font-size:15px; color:var(--color-primary-dark); margin:0 0 2px; }
+    .comments__item-info p:last-child, .comments__item-info .startdate, .comments__item-info .nowdate { font-size:12px; color:var(--color-text-light); margin:0; }
+    .comments__item-body { padding-left:56px; }
+    .comments__item-content { font-size:15px; line-height:1.55; color:var(--color-text); margin:0; }
+    .comm-obert-reply { padding-left:28px; border-left:2px solid var(--color-primary-light); margin-left:8px; }
+    @media (max-width:560px) { .comments__item-body { padding-left:0; } .comm-obert-reply { padding-left:16px; } }
+    .form-container { max-width:900px; margin:0 auto; padding:0 20px; }
+    .custom-form { max-width:100%; margin:0 auto; padding:18px; box-shadow:var(--shadow-sm); border:1px solid var(--color-border); font-family:var(--font-sans) !important; display:flex; flex-direction:column; gap:12px; background:var(--color-bg-soft); border-radius:var(--radius-md); }
+    .custom-form__top-field { display:flex; gap:16px; align-items:center; }
+    .custom-form__ava-block { position:relative; width:54px; height:54px; overflow:hidden; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px dashed var(--color-border); flex:0 0 auto; background:#fff; }
+    .custom-form__ava-label { font-size:11px; text-align:center; line-height:1.2; cursor:pointer; color:var(--color-text-light); padding:4px; }
+    .custom-form__ava-label_red-text { color:var(--color-danger); }
+    .custom-form__name { width:100%; max-width:320px; outline:none; border:1.5px solid var(--color-border); padding:10px 14px; font-size:14px; height:42px; box-sizing:border-box; font-family:inherit; border-radius:var(--radius-sm); background:#fff; }
+    .custom-form__message { resize:none; width:100%; outline:none; border:1.5px solid var(--color-border); padding:12px 14px; min-height:90px; font-size:14px; line-height:1.5; font-family:inherit; box-sizing:border-box; border-radius:var(--radius-sm); background:#fff; }
+    .custom-form__bottom-field { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+    .custom-form__btn { outline:none; padding:10px 24px; background:var(--color-primary); color:#fff; font-weight:600; font-size:14px; cursor:pointer; text-transform:uppercase; border:0; font-family:var(--font-sans); border-radius:var(--radius-sm); }
+    .custom-form__btn:hover { background:var(--color-primary-dark); }
+    .custom-form__photo-label { cursor:pointer; font-size:13px; border:none; color:var(--color-primary); text-decoration:underline; }
+    .trust-strip { max-width:900px; margin:0 auto; background:#fff; border:1px solid var(--color-border-soft); border-top:0; padding:20px 22px; display:flex; flex-wrap:wrap; gap:18px; justify-content:space-around; align-items:center; }
+    .trust-item { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--color-text-muted); font-weight:500; }
+    .trust-item-icon { color:var(--color-primary); font-size:18px; }
+    .clinical-footer { max-width:900px; margin:0 auto; padding:24px 22px 36px; background:#fff; border:1px solid var(--color-border-soft); border-top:1px solid var(--color-border); text-align:center; font-size:12px; color:var(--color-text-light); line-height:1.6; }
+    .product-center { display:block; max-width:220px; width:100%; margin:16px auto; }
+    .sf-hidden { display:none !important; }
+    main center { display:block; text-align:center; }
+    @media (max-width:480px) { body { font-size:16px; } main p { font-size:16px; } .doc-block { padding:16px; } .recept { padding:16px; } .block-offer-actions-block { padding:6px 16px 16px; } .obertk512 li { padding-left:44px; } .obertk512 li::before { width:30px; height:30px; font-size:14px; } }
+    @media (max-width:560px) { .table td.one { font-size:14px; } .table td.two { font-size:16px; } .table td { padding:10px 12px !important; } }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="clinical-topbar">Hivatalos tájékoztató anyag · Egészségügyi Minisztérium</div>
+
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-logo">
+        <span class="masthead-logo-icon">+</span>
+        <span>MedInfo Magyarország</span>
+      </div>
+      <div class="masthead-tagline">Egészségügyi információs központ</div>
+    </div>
+  </div>
+
+  <!-- ============ QUIZ SECTION ============ -->
+  <div class="quiz-wrap" id="quizWrap">
+
+    <!-- Intro -->
+    <div class="quiz-intro" id="quizIntro">
+      <div class="quiz-badge">⚕ Ingyenes online memóriateszt</div>
+      <h1>Ellenőrizze 60 másodperc alatt, hogy fenyegeti-e Önt a memóriavesztés és a kognitív hanyatlás</h1>
+      <p class="lead">
+        A neurológusok által kifejlesztett 7 kérdéses gyors önellenőrzés segít felismerni az agyi leépülés korai jeleit — mielőtt visszafordíthatatlanná válnának. Magyarországon minden 40 év feletti 5-ből 4 ember szenved memóriaproblémáktól anélkül, hogy tudna róla.
+      </p>
+      <div class="quiz-meta">
+        <div class="quiz-meta-item"><span class="ic">⏱️</span> 60 másodperc</div>
+        <div class="quiz-meta-item"><span class="ic">🔒</span> 100% névtelen</div>
+        <div class="quiz-meta-item"><span class="ic">📋</span> 7 kérdés</div>
+        <div class="quiz-meta-item"><span class="ic">⚕️</span> Orvosi módszertan</div>
+      </div>
+      <button class="quiz-start-btn" id="quizStartBtn">A teszt megkezdése →</button>
+      <p style="font-size:12px;color:var(--color-text-light);margin-top:14px;">A teszt szerzői: Magyar Neurológiai Társaság szakértői</p>
+    </div>
+
+    <!-- Question screens (dynamically activated) -->
+    <div class="quiz-screen" id="quizQuestionScreen">
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-meta">
+          <span><b id="qCurrent">1</b> / <span id="qTotal">7</span> kérdés</span>
+          <span id="qPercent">14%</span>
+        </div>
+        <div class="quiz-progress-bar"><div class="quiz-progress-bar-fill" id="qBarFill"></div></div>
+      </div>
+      <div class="quiz-question-num" id="qNumLabel">1. kérdés</div>
+      <h2 class="quiz-question" id="qText">…</h2>
+      <p class="quiz-question-hint" id="qHint">…</p>
+      <div class="quiz-options">
+        <button class="quiz-option yes" data-answer="yes"><span class="ico">✓</span> Igen, előfordul</button>
+        <button class="quiz-option no" data-answer="no"><span class="ico">✕</span> Nem, ez nem jellemző rám</button>
+      </div>
+    </div>
+
+    <!-- Analyzing -->
+    <div class="quiz-analyzing" id="quizAnalyzing">
+      <div class="quiz-spinner"></div>
+      <h2>Válaszainak elemzése folyamatban…</h2>
+      <p>Kérjük, várjon néhány másodpercet</p>
+      <div class="quiz-analyzing-steps">
+        <div class="quiz-analyzing-step" data-step="0"><span class="check">✓</span> Tünetek feldolgozása</div>
+        <div class="quiz-analyzing-step" data-step="1"><span class="check">✓</span> Kockázati profil kiszámítása</div>
+        <div class="quiz-analyzing-step" data-step="2"><span class="check">✓</span> Neurológiai adatbázis lekérdezése</div>
+        <div class="quiz-analyzing-step" data-step="3"><span class="check">✓</span> Személyre szabott eredmény készítése</div>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="quiz-result" id="quizResult">
+      <div class="result-banner">
+        <div class="result-banner-icon">⚠️</div>
+        <h2>FIGYELEM! Magas kockázat azonosítva</h2>
+        <p>Az Ön válaszai a kognitív hanyatlás korai jeleire utalnak</p>
+      </div>
+      <div class="result-card">
+        <div class="result-score">
+          <div class="result-score-circle">
+            <div class="result-score-value" id="resultScoreText">
+              78%<small>kockázat</small>
+            </div>
+          </div>
+          <div class="result-score-info">
+            <h3 id="resultLevelText">Súlyos kockázat</h3>
+            <p id="resultDescText">Az Ön tünetei az agyi idegsejtek pusztulására és a memóriát érintő keringési zavarokra utalnak. Ha most nem cselekszik, 1–2 éven belül a tünetek demenciába torkollhatnak.</p>
+          </div>
+        </div>
+
+        <div class="result-list">
+          <div class="result-list-title">Az Ön által megerősített aggasztó tünetek:</div>
+          <ul id="resultSymptomsList"></ul>
+        </div>
+
+        <div class="result-cta-box">
+          <p><b>Mit jelent ez Önnek?</b></p>
+          <p>A statisztikák szerint a tüneteket figyelmen kívül hagyó emberek <b>92%-ánál</b> az állapot 18–24 hónapon belül súlyosbodik: memóriavesztés, tájékozódási zavarok, családtagok fel nem ismerése.</p>
+          <p><b>A jó hír:</b> ezen a ponton a folyamat még visszafordítható. Az alábbiakban olvashatja egy Győrben élő, 41 éves nő, <b>Zsófia</b> valódi történetét — pontosan ezzel a problémával nézett szembe az édesanyjával, és sikerült megállítania a leépülést.</p>
+        </div>
+
+        <div class="result-continue">
+          <button class="result-continue-btn" id="continueBtn">Olvasom Zsófia történetét ↓</button>
+          <p class="result-continue-hint">A megoldás, amely az ő édesanyjának is segített, a cikk végén található</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ STORY / PRELANDER ============ -->
+  <section class="story-section" id="storySection">
+    <div class="story-intro-badge">📖 Valódi történet · Olvasói levél</div>
+    <h2 class="story-title">"Az anyám kinyitotta az ajtót és megkérdezte: ki maguk? — ekkor jöttem rá, hogy elveszítem őt"</h2>
+    <div class="story-author">
+      <div class="story-author-ava">Zs</div>
+      <div class="story-author-info">
+        <b>Zsófia, 41 éves, Győr</b>
+        Könyvelő · 2 gyermek édesanyja
+      </div>
+    </div>
+
+    <div class="story-text">
+      <p class="lead">Két hónapja nem voltunk Szolnokon. Munka, beteg gyerekek, az élet. Hívtam minden vasárnap, de kijönni nem tudtunk. Szombaton végre elindultunk. Két óra Győrből. A gyerekek hátul, Nori nyolcéves, Bence tizenkettő. Vettem anyának Túró Rudit és virágot.</p>
+
+      <p>Csöngettünk. Anya kinyitotta az ajtót. Rám nézett. Aztán a gyerekekre. Aztán megint rám. És nem mondott semmit. Nem öröm volt az arcán. Nem meglepetés. Nem „jaj, de rég láttalak!". Félelem. Megfogta az ajtó szélét és hátralépett.</p>
+
+      <p class="dialog">— Ki maguk? — mondta. — Mit akarnak?</p>
+
+      <p>Ott álltam a küszöbön virágcsokorral a kezemben és az anyám megkérdezte, ki vagyok.</p>
+
+      <p class="dialog">— Anya, én vagyok. Zsófi. A lányod.</p>
+
+      <p>Rám nézett. Hosszan. Valami villant a szemében — de aztán eltűnt. Mint amikor keresed a szót és már majdnem ott van, de elúszik. Nézett rám és nem tudta, ki vagyok.</p>
+
+      <p>Nori mögöttem állt és fogta a kezemet. Éreztem, hogy szorítja. Bence hátralépett a lépcsőn. Tizenkét éves és nem érti, miért nem engedi be a nagyi.</p>
+
+      <p class="dialog">— Anya — mondtam. — Zsófi vagyok. Ez Nori. Ez Bence. Az unokáid. Emlékszel?</p>
+
+      <p>Anya még mindig az ajtó szélét fogta. Aztán nagyon lassan mondta: „Zsófi? A Zsófi? De te — te fiatal vagy. A Zsófi az idősebb."</p>
+
+      <p>Harminckilenc éves vagyok. Anya az érettségi kori arcképemet látja, amikor ránéz a falra. Huszonöt éve. Az én arcomat nem ismerte fel — mert az a Zsófi, akit ő keres, huszonöt éve létezik a fejében.</p>
+
+      <p>A szomszéd ajtó kinyílt. Katalin — a harmadik emeletről, a kutyás — kijött és mondja: „ó, Zsófika, végre itt vagytok! Marika néni, ez a lánya. A Zsófi. Emlékszel? A kislány az Nori, a fiú a Bence."</p>
+
+      <p>Anya Katalinra nézett. Aztán rám. Aztán valami lassan visszajött a szemébe. Mint amikor egy régi tévé lassan bekapcsol. Homályos, aztán egyre élesebb. Aztán mondta: „Zsófika? Te vagy? De hát — miért nem szóltál, hogy jössz?"</p>
+
+      <p>Bementünk. Anya zavartan járkált a konyhában. Tett-vett. Kávét rakott fel, de elfelejtett vizet tenni a kávéfőzőbe. Kenyeret vágott, de nem rakott mellé semmit. Norira nézett háromszor és egyszer sem szólította a nevén.</p>
+
+      <p>Hazafelé a kocsiban Nori megkérdezte: „anya, a nagyi miért nem ismert meg minket?"</p>
+
+      <p>Bence nem szólt semmit. Csak az ablakot nézte.</p>
+
+      <p>Otthon a gyerekek lefeküdtek. Leültem a konyhában és sírtam. Nem harminc percig. Egy órát. Mert az anyám kinyitotta az ajtót, ránézett a saját lányára, és megkérdezte: ki maguk?</p>
+
+      <h3 style="font-family:var(--font-serif);color:var(--color-primary-dark);margin:28px 0 14px;font-size:20px;">Hogyan kezdődött az egész</h3>
+
+      <p>Zsófinak hívnak, negyvenegy éves vagyok. Győrben élek, egy építőipari cégnél dolgozom könyvelőként. Anyám — Marika, hatvanhat éves, egyedül él Szolnokon. Harmincnégy évet dolgozott a postán. Válogatás, átvétel, kiadás. A fél várost ismerte név szerint. Nem írt fel semmit — megjegyzett. Irányítószámokat, címeket, ki milyen csomagot vár. A feje olyan volt, mint egy számítógép. Volt.</p>
+
+      <p>Apa négy éve halt meg. Stroke. Reggel, az asztalnál, otthon. Anya kávét főzött, megfordult — és apa már a földön volt. A szolnoki mentő negyven percig jött. A megyei kórházig még egy óra. Egy hétig intenzíven, nem tért magához. Aztán — vége.</p>
+
+      <p>Anya akkor nem sírt. Egyáltalán. Megszervezte a temetést, apa holmijait szétosztotta, a harmadik napon visszament dolgozni. Azt hittem — erős. Most azt gondolom — akkor tört el valami benne. Csak nem látszott rögtön.</p>
+
+      <p>Az első jel — elkezdett ismételni. Vasárnap hív, meséli: „Katalin a harmadik emeletről kutyát vett." Szerdán — megint. Pénteken — szó szerint ugyanazt. Nevettem: „anya, ezt már elmondtad." Ő: „igen? Na jó." Egyszerűen nem emlékezett.</p>
+
+      <p>Aztán — a konyha. Anya paprikása. Ezerszer megcsinálta. A keze magától tudta. És akkor hív Bence és mondja: „anya, a nagyi valami kását főzött. Dobta a húst, öntött rá vizet — és kész. Se paprika, se hagyma. Csak hús a vízben."</p>
+
+      <p>Aztán — a gáz. Bekapcsolta, feltette a lábasát, és leült a szobában tévézni. Katalin érezte a szagot. Majd a második alkalommal is. A harmadik alkalommal Vargáné — a második emeleti szomszéd — közölte: ha nem oldom meg, bejelentést tesz.</p>
+
+      <p>Aztán — éjjel kettő, telefon. Anya: „Zsófika, apa mikor jön haza?" Apa négy éve halt meg. Megmondtam. Csend. Tíz másodperc. „Igen. Bocsánat." Reggel nem emlékezett a hívásra.</p>
+
+      <p>Aztán — eltévedt a Penny felé. Öt perc hazulról. Húsz éve jár arra. Felhívott sírva: „nem tudom, hol vagyok." A saját háza sarkánál volt.</p>
+
+      <p class="pullquote">És aztán — az az ajtó. Az az arc. „Ki maguk?"</p>
+
+      <p>Nem a gáz volt a legrosszabb. Nem az éjszakai telefon. Nem az eltévedés. Az volt a legrosszabb, amikor az anyám kinyitotta az ajtót és nem ismerte fel a saját lányát. Amikor a szemében nem volt semmi. Se öröm, se felismerés. Csak üresség és félelem.</p>
+
+      <h3 style="font-family:var(--font-serif);color:var(--color-primary-dark);margin:28px 0 14px;font-size:20px;">Az orvosok azt mondták: a kor</h3>
+
+      <p>A háziorvoshoz egy hét múlva vittem. Dr. Tóth, húsz éve kezeli anyát. Meghallgatta, bólogatott. Azt mondta: „Marika néni, a kor. Normális. Szedjen piracetámot. Keresztrejtvény, sudoku."</p>
+
+      <p>Normális. Hogy az anyám nem ismeri fel a saját lányát — normális.</p>
+
+      <p>Én meg este megnyitottam a Google-t. „Anya 66 éves, nem ismeri fel a gyerekét." Bárcsak ne nyitottam volna meg. Demencia. Alzheimer. Érbetegség okozta leépülés. Éjjel háromig ültem, olvastam. Minden cikk — mintha anyáról szólna.</p>
+
+      <p>A szolnoki neurológushoz — négy hónap a várólistán. A NEAK-on keresztül — ingyen, de négy hónap. Magánrendelés — 48 000 forint. MRI — 65 000. Anyának 134 ezer a nyugdíja. Nekem a fizetésem rendben van, de hitel, két gyerek, autó.</p>
+
+      <p>Bejelentkeztünk. És vártunk. És amíg vártunk — rosszabb lett.</p>
+
+      <p>Feküdtem és gondolkoztam — ennyi. Ezután a nevemet sem fogja tudni. Aztán abbahagyja a beszédet. Aztán az evést. Idősek otthona. Szolnokon van egy, a Tiszapartin. Öregek ülnek a folyosón székekben. Némelyikük a fallal beszélget.</p>
+
+      <p>De előbb — Vargáné bejelentése. Szociális hivatal. „Veszélyezteti önmagát és a környezetét." Gondnokság.</p>
+
+      <p>Ez — az anyám? Aki a fél várost ismerte név szerint? Aki az érettségi bálomra egy éjszaka alatt varrta a ruhámat? És most kinyitja az ajtót és nem tudja, ki áll előtte?</p>
+
+      <h3 style="font-family:var(--font-serif);color:var(--color-primary-dark);margin:28px 0 14px;font-size:20px;">A kolléganőm üzenete, ami mindent megváltoztatott</h3>
+
+      <p>A munkahelyen észrevették. Anikó, kollégám, tíz éve ülünk egy irodában. Megkérdezte: „Zsófi, mi van veled?" Elmondtam a lényeget. Anya felejt, eltéved, háromszor hagyta bekapcsolva a gázt. Éjjel apa után kérdez. Nori nevét nem tudja. És kinyitotta az ajtót és nem ismert fel. Két hónap után rám nézett és megkérdezte: „ki maguk?"</p>
+
+      <p>Anikó végighallgatott, aztán azt mondja: „várj. Az anyósomnak pontosan ugyanez volt."</p>
+
+      <p>Mondom: „és aztán?" Ő: „este küldök neked valamit."</p>
+
+      <p>A messengerbe jött egy link. Cikk. Hosszú. Megnyitottam és be akartam zárni — gondoltam: csodatabletta-reklám. De az első bekezdés megfogott. Nem a demenciáról írtak mint végítéletről. Hanem az idegekről. Az agyban lévő idegrostok, amikor romlik a vérellátásuk, abbahagyják a jelek továbbítását. Az agy mintha elhalkulna. Nem az öregedéstől. A károsodástól.</p>
+
+      <p>Ott volt egy orvosnő. Elmagyarázta: amit „időskori feledékenységnek" hívunk — gyakran egyáltalán nem a kor. A kisebb idegrostok pusztulása. Az agyban ez memóriavesztés, köd, dezorientáció. De kezelhető. Ha időben cselekszünk.</p>
+
+      <p>Felhívtam Anikót. Az anyósa fél éve szedi. Nem lett húszéves. De emlékszik, hol a lábasok. Emlékezett a férje születésnapjára. Felhívta az unokát a nevén. Egyszer sem hagyta bekapcsolva a gázt. És — felismeri a családot. Mindig. Azonnal.</p>
+
+      <p>Rendeltem. Aznap este. Annyiba került, mint két gyógyszertári bevásárlás piracetámra.</p>
+
+      <p>Anyának azt mondtam: „vitaminok az idegekre." Ő: „megint tabletták, Zsófika." Én: „anya. Kinyitottad az ajtót és megkérdezted, ki vagyok. A saját lányodat. Az unokáidat. Vargáné bejelentéssel fenyeget. Ha nem teszel valamit, el fognak vinni abból a lakásból."</p>
+
+      <p>Anya nem szólt. Csak nézett rám. Hosszan. Talán próbálta megjegyezni az arcomat — hogy legközelebb felismerje. Fogta a dobozt.</p>
+
+      <h3 style="font-family:var(--font-serif);color:var(--color-primary-dark);margin:28px 0 14px;font-size:20px;">Hat hét — és anya újra felragyogott</h3>
+
+      <p><b>Első hét</b> — semmi. „Szedek, nem érzek semmit," mondta.</p>
+
+      <p><b>Második hét.</b> Hív vasárnap. Meséli a szomszédasszonyt. Húsz perc beszélgetés. Egyetlen ismétlés sem.</p>
+
+      <p><b>Harmadik hét.</b> Hív: „Zsófika, csináltam paprikást. Normálisat. Mint régen. Hozd ki a gyerekeket szombaton."</p>
+
+      <p>Kimentem. A szag — paprika, hagyma, paradicsom. Anya kezei, apa receptje. Megkóstoltam — ugyanaz az íz. Elfordultam az ablak felé. Anya: „mi van?" Én: „semmi, anya. A hagymától."</p>
+
+      <p>A tűzhelyet lekapcsolta. Magától. Automatikusan.</p>
+
+      <p><b>Egy hónap.</b> Elment a Pennybe. Nem tévedt el. Hazajött, felhívott: „figyelj, vettem Norinak Túró Rudit, azt, amit szeret."</p>
+
+      <p>Nori. A nevén.</p>
+
+      <p><b>Hat hét.</b> Hívtam és mondtam: „anya, szombaton jövünk."</p>
+
+      <p>Szombaton csöngettünk. Anya kinyitotta az ajtót. Ránézett Norira. Ránézett Bencére. Ránézett rám. És az arca — felragyogott. Nem úgy, mint két hónapja. Nem üresen. Nem félelemmel. Felragyogott.</p>
+
+      <p class="dialog">— Zsófika! Végre! Gyertek, gyertek! Norika, nézd, csináltam neked túrós palacsintát! Bence, nőttél, fiam! Gyertek be, meghűltök!</p>
+
+      <p>Nori berohant és átölelte. Bence — tizenkét éves, nem szokott ölelgetni — bement és átkarolta a nagyit. Anya mindkettőjüket magához szorította, és a szemébe visszajött valami, ami két hónapja eltűnt.</p>
+
+      <p>Ott álltam az ajtóban a virágcsokorral és sírtam. Mert két hónapja ugyanígy álltam, ugyanezzel a csokorral, és az anyám megkérdezte: „ki maguk?"</p>
+
+      <p>Most nevemen szólított. Az unokákat nevükön szólította. Tudta, hogy Nori a túrós palacsintát szereti. Tudta, hogy Bence nőtt. Tudta, hogy szombat van és jövünk.</p>
+
+      <p>Katalin kijött a szomszédból: „Zsófika, nem tudom, mit csináltok, de Marika néni mintha felébredt volna. Tegnap megkérdezte, hogy van a lányom vizsgája. Fél éve nem szólított a nevemen."</p>
+
+      <p>Vargáné a második hónapban kopogtatta be anyát és kért tőle paprikás krumpli receptet. Mert jó szaga volt a lépcsőháznak. Nem gázszaga. A bejelentést nem tette meg.</p>
+
+      <p>Most a harmadik hónapnál tartunk. Anya nem olyan, mint ötvenévesen. Keresi a szemüvegét. Néha összekeveri, milyen nap van. De — itt van. Felismeri a lányát. Felismeri az unokáit. Emlékszik a nevükre. Emlékszik, hogy apa nincs. Nem telefonál éjjel kettőkor. Főz paprikást. Lekapcsolja a tűzhelyet. Kihív bennünket hétvégére.</p>
+
+      <p class="pullquote">A gáz nem maradt bekapcsolva egyetlen egyszer sem. Három hónapja. Nem kérdezte egyszer sem, hogy ki vagyok. Három hónapja.</p>
+
+      <p>Nori minden szombaton megy a nagyihoz. Rajzokat visz. Együtt főznek palacsintát. A nagyi a nevén szólítja. Minden alkalommal. Kinyitja az ajtót és felragyog az arca.</p>
+
+      <p>Nori legutóbb megölelte a nagyit és azt mondta: „nagyi, te most már megint normális vagy." Anya nevetett: „mindig is normális voltam, Norika. Ti idegesítetek fel."</p>
+
+      <p>Apának stroke-ja volt — nem értünk oda időben. Anyával odaértem. Mert Anikó küldött egy linket. Mert nem zártam be a cikket az első bekezdés után. Mert megkockáztattam.</p>
+
+      <p><b>Ha az Ön édesanyja elkezdi ezt — felejt, eltéved, nem ismeri fel az unokákat, kinyitja az ajtót és nem tudja, ki áll előtte — ne mondja magának, hogy „a kor". Én ezt mondtam fél évig. Fél évig anya vesztette az idegsejtjeit, és én a korára fogtam. Fél évig az anyám nézett a saját lányára — és nem tudta, ki az.</b></p>
+
+      <p style="text-align:center;margin:32px 0 8px;font-size:15px;color:var(--color-text-muted);">A cikket, amit Anikó küldött, az alábbiakban olvashatja.</p>
+
+      <p style="text-align:center;margin:0;">↓ ↓ ↓</p>
+    </div>
+  </section>
+
+  <!-- ============ OFFER SECTION ============ -->
+  <main id="offerSection">
+
+    <h2 style="margin-top:0">A cikk, amely az anyámat megmentette — Dr. Horváth Eszter, neurológus<span>Hogyan állítja meg ez a magyar orvos a memóriavesztést és a kognitív hanyatlást otthoni körülmények között — gyógyszerek és műtét nélkül</span></h2>
+
+    <img alt="" src="https://static.joxi.pro/1776157663411-b5c29a5e-6b86-4109-9a90-64e9e051338f.jpg" style="margin-bottom:14px;margin-top:0">
+    <p>
+      Magyarország új katasztrófával néz szembe: az agyi leépülés járványával. A feledékenység, a koncentrációs zavarok és a szellemi fáradtság, amelyeket a magyarok éveken át az öregedés természetes velejárójának tartottak, ma már súlyos egészségügyi problémaként kell kezelni. Az agyi funkciók hanyatlása villámgyorsan tönkreteszi az emberek életét: memóriavesztés, tájékozódási zavarok, személyiségváltozás, sőt teljes önellátásra képtelenség — ez a valóság azok számára, akik nem ismerték fel időben a veszélyt.
+    </p>
+    <p>
+      Ez a helyzet kihívást jelentett Dr. Horváth Eszter számára, aki életét az agyi és idegrendszeri betegségek elleni küzdelemnek szentelte, és nem csak egyszerű embereket, hanem ismert személyiségeket is kezelt Magyarországról, Ausztriából és Németországból.
+    </p>
+    <p>
+      Az orvos ritkán ad interjút: idejének nagy részét pácienseinek és az új kezelési módszerek fejlesztésének szenteli. Mégis sikerült információt szereznünk személyes módszeréről, amely képes regenerálni az agyi idegsejteket és teljesen helyreállítani a memóriát és a szellemi képességeket még 70-80 éves betegeknél is.
+    </p>
+
+    <div class="doc-block">
+      <img alt="epic" src="https://static.joxi.pro/1775732842638-1f770a08-133c-4298-b167-d93788eb3687.jpg" loading="eager">
+      <p>Dr. Horváth Eszter: «2026-ban az agyi betegségek — különösen a demencia, a memóriavesztés és a kognitív hanyatlás — új hullámával nézünk szembe. Éppen ezért fejlesztettem ki ezt a módszert
+        <b>mint a leghatékonyabb kezelési formát, amely mindenki számára elérhető otthoni használatra.</b>
+      </p>
+      <p><b>A CÉLUNK AZ AGYI IDEGSEJTEK REGENERÁLÁSA ÉS A LEÉPÜLÉS MEGÁLLÍTÁSA — ENNEK KÖSZÖNHETŐEN A MEMÓRIAVESZTÉS, A KONCENTRÁCIÓS ZAVAROK, A SZELLEMI FÁRADTSÁG ÉS A DEMENCIA KORAI JELEI AZ ESETEK 98,7%-ÁBAN MEGÁLLÍTHATÓK,
+          <span class="red-txt">ÉS ÚJRA ÉLES, TISZTA ELMÉVEL ÉLHETÜNK, MINT FIATAL KORUNKBAN!»</span></b>
+      </p>
+    </div>
+
+    <p>
+      Dr. Horváth Eszter meggyőződése, hogy minden ember teljesen helyreállíthatja agyi funkcióit és memóriáját közvetlenül otthon, egyszerű és természetes módon — agresszív gyógyszerek és drága klinikák nélkül.
+    </p>
+    <p>
+      Más ismert kezelési módszerekkel ellentétben az ő megközelítése kizárólag természetes összetevőkre épül, KÁROS VEGYSZEREK NÉLKÜL, amelyekkel a gyógyszertárak tele vannak, és amelyek gyakran több kárt okoznak, mint hasznot.
+    </p>
+
+    <h2>
+      A tabletták és fájdalomcsillapítók NEM állítják meg az agyi leépülést: ez mítosz!
+      <br>
+      A gyógyszertári vegyszerek gyorsabban pusztítják az agyat, mint maga a betegség!
+    </h2>
+
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>— Valóban hiszi, hogy a gyógyszertári tabletták vagy a „memóriajavító" készítmények meg tudják állítani az agy leépülését? Ez veszélyes tévedés! Ezek a gyógyszerek csak ideiglenesen javítják a koncentrációt, miközben az agyi idegsejtek pusztulása tovább folytatódik. Rövid időn belül a tünetek visszatérnek — erősebben, mint valaha.
+    </p>
+
+    <p>A legnagyobb probléma pedig az agyban van! A kognitív hanyatlás elviselhető lehet a kezdeti szakaszban — egy-egy elfelejtett név, egy keresett szó, ami nem jut eszébe — ezért sokan figyelmen kívül hagyják. Idővel azonban befolyásolja a mindennapi tevékenységeket, a munkavégzést és a családi kapcsolatokat. Minden harmadik ember komoly szövődményeket kockáztat a következő 2 évben, ha nem kezeli megfelelően a problémát!
+    </p>
+
+    <div class="pachino-ramka312-block">
+      <p class="pachino-ramka312">
+        <span class="obertka-1">
+          A feledékenység és koncentrációs zavarok 40 éves kor felett szinte mindig az agyi idegsejtek gyengülésére és fokozatos pusztulására utalnak.
+          <br><br>
+          A statisztikák szerint Magyarországon 5-ből 4 ember csendben szenved memóriaproblémáktól vagy kognitív hanyatlástól. Az esetek több mint 40%-ában a probléma gyorsan súlyos stádiumba — demenciába — lép 1-2 éven belül!
+        </span>
+      </p>
+    </div>
+
+    <p><b>Dr. Horváth Eszter:</b></p>
+
+    <p>— Képzelje el! Néhány hónapon belül az agyi leépülés teljesen tönkreteheti a memóriát és a gondolkodási képességet! Az ember nem emlékszik, hová tette a kulcsait, elfelejti a családtagok nevét, eltéved a saját városában. Sokan önellátásra képtelenné válnak és állandó felügyeletre szorulnak!
+    </p>
+
+    <p>
+      És az egyetlen, amit a modern orvostudomány ilyen helyzetben kínál, az a drága gyógyszerek és fájdalmas beavatkozások! Azonban gondoljon bele! Az agresszív kezelések kimerítik a szervezetet, gyengítik a májat és a vesét, a mellékhatások pedig katasztrofálisak lehetnek: szédülés, állandó fáradtság, depresszió és a probléma súlyosbodása az esetek 70%-ában!
+    </p>
+
+    <figure class="Figure" style="text-align:center">
+      <img src="https://static.joxi.pro/1776157164125-8cbb377e-7026-437c-90fd-e61835f1b93e.jpg" style="margin:0 auto">
+      <span class="Figure-caption">
+        <b>A hagyományos demencia-kezelések kockázatosak. 10-ből csak 3 ember tapasztal tartós javulást, míg a többiek tartós mellékhatásokkal és jelentős életminőség-csökkenéssel néznek szembe.</b>
+      </span>
+    </figure>
+
+    <p class="red-txt">
+      Fontos hangsúlyozni, hogy az esetek 9-ből 10-ben a tünetek 2-3 hónapon belül visszatérnek a hagyományos kezelések után. A gyógyszer nemcsak drága, hanem haszontalan is, ha nem szüntetik meg a leépülés valódi okát — az agyi vérkeringés romlását és az idegsejtek pusztulását!
+    </p>
+
+    <h2>
+      Dr. Horváth Eszter receptje, amely beindítja az agyi idegsejtek regenerálását és teljesen helyreállítja a memóriát
+      <span>
+        Nemcsak a memóriavesztést gyógyítja, hanem az agyi funkciók összes zavarát!
+      </span>
+    </h2>
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>
+      — Az agyi betegségek helyzete ma kritikussá vált, ezért fejlesztettem ki ezt a receptet. Hatékonysága példátlan, mert aktiválja a szervezet természetes erőforrásait az agyi idegsejtek regenerálására és a szellemi képességek helyreállítására. Több mint 10 évig kerestem ezt a kombinációt — és egyetlen gyógyszer, injekció vagy tabletta sem képes hasonló hatást elérni!
+    </p>
+
+    <div class="recept">
+      <p><b>A készítmény formulája a következő hatóanyagokat tartalmazza:</b></p>
+      <ul class="my-ul-0-green">
+        <li><b>Cordyceps gomba kivonat</b>
+          <font>Serkenti az agyi vérkeringést és az idegsejtek regenerációját: 4500 mg</font>
+        </li>
+        <li><b>Oroszlánsörény gomba</b>
+          <font>Támogatja az idegrostok növekedését és a mielinhüvely regenerációját: 2300 mg</font>
+        </li>
+        <li><b>Alfa-liponsav (ALA)</b>
+          <font>Csökkenti az agyi oxidatív stresszt és védi az idegsejteket: 600 mg</font>
+        </li>
+        <li><b>B12-vitamin (metilkobalamin)</b>
+          <font>Helyreállítja a mielinhüvelyt és támogatja a memória működését: 1000 mcg</font>
+        </li>
+        <li><b>Foszfatidil-szerin</b>
+          <font>Javítja a memóriát, a koncentrációt és a tanulási képességet: 320 mg</font>
+        </li>
+        <li><b>Magnézium</b>
+          <font>Csökkenti a szorongást és támogatja az agyi neurotranszmittereket: 400 mg</font>
+        </li>
+        <li><b>Kurkumin</b>
+          <font>Gyorsítja az agyszövet regenerációját és csökkenti a neuroinflammációt: 2300 mg</font>
+        </li>
+      </ul>
+    </div>
+
+    <h2>
+      A Cordyceps Pulse — az egyetlen készítmény, amely tartalmazza az összes összetevőt pontos arányban
+    </h2>
+    <p><b>Dr. Horváth Eszter:</b></p>
+    <p>
+      — Eddig csak egyetlen ilyen készítményt sikerült előállítanunk. A termék neve: Cordyceps Pulse. Jelenleg ez az egyetlen készítmény, amely képes beindítani az agyi idegsejtek regenerálását sejtes szinten. Tartalmazza az összes komponenst pontos arányban, beleértve 23 rendkívül ritka kivonatot és vitaminkomplexet, amelyek megsokszorozzák az agyi szövetek regenerációs képességét. Ez az egyetlen formula, amely képes helyreállítani a memóriát, a koncentrációt és a szellemi képességeket még 60 és 80 év közötti korban is!
+    </p>
+    <img src="https://static.joxi.pro/1776157017669-9fafd175-6d80-4d93-999d-55b491942567.jpg" style="width:78%;max-width:340px;display:block;margin:18px auto">
+    <p>
+      A Cordyceps Pulse túlzás nélkül áttörés a neurológiában. Személyesen vezettem a fejlesztését, magyar és német tudósok részvételével, és az elért eredmények felülmúltak minden várakozást. A titok a kiegyensúlyozott formulában és a speciális hideg extrakciós technológiában rejlik, amely megőrzi az összetevők összes aktív tulajdonságát.
+    </p>
+    <p class="pachino-ramka2">
+      A "Cordyceps Pulse" páratlan. A formula a világ legritkább összetevőiből áll, amelyek mindegyike — a megfelelő dózisban — beindítja az agyi idegsejtek regenerációját és megállítja a szellemi leépülést. Ez az egyetlen készítmény, amely képes visszafordítani a memóriavesztést és a kognitív hanyatlást még súlyos esetekben és idősebb korban is.
+    </p>
+
+    <h2>
+      A Cordyceps Pulse 4 kulcsfontosságú hatásmechanizmusa
+    </h2>
+
+    <div class="obertk512">
+      <h1>A "Cordyceps Pulse" 4 fő hatása:</h1>
+      <div class="block-offer-actions-block">
+        <ol>
+          <li>
+            <font>A szellemi ködösség és feledékenység megszüntetése:</font>
+            <span>Már 1-2 nap használat után a Cordyceps Pulse elkezdi javítani az agyi vérkeringést. A „ködös fejérzés", a szórakozottság és a szellemi fáradtság fokozatosan eltűnik, az elme tisztábbá és élesebbé válik.</span>
+          </li>
+          <li>
+            <font>A memória és koncentráció helyreállítása:</font>
+            <span>7-14 napon belül az aktív összetevők hatnak az agyi szövetre, serkentik az idegsejtek közötti kapcsolatokat és helyreállítják a memória normális működését. A nevek, dátumok és fontos információk újra könnyedén eszébe jutnak.</span>
+          </li>
+          <li>
+            <font>Az agyi idegsejtek regenerálása és a demencia megelőzése:</font>
+            <span>A formula serkenti a sérült idegsejtek regenerációját, helyreállítja a mielinhüvelyt és jelentősen csökkenti a demencia kialakulásának kockázatát. A gondolkodás gyorsabbá és pontosabbá válik.</span>
+          </li>
+          <li>
+            <font>Hosszú távú védelem és az agyi funkciók megőrzése:</font>
+            <span>A 20. naptól a szellemi leépülés teljesen megáll, az agy visszanyeri normális működését. A vitaminoknak és természetes kivonatoknak köszönhetően a kognitív hanyatlás kockázata jelentősen csökken 3-5 évre.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <h2>
+      Klinikai vizsgálat 1980 fős kontrollcsoportban — az eredmények lenyűgözőek
+    </h2>
+
+    <div class="table-block">
+      <h1>A "Cordyceps Pulse" vizsgálatának eredményei — 28-76 év közöttiek, kognitív hanyatlással</h1>
+      <table class="table">
+        <tbody>
+          <tr><td class="one">Az agyi ködösség és szellemi fáradtság megszűnése</td><td class="two">100%</td></tr>
+          <tr><td class="one">A rövid távú memória helyreállítása</td><td class="two">98,2%</td></tr>
+          <tr><td class="one">A koncentrációs képesség javulása</td><td class="two">96,7%</td></tr>
+          <tr><td class="one">A hosszú távú memória helyreállítása</td><td class="two">95,4%</td></tr>
+          <tr><td class="one">Az agyi funkciók teljes normalizálása</td><td class="two">97,1%</td></tr>
+          <tr><td class="one">Az alvásminőség javulása</td><td class="two">99,0%</td></tr>
+          <tr><td class="one">A szorongás és ingerlékenység megszűnése</td><td class="two">100%</td></tr>
+          <tr><td class="one">A demencia kockázatának csökkenése 36 hónapon belül</td><td class="two">92,6%</td></tr>
+          <tr><td class="one">A betegek általános elégedettsége</td><td class="two">99,8%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>
+      Utolsó lehetőség idén megszerezni a Cordyceps Pulse-t — ragadja meg a pillanatot
+    </h2>
+
+    <img alt="epic2" src="https://static.joxi.pro/1775734545128-3e806239-9633-4ceb-a3ab-5b078e3de989.jpg" loading="eager" style="margin:0 auto;display:block;max-width:500px;width:100%;margin-top:24px;margin-bottom:20px">
+
+    <p><b>Dr. Horváth Eszter:</b></p>
+
+    <p>
+      — Idén sikerült forrásokat biztosítanunk és 20.000 csomagot lefoglalnunk kizárólag a portál olvasói számára, de ez csak töredéke a valódi igénynek. Kérem, ne halogassa a döntést — a következő támogatási program csak az év végén kezdődik! A program utasításai szerint minden 40 év feletti magyarországi lakos
+      <font class="red-txt">akár 50%-os kedvezményt</font> kaphat.
+    </p>
+
+    <p>
+      A programban való részvételhez elegendő beírni nevét és telefonszámát az űrlapba. Egy tanácsadó felveszi Önnel a kapcsolatot, személyre szabott kezelési tervet készít és megszervezi a kiszállítást Magyarország bármely régiójába 2-3 napon belül, postán vagy futárszolgálattal, közvetlenül a megadott címre.
+    </p>
+
+    <p><b>Sok egészséget kívánok mindenkinek! Vigyázzon magára! Szeretettel, Dr. Horváth Eszter.</b></p>
+
+    <p class="pachino-ramka">
+      <span class="ramka-title">Frissítés:</span>
+      A Cordyceps Pulse iránti nagy érdeklődés miatt a készletek a vártnál hamarabb elfogyhatnak! Ne feledje, hogy <font>ma a program utolsó napja</font> vagy amíg a készlet tart.
+    </p>
+
+    <center><img src="коряжма.png?=v1" class="product-center"></center>
+
+    <center>
+      <p class="noclose-cta red-txt">
+        Figyelem! Ne zárja be és ne frissítse az oldalt, különben más személy kapja meg a lefoglalt Cordyceps Pulse csomagot!
+      </p>
+      <span class="pre-cta">
+        Részt vehet az ajánlatban — helye lefoglalva:
+        <span class="nowrap">Szám <font class="number-me" style="border-bottom:2px solid var(--color-danger);font-weight:700">19&nbsp;974</font></span>
+      </span>
+    </center>
+
+    <span id="form"></span>
+    <span id="oneform"></span>
+    <div class="pachinoform">
+      <div class="pachinoform_title">
+        <div class="pachinoform_title_logo"><img alt="" src="images/56d9b0017d1d_d58505c9.png"></div>
+        <div class="pachinoform_title_text">
+          <b>Hivatalos rendelési űrlap</b>
+          № <font class="number-me nowrap">19&nbsp;974</font> / <font class="nowrap">20 000</font>
+        </div>
+      </div>
+      <div class="pachinoform_order">
+        Az <b>50%-os kedvezmény</b> igénybevételéhez írja be nevét és telefonszámát az alábbi mezőkbe, majd kattintson a "MEGRENDELÉS" gombra.
+      </div>
+      <div class="pachinoform_value">
+        Raktáron:
+        <span class="blc-pck">
+          <strong class="pachinoform_value_current left-pack">33</strong>
+          <strong class="pachinoform_value_total"> /1000</strong>
+        </span>
+      </div>
+      <div class="pachinoform_price">
+        <div class="pachinoform_price_old"><span class="price_old">23 800 Ft</span></div>
+        <div class="pachinoform_price_new"><span class="price_main">12 900 Ft</span></div>
+      </div>
+      <form action="/order.php" method="post">
+        <input type="hidden" name="fbpx" value="{fbpx}">
+        <input type="hidden" name="utm_code" value="{subid}">
+        <input type="hidden" name="cid" value="{campaign_id}">
+        <input type="hidden" name="sid" value="3548">
+        <input type="hidden" name="hash" value="{hash}">
+        <input type="hidden" name="country" value="HU">
+        <div class="name-input">
+          <label for="name-input">Név</label>
+          <input autocomplete="name" id="name-input" name="name" placeholder="Az Ön neve" required type="text" value="">
+        </div>
+        <div class="phone-input">
+          <label for="phone-input">Telefonszám</label>
+          <input autocomplete="tel" id="phone-input" maxlength="20" name="phone" pattern="^[\-+() 0-9]{8,20}$" placeholder="Az Ön telefonszáma" required type="tel" value="">
+        </div>
+        <button class="button-submit" type="submit">MEGRENDELÉS</button>
+      </form>
+      <div class="pachinoform_footer">
+        ✔️ A kiszállítást az Országos Egészségügyi Központ végzi<br> közvetlenül a megadott címre
+        <br>
+        <img alt="" src="images/b0110a32ff2e_8322b1b5.png" style="width:auto">
+      </div>
+    </div>
+
+    <div class="comments comments-fb" id="pluginComments">
+      <div class="comments__header">
+        <div class="comments__left-box">
+          <p class="comments__header-title">HOZZÁSZÓLÁSOK</p>
+        </div>
+      </div>
+
+      <div class="comments__item-list">
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/7da17fc86c6c_2f1260d0.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Kovács Mária</p>
+              <p class="startdate">7 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Köszönöm ezeket az információkat! Évek óta szedtem memóriajavító gyógyszereket, de semmi nem segített tartósan, ráadásul a gyomrom és a májam is tönkrement… Most sok ismerősömtől hallottam jókat a Cordyceps Pulse-ról. Nagyon örülök, hogy megtaláltam ezt a cikket és nagy kedvezménnyel tudok rendelni. Köszönöm!</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="comments__item">
+            <div class="comments__item-header">
+              <img alt="" class="comments__item-avatar" loading="eager" src="images/8ba73d45c164_4ede289a.jpg">
+              <div class="comments__item-info">
+                <p class="comments__item-name">Szabó Erzsébet</p>
+                <p class="startdate">6 napja</p>
+              </div>
+            </div>
+            <div class="comments__item-body">
+              <p class="comments__item-content">Múlt hétfőn kaptam meg a csomagot. Már egy hét után óriási különbséget érzek! A fejem tiszta, nem keresem a szavakat, a neveket újra tudom. Szeretném befejezni a teljes kúrát. Korábban semmi nem segített. Alig várom, hogy újra magabiztosan tudjak beszélgetni az unokáimmal anélkül, hogy elfelejtem, mit akartam mondani.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/fa7f61c1431c_7946ff6c.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Tóth Anna</p>
+              <p class="startdate">5 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">69 éves vagyok és több mint két éve szenvedtem egyre rosszabb memóriától és koncentrációs zavaroktól. Elfelejettem, hová tettem a dolgaimat, összekevertem a napokat. Azt mondták, ez a korom miatt van és el kell viselnem. 2 hónap Cordyceps Pulse használat után az agyam mintha újjászületett volna! Emlékszem mindenre, a fejem tiszta, mint húsz éve! Ez a készítmény valódi forradalom. Köszönöm!</p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/73d3a879cef9_4a9ce85c.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Horváth Ilona</p>
+              <p class="startdate">5 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Még gondolkodom, hogy kipróbáljam-e a Cordyceps Pulse-t. Honnan tudom, hogy nem csak üres ígéretek? Valóban működik? Az orvos csak gyógyszereket ajánl, amelyektől álmos és fáradt vagyok…</p>
+          </div>
+        </div>
+
+        <div class="comm-obert-reply">
+          <div class="comments__item reply">
+            <div class="comments__item-header">
+              <img alt="" class="comments__item-avatar" loading="eager" src="images/71deaf909b4e_ea30d07c.jpg">
+              <div class="comments__item-info">
+                <p class="comments__item-name">Varga Judit</p>
+                <p class="startdate">4 napja</p>
+              </div>
+            </div>
+            <div class="comments__item-body">
+              <p class="comments__item-content">Ilona, tökéletesen megértem a kételyeidet — én is szkeptikus voltam. De egy hónap Cordyceps Pulse használat után úgy érzem, mintha az agyam újjászületett volna! Korábban állandóan kerestem a szavakat, elfelejettem, miért mentem a konyhába. Most minden kristálytiszta. Szerintem neked is ki kellene próbálnod!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/c364fa7fabf3_734a4c7f.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Lakatos Marianna</p>
+              <p class="startdate">4 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Rendeltem Cordyceps Pulse-t az édesanyámnak. Kezdte elfelejteni a nevünket, összekeverte a napokat, néha nem ismerte fel a szomszédokat. Az orvosok azt mondták, ez a demencia kezdete, szokjunk hozzá. 2 hónap Cordyceps Pulse után anyukám újra mindent tud — neveket, dátumokat, mi volt tegnap ebédre. Hihetetlen!</p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/7099c502f996_b89c4cc9.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Németh Flóra</p>
+              <p class="startdate">3 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Az édesapám sokáig bezárkózott otthon, mert nem mert kimenni — félt, hogy eltéved. Összekeverte az utcákat a saját városában. A Cordyceps Pulse után 4 hét múlva először ment ki egyedül a boltba és visszatalált! Úgy ragyogott, mint régen! Köszönöm, hogy megnyitják az emberek szemét!</p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/95700a967e85_c7b9fe05.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Hegedűs Zsuzsanna</p>
+              <p class="startdate">3 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Volt valakinek allergiás reakciója erre a termékre? Szinte minden gyógyszerre allergiás vagyok. Lehetek allergiás a Cordyceps Pulse-ra is?</p>
+          </div>
+        </div>
+
+        <div class="comm-obert-reply">
+          <div class="comments__item reply">
+            <div class="comments__item-header">
+              <img alt="" class="comments__item-avatar" loading="eager" src="images/d653e647ce29_c22febb7.jpg">
+              <div class="comments__item-info">
+                <p class="comments__item-name">Pintér Auróra</p>
+                <p class="startdate">2 napja</p>
+              </div>
+            </div>
+            <div class="comments__item-body">
+              <p class="comments__item-content">Allergiás vagyok és 2 hónapig használtam a Cordyceps Pulse-t — semmilyen reakcióm nem volt. A termék hipoallergén és tesztelt! De ami a legfontosabb, a memóriám sokkal jobb és a fejem tiszta.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/df3e8c2eb745_86a29b61.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Török Amália</p>
+              <p class="startdate">2 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Az édesanyám szörnyen szenvedett a memóriavesztéstől! Egyik napról a másikra elfelejtette a nevünket. Éjszaka felébredt és nem tudta, hol van — borzasztó volt nézni! Egy hét Cordyceps Pulse után anyukám újra mosolyogni kezdett, ma — először 2 év után — egyedül ment sétálni és visszatalált! A Cordyceps Pulse visszaadta nekem az édesanyámat!</p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/47a8cb9cf088_09555b8e.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Veres Lídia</p>
+              <p class="startdate">1 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">A kommentek mélyen megérintettek, ezért rendeltem Cordyceps Pulse-t az édesanyámnak. Olyan nehéz nézni, ahogy napról napra egyre többet felejt… Rögtön 4 csomagot vettem. Remélem, segíteni fog.</p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/f021e0a36f8b_7c282874.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Antal Tekla</p>
+              <p class="startdate">1 napja</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Meglepődtem, hogy létezik ilyen készítmény a memória helyreállítására! A futár 2 nap alatt kézbesítette. Köszönöm!</p>
+          </div>
+        </div>
+
+        <div class="comments__item">
+          <div class="comments__item-header">
+            <img alt="" class="comments__item-avatar" loading="eager" src="images/d770c7a4cbdf_467ee117.jpg">
+            <div class="comments__item-info">
+              <p class="comments__item-name">Halász Florina</p>
+              <p class="nowdate">ma</p>
+            </div>
+          </div>
+          <div class="comments__item-body">
+            <p class="comments__item-content">Köszönöm! Megpróbáltam megtalálni a Cordyceps Pulse-t a gyógyszertárakban, de azt mondták, nagyon nehéz beszerezni és jobb közvetlenül erről az oldalról rendelni.</p>
+          </div>
+        </div>
+
+        <a href="#oneform">
+          <div class="form-container">
+            <form class="custom-form" id="custom-form" onsubmit="return false;">
+              <div class="custom-form__top-field">
+                <div class="custom-form__ava-block">
+                  <label class="custom-form__ava-label"><span class="custom-form__ava-label_red-text">*</span>Avatar hozzáadása</label>
+                </div>
+                <input disabled class="custom-form__name" placeholder="Az Ön neve" type="text" value="">
+              </div>
+              <textarea disabled class="custom-form__message" placeholder="Az Ön hozzászólása"></textarea>
+              <div class="custom-form__bottom-field">
+                <div class="custom-form__photo-block">
+                  <label class="custom-form__photo-label">Fotó hozzáadása</label>
+                </div>
+                <button disabled class="custom-form__btn">KÜLDÉS</button>
+              </div>
+            </form>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div class="trust-strip" id="trustStrip" style="display:none">
+    <div class="trust-item"><span class="trust-item-icon">🛡️</span> Tanúsított minőség</div>
+    <div class="trust-item"><span class="trust-item-icon">🚚</span> Szállítás 2–3 nap</div>
+    <div class="trust-item"><span class="trust-item-icon">⚕️</span> Vény nélkül kapható</div>
+    <div class="trust-item"><span class="trust-item-icon">🔒</span> Biztonságos rendelés</div>
+  </div>
+
+  <footer class="clinical-footer">
+    © MedInfo Magyarország — tájékoztató anyag<br>
+    Az ezen az oldalon bemutatott adatok tájékoztató jellegűek, és nem helyettesítik az orvosi konzultációt.
+  </footer>
+
+  <script>
+    /* ===================== QUIZ LOGIC ===================== */
+    const QUIZ_QUESTIONS = [
+      {
+        text: "Egyre gyakrabban elfelejti az ismerős emberek nevét vagy a hétköznapi szavakat?",
+        hint: "Például egy beszélgetés közben nem jut eszébe egy ismerős neve vagy egy egyszerű szó."
+      },
+      {
+        text: "Előfordult már az utóbbi időben, hogy bement egy szobába, és elfelejtette, miért ment oda?",
+        hint: "Egy másodpercre megáll és nem emlékszik, mit szeretett volna csinálni."
+      },
+      {
+        text: "Gyakran keresi a kulcsait, a szemüvegét, a telefonját vagy más hétköznapi tárgyakat?",
+        hint: "Naponta többször is keresnie kell olyan dolgokat, amelyeknek a helyén kellene lenniük."
+      },
+      {
+        text: "Nehezebben tud koncentrálni egy könyvre, filmre vagy beszélgetésre, mint 5-10 évvel ezelőtt?",
+        hint: "Elkalandoznak a gondolatai, nehezebben követi a fonalat."
+      },
+      {
+        text: "Megesik, hogy beszélgetés közben elveszíti a gondolatát, vagy nem találja a megfelelő szót?",
+        hint: "A mondat közepén megáll és keresi a kifejezést."
+      },
+      {
+        text: "Reggel ébredés után „ködös", nehéz fejjel ébred, és csak órák múlva érzi tisztának magát?",
+        hint: "A szellemi fáradtság már a nap elejétől jelen van."
+      },
+      {
+        text: "Mondta már Önnek családtag vagy ismerős, hogy „ezt már elmondtad" vagy „ezt már elfelejtetted"?",
+        hint: "Ismétlések, elfelejtett megbeszélések, dátumok."
+      }
+    ];
+
+    const SYMPTOM_LABELS = [
+      "Nevek és szavak elfelejtése",
+      "Tájékozódási zavar saját otthonban",
+      "Tárgyak állandó keresése",
+      "Koncentrációs nehézségek",
+      "A gondolat elvesztése beszéd közben",
+      "Reggeli szellemi ködösség",
+      "Visszatérő ismétlések — családi jelzés"
+    ];
+
+    let currentQ = 0;
+    let answers = [];
+
+    const $intro = document.getElementById('quizIntro');
+    const $screen = document.getElementById('quizQuestionScreen');
+    const $analyzing = document.getElementById('quizAnalyzing');
+    const $result = document.getElementById('quizResult');
+    const $story = document.getElementById('storySection');
+    const $offer = document.getElementById('offerSection');
+    const $trust = document.getElementById('trustStrip');
+
+    const $qText = document.getElementById('qText');
+    const $qHint = document.getElementById('qHint');
+    const $qNumLabel = document.getElementById('qNumLabel');
+    const $qCurrent = document.getElementById('qCurrent');
+    const $qTotal = document.getElementById('qTotal');
+    const $qPercent = document.getElementById('qPercent');
+    const $qBar = document.getElementById('qBarFill');
+
+    $qTotal.textContent = QUIZ_QUESTIONS.length;
+
+    function showQuestion(idx) {
+      const q = QUIZ_QUESTIONS[idx];
+      $qText.textContent = q.text;
+      $qHint.textContent = q.hint;
+      $qNumLabel.textContent = (idx + 1) + ". kérdés";
+      $qCurrent.textContent = idx + 1;
+      const pct = Math.round(((idx) / QUIZ_QUESTIONS.length) * 100);
+      $qPercent.textContent = pct + "%";
+      $qBar.style.width = pct + "%";
+    }
+
+    document.getElementById('quizStartBtn').addEventListener('click', function () {
+      $intro.style.display = 'none';
+      $screen.classList.add('active');
+      currentQ = 0;
+      answers = [];
+      showQuestion(0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('.quiz-option').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const ans = btn.getAttribute('data-answer');
+        answers.push(ans);
+        currentQ++;
+        if (currentQ < QUIZ_QUESTIONS.length) {
+          showQuestion(currentQ);
+        } else {
+          // finished — go to analyzing
+          $screen.classList.remove('active');
+          $qBar.style.width = "100%";
+          startAnalyzing();
+        }
+      });
+    });
+
+    function startAnalyzing() {
+      $analyzing.classList.add('active');
+      const steps = document.querySelectorAll('.quiz-analyzing-step');
+      let i = 0;
+      const interval = setInterval(function () {
+        if (i < steps.length) {
+          steps[i].classList.add('done');
+          i++;
+        } else {
+          clearInterval(interval);
+          setTimeout(showResult, 600);
+        }
+      }, 700);
+    }
+
+    function showResult() {
+      $analyzing.classList.remove('active');
+      $result.classList.add('active');
+
+      // count "yes" answers
+      const yesCount = answers.filter(function (a) { return a === 'yes'; }).length;
+      // even with 0 yes, show a "moderate" result — but most users will hit at least 2-3
+      let riskPercent;
+      let level;
+      let desc;
+
+      if (yesCount >= 5) {
+        riskPercent = 82 + Math.min(yesCount - 5, 2) * 4; // 82-94%
+        level = "Súlyos kockázat — azonnali cselekvés szükséges";
+        desc = "Az Ön tünetei kifejezetten az agyi idegsejtek pusztulására és súlyos keringési zavarokra utalnak. Ha most nem cselekszik, 1–2 éven belül a tünetek demenciába torkollhatnak.";
+      } else if (yesCount >= 3) {
+        riskPercent = 64 + (yesCount - 3) * 6; // 64-76%
+        level = "Magas kockázat";
+        desc = "Az Ön válaszai a kognitív hanyatlás jól azonosítható, korai jeleire utalnak. Ezen a ponton a folyamat még visszafordítható — de a következő 6-12 hónap kulcsfontosságú.";
+      } else if (yesCount >= 1) {
+        riskPercent = 48 + yesCount * 6; // 54-60%
+        level = "Közepes kockázat";
+        desc = "Néhány figyelmeztető jel már jelen van. Az agyi idegsejtek lassú gyengülése elkezdődött. Még jelentősen lassítható, ha mostantól odafigyel.";
+      } else {
+        riskPercent = 42;
+        level = "Megelőző figyelmeztetés";
+        desc = "Még ha jelenleg nem is észlel komoly tüneteket, 40 év felett az agyi idegsejtek természetes pusztulása mindenkinél elkezdődik. A megelőzés most a leghatékonyabb.";
+      }
+
+      // update circle
+      const circle = document.querySelector('.result-score-circle');
+      circle.style.background = "conic-gradient(var(--color-danger) 0% " + riskPercent + "%, var(--color-border-soft) " + riskPercent + "% 100%)";
+      document.getElementById('resultScoreText').innerHTML = riskPercent + "%<small>kockázat</small>";
+      document.getElementById('resultLevelText').textContent = level;
+      document.getElementById('resultDescText').textContent = desc;
+
+      // confirmed symptoms list
+      const list = document.getElementById('resultSymptomsList');
+      list.innerHTML = '';
+      let any = false;
+      answers.forEach(function (a, idx) {
+        if (a === 'yes') {
+          const li = document.createElement('li');
+          li.textContent = SYMPTOM_LABELS[idx];
+          list.appendChild(li);
+          any = true;
+        }
+      });
+      if (!any) {
+        const li = document.createElement('li');
+        li.textContent = "Életkori kockázati tényezők (40+ év)";
+        list.appendChild(li);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.getElementById('continueBtn').addEventListener('click', function () {
+      $story.classList.add('active');
+      // reveal offer too — but story is shown first; scroll to story
+      $offer.classList.add('active');
+      $trust.style.display = 'flex';
+      $story.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    /* ===================== EXISTING FORM/UX HANDLERS ===================== */
+    $(function () {
+      $("main a, .form-container a").on("click", function (e) {
+        const href = $(this).attr('href');
+        if (href && href.indexOf('#') === 0) {
+          e.preventDefault();
+          const target = $(href).length ? $(href) : $('#oneform');
+          if (target.length) {
+            $('html,body').animate({ scrollTop: target.offset().top - 20 }, 400);
+          }
+        }
+      });
+
+      $('[name="name"]').on("input", function () {
+        var val = $(this).val();
+        var cleaned = val
+          .replace(/[^a-zA-Zа-яА-ЯёЁáéíóöőúüűÁÉÍÓÖŐÚÜŰ ]/g, "")
+          .replace(/^\s+/, "")
+          .replace(/\s\s+/, " ");
+        var parts = cleaned.split(" ");
+        if (parts.length > 2) { cleaned = parts[0] + " " + parts[1]; }
+        $(this).val(cleaned);
+      });
+      $('[name="name"]').on("change blur", function () { $(this).val($(this).val().trim()); });
+      $('[name="phone"]').on("input change", function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/\D/g, ""));
+        $(e.currentTarget).attr("pattern", "[0-9]{6,}");
+      });
+    });
+
+    /* lazy-load images */
+    const LAZY = document.querySelectorAll('img');
+    for (let i = 0; i < LAZY.length; i++) { LAZY[i].setAttribute('loading', 'lazy'); }
+  </script>
+
+</body>
+</html>

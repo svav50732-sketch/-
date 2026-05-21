@@ -258,16 +258,19 @@
     .quiz-warning strong { color:var(--color-danger); }
     .quiz-section-title { font-family:var(--font-serif); font-size:18px; font-weight:700; color:var(--color-primary-dark); margin:0 0 12px; }
     .quiz-symptom-list { list-style:none; padding:0; margin:0 0 22px; background:#fff; border:1px solid var(--color-border); border-radius:var(--radius-md); overflow:hidden; }
-    .quiz-symptom-list li { display:flex; align-items:flex-start; gap:12px; padding:13px 18px; border-bottom:1px solid var(--color-border-soft); font-size:15px; line-height:1.5; color:var(--color-text); }
+    .quiz-symptom-list li { display:flex; align-items:flex-start; gap:12px; padding:13px 18px 13px 18px !important; margin:0 !important; border-bottom:1px solid var(--color-border-soft); font-size:15px; line-height:1.5; color:var(--color-text); position:static; }
     .quiz-symptom-list li:last-child { border-bottom:0; }
-    .quiz-symptom-list li::before { content:"✓"; flex-shrink:0; width:22px; height:22px; background:var(--color-danger-light); color:var(--color-danger); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; margin-top:1px; }
+    .quiz-symptom-list li::before { content:"✓" !important; position:static !important; top:auto !important; left:auto !important; flex-shrink:0; width:22px !important; height:22px !important; background:var(--color-danger-light) !important; color:var(--color-danger); border:0 !important; border-radius:50% !important; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; margin-top:1px; }
     .quiz-symptom-list li.empty { color:var(--color-text-muted); font-style:italic; }
-    .quiz-symptom-list li.empty::before { content:"—"; background:var(--color-bg-alt); color:var(--color-text-muted); }
+    .quiz-symptom-list li.empty::before { content:"—" !important; background:var(--color-bg-alt) !important; color:var(--color-text-muted); }
     .quiz-prompt { text-align:center; padding:18px 22px; background:var(--color-primary-light); border:1px solid rgba(74,124,58,0.18); border-radius:var(--radius-md); font-size:16px; line-height:1.6; color:var(--color-primary-dark); }
     .quiz-prompt strong { font-weight:700; }
     .quiz-prompt-arrow { display:block; margin-top:10px; font-size:22px; color:var(--color-primary); animation:quizBounce 1.6s ease infinite; }
     @keyframes quizBounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(6px); } }
-    .article-locked { display:none; }
+    .article-locked { display:none !important; }
+    .quiz-outer { max-width:900px; margin:0 auto; padding:24px 28px 8px; background:#fff; border-left:1px solid var(--color-border-soft); border-right:1px solid var(--color-border-soft); }
+    @media (max-width:640px) { .quiz-outer { padding:18px 18px 6px; } }
+    .quiz-outer .quiz-wrap { margin:0; }
     @media (max-width:560px) {
       .quiz-wrap { padding:22px 18px 24px; }
       .quiz-title { font-size:21px; }
@@ -297,29 +300,8 @@
     </div>
   </div>
 
-  <header>
-    <div class="bg-image"></div>
-  </header>
-  <div class="text-container"></div>
-  <div class="h1-bg split">
-    <h1 class="title_h1">
-      <span class="head-one-part">„UŽ SOM UNAVENÁ POZERAŤ SA, AKO SI MOJE PACIENTKY NIČIA TELO DIÉTAMI, KTORÉ AJ TAK NEFUNGUJÚ."</span>
-      <span class="head-two-part">30-ROČNÁ SLOVENSKÁ VÝŽIVOVÁ PORADKYŇA, KTORÁ PRECESTOVALA KLÁŠTORY V CELEJ ÁZII, NAZBIERALA DÁVNE TAJOMSTVÁ MNÍCHOV — A VYTVORILA MATCHA NÁPOJ, KTORÝ SPAĽUJE TUKY BEZ DIÉT, BEZ CVIČENIA A BEZ HLADOVANIA. JEJ OBJAV ŠOKOVAL CELÚ LEKÁRSKU KOMUNITU.</span>
-    </h1>
-
-    <div class="tdate head-main-date">
-      <span class="head-main-date-title">Zverejnené: </span>
-      <span class="startdate"><script>dtime_nums(-3, true)</script>, 09:36</span>
-    </div>
-
-    <div class="main-subtitle">
-      Ako Dr. Martina Krížová, 30-ročná výživová poradkyňa, opustila dobre platenú kliniku v Bratislave, aby urobila to, čo neurobil žiadny iný lekár na Slovensku: precestovala celú Áziu — od tibetských vrchov cez thajské lesné kláštory až po horské chrámy v Japonsku — a zbierala, jednu po druhej, prísady, ktoré mnísi používajú už stáročia, aby zostali štíhli, plní energie a zdraví až do vysokého veku. A ako tieto prísady spojila v jednom matcha nápoji, ktorý už pomohol viac než 12 000 Slovenkám prirodzene schudnúť — bez nebezpečných diét, bez vyčerpávajúceho cvičenia a bez jediného škodlivého vedľajšieho účinku.
-    </div>
-  </div>
-
-  <main>
-
-    <!-- ===== QUIZ (shown first, blocks article until completed) ===== -->
+  <!-- ===== QUIZ (shown FIRST, blocks article until completed) ===== -->
+  <div class="quiz-outer" id="quiz-outer">
     <section class="quiz-wrap" id="quiz" aria-label="Rýchly zdravotný test">
 
       <div class="quiz-intro" id="quiz-stage">
@@ -367,9 +349,30 @@
         </div>
       </div>
     </section>
-    <!-- ===== /QUIZ ===== -->
+  </div>
+  <!-- ===== /QUIZ ===== -->
 
-    <div class="article-locked" id="article-content">
+  <header class="article-locked" id="article-header">
+    <div class="bg-image"></div>
+  </header>
+  <div class="text-container article-locked"></div>
+  <div class="h1-bg split article-locked">
+    <h1 class="title_h1">
+      <span class="head-one-part">„UŽ SOM UNAVENÁ POZERAŤ SA, AKO SI MOJE PACIENTKY NIČIA TELO DIÉTAMI, KTORÉ AJ TAK NEFUNGUJÚ."</span>
+      <span class="head-two-part">30-ROČNÁ SLOVENSKÁ VÝŽIVOVÁ PORADKYŇA, KTORÁ PRECESTOVALA KLÁŠTORY V CELEJ ÁZII, NAZBIERALA DÁVNE TAJOMSTVÁ MNÍCHOV — A VYTVORILA MATCHA NÁPOJ, KTORÝ SPAĽUJE TUKY BEZ DIÉT, BEZ CVIČENIA A BEZ HLADOVANIA. JEJ OBJAV ŠOKOVAL CELÚ LEKÁRSKU KOMUNITU.</span>
+    </h1>
+
+    <div class="tdate head-main-date">
+      <span class="head-main-date-title">Zverejnené: </span>
+      <span class="startdate"><script>dtime_nums(-3, true)</script>, 09:36</span>
+    </div>
+
+    <div class="main-subtitle">
+      Ako Dr. Martina Krížová, 30-ročná výživová poradkyňa, opustila dobre platenú kliniku v Bratislave, aby urobila to, čo neurobil žiadny iný lekár na Slovensku: precestovala celú Áziu — od tibetských vrchov cez thajské lesné kláštory až po horské chrámy v Japonsku — a zbierala, jednu po druhej, prísady, ktoré mnísi používajú už stáročia, aby zostali štíhli, plní energie a zdraví až do vysokého veku. A ako tieto prísady spojila v jednom matcha nápoji, ktorý už pomohol viac než 12 000 Slovenkám prirodzene schudnúť — bez nebezpečných diét, bez vyčerpávajúceho cvičenia a bez jediného škodlivého vedľajšieho účinku.
+    </div>
+  </div>
+
+  <main class="article-locked" id="article-main">
 
     <!-- 📸 PHOTO 1 -->
     <img alt="Dr. Martina Krížová vo svojej ordinácii" src="https://static.joxi.pro/1779350831451-259c6948-596f-47d1-930c-54244df68611.jpg" style="margin-bottom:16px;margin-top:0">
@@ -1039,8 +1042,6 @@
       </div>
     </div>
 
-    </div><!-- /#article-content -->
-
   </main>
 
   <div class="trust-strip">
@@ -1131,7 +1132,7 @@ LAZY[i].setAttribute('loading', 'lazy');
     var $curNum     = document.getElementById('quiz-current');
     var $percent    = document.getElementById('quiz-percent');
     var $buttons    = document.querySelectorAll('.quiz-btn');
-    var $article    = document.getElementById('article-content');
+    var $articleParts = document.querySelectorAll('.article-locked');
 
     function renderQuestion() {
       var q = questions[current];
@@ -1221,7 +1222,9 @@ LAZY[i].setAttribute('loading', 'lazy');
 
       $stage.style.display = 'none';
       $result.classList.add('is-visible');
-      $article.style.display = 'block';
+      for (var j = 0; j < $articleParts.length; j++) {
+        $articleParts[j].classList.remove('article-locked');
+      }
     }
 
     for (var i = 0; i < $buttons.length; i++) {

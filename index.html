@@ -352,11 +352,11 @@
   </div>
   <!-- ===== /QUIZ ===== -->
 
-  <header class="article-locked" id="article-header">
+  <header class="article-locked" id="article-header" style="display:none">
     <div class="bg-image"></div>
   </header>
-  <div class="text-container article-locked"></div>
-  <div class="h1-bg split article-locked">
+  <div class="text-container article-locked" style="display:none"></div>
+  <div class="h1-bg split article-locked" style="display:none">
     <h1 class="title_h1">
       <span class="head-one-part">„UŽ SOM UNAVENÁ POZERAŤ SA, AKO SI MOJE PACIENTKY NIČIA TELO DIÉTAMI, KTORÉ AJ TAK NEFUNGUJÚ."</span>
       <span class="head-two-part">30-ROČNÁ SLOVENSKÁ VÝŽIVOVÁ PORADKYŇA, KTORÁ PRECESTOVALA KLÁŠTORY V CELEJ ÁZII, NAZBIERALA DÁVNE TAJOMSTVÁ MNÍCHOV — A VYTVORILA MATCHA NÁPOJ, KTORÝ SPAĽUJE TUKY BEZ DIÉT, BEZ CVIČENIA A BEZ HLADOVANIA. JEJ OBJAV ŠOKOVAL CELÚ LEKÁRSKU KOMUNITU.</span>
@@ -372,7 +372,7 @@
     </div>
   </div>
 
-  <main class="article-locked" id="article-main">
+  <main class="article-locked" id="article-main" style="display:none">
 
     <!-- 📸 PHOTO 1 -->
     <img alt="Dr. Martina Krížová vo svojej ordinácii" src="https://static.joxi.pro/1779350831451-259c6948-596f-47d1-930c-54244df68611.jpg" style="margin-bottom:16px;margin-top:0">
@@ -1044,14 +1044,14 @@
 
   </main>
 
-  <div class="trust-strip article-locked">
+  <div class="trust-strip article-locked" style="display:none">
     <div class="trust-item"><span class="trust-item-icon">🌿</span> Certifikovaná kvalita</div>
     <div class="trust-item"><span class="trust-item-icon">🚚</span> Doručenie do 2–3 dní</div>
     <div class="trust-item"><span class="trust-item-icon">💰</span> Platba pri prevzatí (dobierka)</div>
     <div class="trust-item"><span class="trust-item-icon">🔒</span> Bezpečná objednávka</div>
   </div>
 
-  <footer class="clinical-footer article-locked">
+  <footer class="clinical-footer article-locked" style="display:none">
     © ZdravieInfo Slovensko — špeciálna reportáž<br>
     Informácie na tejto stránke sú určené len na informačné účely a nenahrádzajú odborné lekárske poradenstvo.
   </footer>
@@ -1224,6 +1224,7 @@ LAZY[i].setAttribute('loading', 'lazy');
       $result.classList.add('is-visible');
       for (var j = 0; j < $articleParts.length; j++) {
         $articleParts[j].classList.remove('article-locked');
+        $articleParts[j].style.display = '';
       }
     }
 
